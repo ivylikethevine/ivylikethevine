@@ -1,6 +1,6 @@
 # ivylikethevine
 
-[LinkedIn](https://www.linkedin.com/ln/ivylikethevine)
+[LinkedIn](https://www.linkedin.com/in/ivylikethevine)
 
 
 
