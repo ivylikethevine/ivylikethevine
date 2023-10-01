@@ -1,1 +1,0 @@
-![Resume](/resume_v3.png)

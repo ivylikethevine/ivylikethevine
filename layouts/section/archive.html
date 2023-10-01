@@ -1,12 +1,18 @@
 {{ define "main" }}
+
+{{ $pages := .Site.RegularPages }}
+<!-- Main Content -->
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {{ partial "tagcloud.html" . }}
+      
       <!-- Article List -->
-      <div class="mini-post-list">
-        {{ range .Pages.GroupByDate "2006" }}
+      <div class="mini-post-list js-result">
 
-        <section class="">
+        {{ range $pages.GroupByDate "2006" }}
+
+        <section>
           <span class="fa listing-seperator">
             <span class="tag-text">{{ .Key }}</span></span>
             {{ range .Pages }}
@@ -14,8 +20,8 @@
             {{ end }}
         </section>
         {{ end }}
-      </div>
 
+      </div>
     </div>
   </div>
 </div>
