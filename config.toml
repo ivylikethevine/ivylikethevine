@@ -1,30 +1,30 @@
 baseURL = 'https://ivylikethevine.com/'
 languageCode = 'en-us'
 title = 'ivy (likethevine)'
-theme = "puppet"
+theme = 'puppet'
 
-copyright = ""
+copyright = ''
 paginate = 3
-defaultContentLanguage = "en"
+defaultContentLanguage = 'en'
 
 hasCJKLanguage = true
 enableInlineShortcodes = true
 enableEmoji = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
-ignoreErrors = ["error-remote-getjson"]
+ignoreErrors = ['error-remote-getjson']
 
-disqusShortname = ""
-googleAnalytics = ""
+disqusShortname = ''
+googleAnalytics = ''
 
 [outputs]
-home = ["HTML", "JSON", "RSS"]
+home = ['HTML', 'JSON', 'RSS']
 
 # prevent build failures when using Hugo's template _internal/opengraph.html 
 [taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
+category = 'categories'
+tag = 'tags'
+series = 'series'
 
 [markup]
 [markup.highlight]
@@ -33,58 +33,42 @@ codeFences = true
 guessSyntax = true
 lineNos = true
 lineNumbersInTable = false
-style = "dracula"
+style = 'dracula'
 
 [markup.goldmark.renderer]
 unsafe = true
 
 [menu]
 [[menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
+identifier = 'home'
+name = 'home'
+url = '/'
 weight = -100
 [[menu.main]]
-identifier = "resume"
-name = "resume"
-url = "/resume/"
+identifier = 'resume'
+name = 'resume'
+url = '/resume/'
 weight = 10
 [[menu.main]]
-identifier = "projects"
-name = "projects"
-url = "/projects/"
+identifier = 'homelab'
+name = 'homelab'
+url = '/homelab/'
 weight = 20
+[[menu.main]]
+identifier = 'projects'
+name = 'projects'
+url = '/projects/'
+weight = 30
 
+[params]
+description = "My personal projects & writings"
+keywords = "blog,developer,personal"
+img_home = "/front-horizontal2.jpg"
+img_404 = "img/404-bg.jpg"
 
-# [params]
-# author = "Puppet"
-# description = "A simple and clean theme for Hugo"
-# keywords = "blog,developer,personal"
-# img_home = "img/home-bg.jpg"
-# img_404 = "img/404-bg.jpg"
-
-
-custom_js = []
-custom_css = [] # ["css/custom.css"]  Add your file to assets folder  [assets/css/custom.css]
-
-[params.sidebar]
-enable = true
-gravatarEmail = "ivylikethevine@gmail.com"
-# Overwritten by your gravatar image if `gravatarEmail` is filled
-avatar = "img/home-bg.jpg"
-bio = "a personal website"
 
 [params.social]
-github = "ivylikethevine"
-linkedin = "ivylikethevine"
+github = 'ivylikethevine'
+linkedin = 'ivylikethevine'
+medium = '@ivylikethevine'
 
-# See https://giscus.app/
-# [params.giscus]
-# enable = true
-# repo = "roninro/hugo-theme-puppet"
-# repo_id = "R_kgDOHuvyhw"
-# category = "General"
-# category_id = "DIC_kwDOHuvyh84CQjDo"
-# input_position = "top"
-# theme = "light_tritanopia"
-# lang = "en"
