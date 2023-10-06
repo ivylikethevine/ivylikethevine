@@ -11,7 +11,11 @@
               col-md-10 col-md-offset-1
               post-container">
         {{ .Content }}
-
+        <div class="post-content">
+          {{ if (.Params.mermaid) }}
+          {{ partial "mermaid.html" }}
+          {{ end }}
+      </div>
         <hr style="visibility: hidden;" />
         <ul class="pager">
           {{ with .Prev }}

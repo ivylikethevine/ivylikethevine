@@ -54,11 +54,11 @@ identifier = 'homelab'
 name = 'homelab'
 url = '/homelab/'
 weight = 20
-[[menu.main]]
-identifier = 'projects'
-name = 'projects'
-url = '/projects/'
-weight = 30
+# [[menu.main]]
+# identifier = 'projects'
+# name = 'projects'
+# url = '/projects/'
+# weight = 30
 
 [params]
 description = "My personal projects & writings"
@@ -72,3 +72,6 @@ github = 'ivylikethevine'
 linkedin = 'ivylikethevine'
 medium = '@ivylikethevine'
 
+[params.mermaid]
+theme = "dark"
+align = "center"
