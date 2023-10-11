@@ -28,12 +28,9 @@ series = 'series'
 
 [markup]
 [markup.highlight]
-noClasses = true
-codeFences = true
-guessSyntax = true
-lineNos = true
-lineNumbersInTable = false
+lineNos = false
 style = 'dracula'
+tabWidth = 2
 
 [markup.goldmark.renderer]
 unsafe = true
