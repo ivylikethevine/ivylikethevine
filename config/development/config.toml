@@ -1,6 +1,6 @@
-baseURL = 'https://ivylikethevine.com/'
+baseURL = 'https://ivylikethevine.github.io/'
 languageCode = 'en-us'
-title = 'ivy (likethevine)'
+title = 'ivy (development)'
 theme = 'puppet'
 
 copyright = ''

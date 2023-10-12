@@ -1,6 +1,6 @@
 +++
 title = 'Laptop Homelab in 5 Commands'
-date = '2023-10-11'
+date = '2023-10-12'
 subtitle = 'A quick & simple NAS/server from my old laptop.'
 author = 'Ivy Duggan'
 draft = false

@@ -1,4 +1,2 @@
-baseURL = 'https://dev.ivylikethevine.com/'
-title = 'ivy (development)'
-# disqusShortname = ''
-# googleAnalytics = ''
+baseURL = 'https://ivylikethevine.com/'
+title = 'ivy (likethevine)'
