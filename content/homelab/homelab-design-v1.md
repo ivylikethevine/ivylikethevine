@@ -1,6 +1,6 @@
 +++
 title = 'Laptop Homelab in 5 Commands'
-date = '2023-10-06'
+date = '2023-10-11'
 subtitle = 'A quick & simple NAS/server from my old laptop.'
 author = 'Ivy Duggan'
 draft = false
@@ -160,7 +160,8 @@ After the new `netplan` configuration is applied, our `ssh` session break or dis
 Now just configure the software we've installed & enjoy:
 * [Initial Portainer Setup](https://docs.portainer.io/start/install-ce/server/setup)
 * Optional: Change portainer templates to 3rd party repo to allow more 1-click application deployments, such as https://github.com/lissy93/portainer-templates 
-* [Configure NFS on the server](https://github.com/45Drives/cockpit-file-sharing#nfs-management-tab)
+* [Configure SAMBA on the server for Windows Clients](https://github.com/45Drives/cockpit-file-sharing#samba-management-tab)
+* [Configure NFS on the server for linux clients](https://github.com/45Drives/cockpit-file-sharing#nfs-management-tab)
 * Optional: Mount folder at boot on Linux with the following command: 
 {{< highlight bash >}}
 sudo echo '<hostname>.local:/<nfs_folder>    /<local_mount>   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0' | sudo tee -a /etc/fstab &&
