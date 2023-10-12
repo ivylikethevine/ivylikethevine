@@ -1,4 +1,4 @@
-baseURL = 'https://ivylikethevine.github.io/'
+baseURL = 'https://ivylikethevine.pages.dev/'
 languageCode = 'en-us'
 title = 'ivy (development)'
 theme = 'puppet'
