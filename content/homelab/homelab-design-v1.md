@@ -1,6 +1,6 @@
 +++
 title = 'Laptop Homelab in 5 Commands'
-date = '2023-10-06'
+date = '2023-10-12'
 subtitle = 'A quick & simple NAS/server from my old laptop.'
 author = 'Ivy Duggan'
 draft = false
@@ -54,7 +54,7 @@ For my setup, my server hardware is my old 2012 Macbook Pro 13":
 The specs are not incredible, and I was uncertain if this would be a performant system (spoiler: it works fine!). I upgraded the SSD with one I had laying around, since 128GB was not sufficient. Production servers should **always have redundant storage and networking**, but beggers can't be choosers! It is possible to adapt the Thunderbolt 2 port to Gigabit ethernet, but dual networking is a rabbithole to follow another day.
 
 ### The Software - Keep it Simple
-- OS: [Ubuntu 22.04LTS ](https://ubuntu.com/download/server)
+- OS: [Ubuntu 22.04LTS](https://ubuntu.com/download/server)
 - Host Management: [Cockpit](https://cockpit-project.org/)
 - Container Management: [Portainer-CE](https://docs.portainer.io/start/install-ce)
 - Virtualization: [Docker](https://www.docker.com/)
@@ -149,7 +149,7 @@ sudo echo "network:
   sudo netplan apply
 {{< / highlight >}}
 
-Essentially what I am doing here is overwriting the default wired connection with my own configuration. The renderer is set to `NetworkManager` to work with `cockpit`'s UI. The line `$(ip -o -4 route show to default | awk '{print $5}'):` is a nifty way to grab the current active ethernet connection and configure it (versus unconfigured or virtual interfaces). On my macbook, it evalutes to `ens9`, the name of the built-in ethernet interface. We enable `dhcp4`, since my home network only uses `ipv4`, not `ipv6`, and my router uses DHCP instead of static IPs (as do most home networks).[^5] [^6]
+Essentially what I am doing here is overwriting the default wired `netplan` with my own configuration. The renderer is set to `NetworkManager` to work with `cockpit`'s UI. The line `$(ip -o -4 route show to default | awk '{print $5}'):` is a nifty way to grab the current active ethernet connection and configure it (versus unconfigured or virtual interfaces). On my macbook, it evalutes to `ens9`, the name of the built-in ethernet interface. We enable `dhcp4`, since my home network only uses `ipv4`, not `ipv6`, and my router uses DHCP instead of static IPs (as do most home networks).[^5] [^6] [^7]
 
 The `link-local: [ ipv4 ]` line is also crucial, as it works with `avahi-daemon`/`avahi-utils` to tell other devices on our network that `nessie.local` can be used, not a dynamically changing IP address. Alternate solutions involve editing files on every host (which is a hassle), or creating a custom DNS server (which is also a hassle and I could break the wifi for my roommate, which would be very bad!)
 
@@ -160,7 +160,8 @@ After the new `netplan` configuration is applied, our `ssh` session break or dis
 Now just configure the software we've installed & enjoy:
 * [Initial Portainer Setup](https://docs.portainer.io/start/install-ce/server/setup)
 * Optional: Change portainer templates to 3rd party repo to allow more 1-click application deployments, such as https://github.com/lissy93/portainer-templates 
-* [Configure NFS on the server](https://github.com/45Drives/cockpit-file-sharing#nfs-management-tab)
+* [Configure SAMBA on the server for Windows Clients](https://github.com/45Drives/cockpit-file-sharing#samba-management-tab)
+* [Configure NFS on the server for linux clients](https://github.com/45Drives/cockpit-file-sharing#nfs-management-tab)
 * Optional: Mount folder at boot on Linux with the following command: 
 {{< highlight bash >}}
 sudo echo '<hostname>.local:/<nfs_folder>    /<local_mount>   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0' | sudo tee -a /etc/fstab &&
@@ -171,7 +172,7 @@ sudo echo '<hostname>.local:/<nfs_folder>    /<local_mount>   nfs rw,auto,nofail
   - `<nfs_folder>` - the name of the nfs folder created above
   - `<local_mount>` - the folder on the client device to alias to the server
       - often the `/media/<folder>` or `/mnt/<folder>`. ex: `/mnt/nessie`
-      - folder must be created before the `fstab` file modification[^7], ex: `sudo mkdir /mnt/nessie`
+      - folder must be created before the `fstab` file modification[^8], ex: `sudo mkdir /mnt/nessie`
 
 **Next up, we'll configure offsite backups via a containerized application since our server has ZERO redundancy!**
 
@@ -183,4 +184,5 @@ sudo echo '<hostname>.local:/<nfs_folder>    /<local_mount>   nfs rw,auto,nofail
 [^4]: Containerization is more complex than this, and the security implications of containers is its own discussion, but for most users, the simple understanding works.
 [^5]: `ipv4` addresses follow a period deliminated format, such as `192.168.1.1` (typically the router's IP address), but `ipv6` uses colon deliminated addresses, such as `fd12:3456:789a:1::1`. `ipv6` is useful in larger deployments, but unneccessary for most home use.
 [^6]: In a DHCP network, typically the router assigns IP addresses to all devices, but these addresses (192.168.1.XX) can change when a device is disconnected/restarted. Static IPs do not change, but usually require more configuration.
-[^7]: `fstab` is a file that essentially lists all drives and how to connect to them on boot, etc.
+[^7]: [Netplan Documentation](https://netplan.readthedocs.io/en/stable/netplan-yaml/)
+[^8]: `fstab` is a file that essentially lists all drives and how to connect to them on boot, etc.

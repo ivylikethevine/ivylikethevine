@@ -1,6 +1,6 @@
-baseURL = 'https://ivylikethevine.com/'
+baseURL = 'https://ivylikethevine.github.io/'
 languageCode = 'en-us'
-title = 'ivy (likethevine)'
+title = 'ivy (development)'
 theme = 'puppet'
 
 copyright = ''
@@ -14,8 +14,6 @@ enableEmoji = true
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ['error-remote-getjson']
 
-disqusShortname = ''
-googleAnalytics = ''
 
 [outputs]
 home = ['HTML', 'JSON', 'RSS']
