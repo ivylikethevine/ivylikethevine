@@ -31,8 +31,7 @@ draft = true
   - Alternatives: Static IPs (either reserved on DHCP at the router, or with custom DNS server)
     - Laptop can't be relied on for entire network, but static IPs are a pain to change per-client.
 
-
-### Clients List:
+### Clients List
 
 - Expy: Up & Down
   - Dell XPS 9300 - Ubuntu 22
@@ -43,7 +42,7 @@ draft = true
 - Steamy: Down
   - Steam Deck - SteamOS
 
-### Server List:
+### Server List
 
 - Maccy: Up & Down
   - 2012 Macbook Pro 13" - Ubuntu 22 Server

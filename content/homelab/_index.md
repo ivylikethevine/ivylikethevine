@@ -1,4 +1,4 @@
 +++
-title = "Homelab (WIP)"
+title = "Homelab"
 author = "Ivy Duggan"
 +++
