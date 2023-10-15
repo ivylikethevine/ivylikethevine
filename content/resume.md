@@ -10,11 +10,11 @@ tags = [
     "cognitive science"
 ]
 +++
-<object data="/resume_v4.pdf" type="application/pdf" style="min-height: 120vh; width: 100%">
-    <embed src="/resume_v4.pdf" style="min-height: 120vh; width: 100%">
+<object data="/docs/resume_v4.pdf" type="application/pdf" style="min-height: 120vh; width: 100%">
+    <embed src="/docs/resume_v4.pdf" style="min-height: 120vh; width: 100%">
         <p>
-            This browser does not support PDFs. Please download the PDF to view it: 
-            <a href="/resume_v4.pdf">
+            This browser does not support PDFs. Please download the PDF to view it:
+            <a href="/docs/resume_v4.pdf">
                 Download PDF
             </a>
         </p>

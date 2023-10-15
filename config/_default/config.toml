@@ -14,7 +14,6 @@ enableEmoji = true
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ['error-remote-getjson']
 
-
 [outputs]
 home = ['HTML', 'JSON', 'RSS']
 
@@ -58,9 +57,8 @@ weight = 30
 [params]
 description = "My personal projects & writings"
 keywords = "blog,developer,personal"
-img_home = "/front-horizontal2.jpg"
-img_404 = "img/404-bg.jpg"
-
+img_home = "/img/front-horizontal2.jpg"
+# img_404 = "img/404-bg.jpg"
 
 [params.social]
 github = 'ivylikethevine'
@@ -70,3 +68,6 @@ medium = '@ivylikethevine'
 [params.mermaid]
 theme = "dark"
 align = "center"
+
+[params.giscus]
+enable = false

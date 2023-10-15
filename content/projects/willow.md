@@ -5,4 +5,4 @@ author = "Ivy Duggan"
 draft = true
 +++
 
-![image](/parked1.jpg)
+![image](/img/parked1.jpg)
