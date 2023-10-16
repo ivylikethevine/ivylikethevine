@@ -13,7 +13,7 @@ tags = [
 ]
 +++
 
-![image](/img/assembly-line.jpg "This is what we aim for! <a href='https://www.ta-systems.com/system-categories/automated-assembly-lines/'>Source</a>")
+![image](images/assembly-line.jpg "We want to automate as much as possible! <a href='https://www.ta-systems.com/system-categories/automated-assembly-lines/'>Source</a>")
 
 # Sustainable Software
 
@@ -48,7 +48,7 @@ Dev Ops takes time to setup, but it is absolutely worth it. Here's a story from 
 
 That's over a month of dev hours lost per year! Does any dev want to waste a month every single year running the same deployments? However, this is just the tip of the iceberg. If your system takes a day to patch, what happens when a major exploit is found in production?
 
-![image](/img/spongebob-panic.gif "This is what happens. I've been in the room.")
+![image](images/spongebob-panic.gif "This is what happens. I've been in the room.")
 
 This is a single example of poor dev ops, but time is money and similar math applies to dozens of scenarios.
 
@@ -126,19 +126,21 @@ Luckily, Cloudflare has a pretty slick Github integration, so we can follow the 
 
 Github & Cloudflare pages host websites, but they do so using their own domains. Github uses a `.github.io` extension and Cloudflare uses a `.pages.dev extension`. We would obviously prefer our own custom domain, so what we have to do is change the DNS records for our site to point to the content deployed by our hosting platform. In Cloudflare, here is what my DNS settings look like for my website.
 
-![image](/img/cloudflare-dns.png "Middle entry unrelated & redacted.")
+![image](images/cloudflare-dns.png "Middle entry unrelated & redacted.")
 
 Our `CNAME` allow us to load the content of the `pages.dev`, but access it via our custom domain name. My domain name servers are with Cloudflare, which makes the setup very easy. If moving from Github Pages, make sure to remove the custom domain from the Github Pages site & to transfer name servers. We also redirect the `www` subdomain since it is still sometimes used, and we just want it to redirect to the same content anyways. We can also see that on our Workers/Pages configuration we have setup our custom domains.
 
-![image](/img/custom-domains.png "Cloudflare 'Workers & Pages' tab.")
+![image](images/custom-domains.png "Cloudflare 'Workers & Pages' tab.")
 
 ###### Staging Environment
 
-Now, we have automatic deployments from our main branch, as well as automatic preview branches! Our job *COULD* be over, but for my own sanity, lets prevent random users seeing our staging sites. On the 'Workers & Pages' tab of Cloudflare, we can click on the details for our site, then head to "Settings", then "Builds & deployments". We can leave the top production branch alone, but here is my configuration for the preview deployments:
+Now, we have automatic deployments from our main branch, as well as automatic preview branches! We could be done, but I prefer to just have one staging site, at least for now. In future, I will cover using Cloudflare Zero Trust to password protect all staging sites.
 
-![image](/img/staging-site.png "Now only commits pushed to development will have preview pages.")
+On the 'Workers & Pages' tab of Cloudflare, we can click on the details for our site, then head to "Settings", then "Builds & deployments". We can leave the top production branch alone, but here is my configuration for the preview deployments:
 
-So now we can access a live version of our `development` branch at `https://development.repoName.pages.dev`! My development site is also password protected via Cloudflare for extra security, which I will cover in a later article.
+![image](images/staging-site.png "Now only commits pushed/merged to development will have preview pages.")
+
+So now we only publish a live version of our `development` branch at `https://development.repoName.pages.dev`!
 
 #### Two Environments, both alike in config
 
@@ -153,7 +155,7 @@ Having two environments now means we need to have configurations for each. Hugo 
 
 Hugo uses the `_default` config, but it can apply the `production` config if passed a flag during deployment. Luckily, since Cloudflare Pages supports Hugo out of the box, we simply need to set a few environment variables in the GUI. Back at the settings for our website, we can define the following flags. These will be passed to the `hugo build` command when we deploy:
 
-![image](/img/environment-variables.png "Simple configuration, huh.")
+![image](images/environment-variables.png "Simple configuration, huh.")
 
 **Note**: Environment variables are also useful for securing data that absolutely should not be in the main git repository, such as SSH/application keys.
 
@@ -161,7 +163,9 @@ Hugo uses the `_default` config, but it can apply the `production` config if pas
 
 Now that we have our SVM and our automatic deployments, lets talk workflow. Github (and other SVMs) provide many automated checks and systems to prevent the dreaded "new dev destroys prod" disaster. [Branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) are super simple and useful. Common rules include preventing direct pushes to `main`, requiring pull requests to be approved by others before being merged, and tons of more complex versions.
 
-![image](/img/pull-request-check.png "Additionally, integrations (such as the Cloudflare Pages one), will actually show if the staging deployment works on the PR, providing even more feedback and warning if something is awry.")
+![image](images/pull-request-check.png "Additionally, integrations (such as the Cloudflare Pages one), will actually show if the staging deployment works on the PR, providing even more feedback and warning if something is awry.")
+
+![image](images/branch-protection.png "And this branch protection rule option will not allow deployments with failed Cloudflare statuses on their Pull Requests.")
 
  Here are the basic steps to working within a system like this:
 
