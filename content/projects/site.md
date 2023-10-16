@@ -1,6 +1,6 @@
 +++
 title = 'Dev Ops are not Optional.'
-date = '2023-10-14'
+date = '2023-10-15'
 subtitle = 'Deploying a modern website with SVM/CI/CD.'
 author = 'Ivy Duggan'
 draft = false
@@ -159,14 +159,16 @@ Hugo uses the `_default` config, but it can apply the `production` config if pas
 
 #### iii. Prevent Disaster with Automatic Checks
 
-Now that we have our SVM and our automatic deployments, lets talk workflow. Github (and other SVMs) provide many automated checks and systems to prevent the dreaded "new dev destroys prod" disaster. [Branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) are super simple and useful. Common rules include preventing direct pushes to `main`, requiring pull requests to be approved by others before being merged, and tons of more complex versions. Additionally, integrations (such as the Cloudflare Pages one), will actually show if the code deployment works at the pull request itself, providing even more feedback and warning if something is awry.
+Now that we have our SVM and our automatic deployments, lets talk workflow. Github (and other SVMs) provide many automated checks and systems to prevent the dreaded "new dev destroys prod" disaster. [Branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) are super simple and useful. Common rules include preventing direct pushes to `main`, requiring pull requests to be approved by others before being merged, and tons of more complex versions.
+
+![image](/img/pull-request-check.png "Additionally, integrations (such as the Cloudflare Pages one), will actually show if the staging deployment works on the PR, providing even more feedback and warning if something is awry.")
 
  Here are the basic steps to working within a system like this:
 
 1. Create a `featureName` branch off of `development`.
 1. Add a feature/bugfix/etc, modifying as few files as possible.
 1. Add files & commit at major checkpoints, leaving short but useful commit messages.
-1. When a feature is ready for evaluation, push to the `featureName` branch, then open a pull request to merge `featureName` into `development`. (make sure that)
+1. When a feature is ready for evaluation, push to the `featureName` branch, then open a pull request to merge `featureName` into `development`.
 1. Have the pull request approved & merged by supervisor (or double check manually).
 1. Test the staging site.
 1. Deploy to production via pull request from `development` into `main`.
