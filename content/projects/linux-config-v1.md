@@ -11,7 +11,7 @@ tags = [
 draft = true
 +++
 
-![image](/linux-penguin.jpg)
+![image](/img/linux-penguin.jpg)
 
 # The 'Just Work' Philosophy
 
@@ -21,24 +21,25 @@ Linux is awesome! It's free, configurable, versatile, and it runs on almost anyt
 
 I define a Usability Failure as the following: any event where a human's expectation of behaviour is not met by the software (in this case, the OS).
 
-This very broad definiton means that many of the usability failures I point out may be "intended behaviour". 
-
+This very broad definiton means that many of the usability failures I point out may be "intended behaviour".
 
 1. Immediate unexpected outcome
    - inability to install *.deb files
 1. Latent unexpected outcome - inability to update .deb files
-1. 
+1.
 
 ## The Princess and the Pea
 
 Before I end up cruxified on Linux forums, I understand that a massive part of the reason for the poor UX is due to the immense workload of developing & supporting an OS. The devs who work on open source software are overworked, underappreciated, and
 
 ### Why People Don't Use Linux
+
 1. Lack of software support - hard to address
 1. Things that actually can work don't **just work**
 1. Things that just work can't be done without the commandline.
 
 ## Trying to Install *.deb files
+
 1. Install Linux
 1. Open built-in browser (Firefox)
 1. Search for application (Chrome, Spotify, Slack, Discord)
@@ -53,12 +54,13 @@ Before I end up cruxified on Linux forums, I understand that a massive part of t
 1. Give up.
 
 ## To Deb, to Flatpak, to Snap, or to AppImage?
+
 Ubuntu-based distros have 4 main kinds of system-wide application installers:
+
 1. deb
 1. flatpaks
 1. snaps
 1. appimage
-
 
 ### Linux Commandments
 
@@ -69,4 +71,3 @@ Ubuntu-based distros have 4 main kinds of system-wide application installers:
 ## Fruits of my Frustration
 
 Since I have done nothing but complain for the past few years, I have decided to begin compiling my normal configuration step for UNIX based machines. The following snippets are tested on Ubuntu 22.04LTS -- my preferred distribution.
-
