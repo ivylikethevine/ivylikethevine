@@ -172,7 +172,7 @@ Now just configure the software we've installed & enjoy:
 - Optional: Change portainer templates to 3rd party repo to allow more 1-click application deployments, such as <https://github.com/lissy93/portainer-templates>
 - [Configure SAMBA on the server for Windows Clients](https://github.com/45Drives/cockpit-file-sharing#samba-management-tab)
 - [Configure NFS on the server for linux clients](https://github.com/45Drives/cockpit-file-sharing#nfs-management-tab)
-- Optional: Mount folder at boot on Linux with the following command:
+- Optional: Mount folder at boot on Linux client with the following command (requires `sudo apt install -y nfs-common` first):
 {{< highlight bash >}}
 sudo echo '<hostname>.local:/<nfs_folder>    /<local_mount>   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0' | sudo tee -a /etc/fstab &&
   sudo mount -a
