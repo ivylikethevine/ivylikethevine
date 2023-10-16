@@ -1,4 +1,8 @@
-<script async type="application/javascript" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js">
+<script
+  async
+  type="application/javascript"
+  src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+>
   var config = {
     startOnLoad:true,
     theme:'{{ if .Get "theme" }}{{ .Get "theme" }}{{ else }}dark{{ end }}',
@@ -7,6 +11,4 @@
   mermaid.initialize(config);
 </script>
 
-<div class="mermaid">
-  {{.Inner}}
-</div>
+<div class="mermaid">{{.Inner}}</div>

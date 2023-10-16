@@ -64,10 +64,3 @@ img_home = "/img/front-horizontal2.jpg"
 github = 'ivylikethevine'
 linkedin = 'ivylikethevine'
 medium = '@ivylikethevine'
-
-[params.mermaid]
-theme = "dark"
-align = "center"
-
-[params.giscus]
-enable = false
