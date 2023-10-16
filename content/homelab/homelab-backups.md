@@ -3,7 +3,7 @@ title = "NAS Backups and the Dark USB Arts"
 subtitle = 'How to do what you should never do, the best way possible.'
 date = "2023-10-16"
 author = "Ivy Duggan"
-draft = false
+draft = true
 tags = [
     'linux',
     'storage',
