@@ -6,10 +6,9 @@ author = "Ivy Duggan"
 draft = false
 tags = [
     'linux',
-    '3d-printing',
-    'DNS',
-    'networking',
-    'docker',
+    'storage',
+    'data redundancy',
+    'server',
     'homelab',
     'nas'
 ]
@@ -22,11 +21,11 @@ Every discussion about file backups generally revolves around the same speech:
 
 Similarly, when reading about home servers, there are lots of pieces of (good) advice that talk about the importance of redundancy at every level:
 
-Proxmox Recommended Hardware:
-> Fast and redundant storage, best results with SSD disks. [^1]
+[Proxmox Recommended Hardware](https://www.proxmox.com/en/proxmox-virtual-environment/requirements):
+> Fast and redundant storage, best results with SSD disks.
 
-TrueNas Minimum Hardware Requirements:
-> You do not need an SSD boot device, but we discourage using a spinner or a USB stick. We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so. You can install and run TrueNAS without any data devices, but we strongly discourage it.[^2]
+[TrueNas Minimum Hardware Requirements](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/):
+> You do not need an SSD boot device, but we discourage using a spinner or a USB stick. We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so. You can install and run TrueNAS without any data devices, but we strongly discourage it.
 
 But... my laptop has one drive and I need more NAS storage as cheap as possible. Also, USB drives have changed a lot in recent years with the advent of faster USB data transfer and NVME SSD storage!
 
@@ -40,13 +39,13 @@ But, thats not the full story. My homelab now has two laptops, configured identi
 
 Don't talk about USB Drive NAS's. Most questions online about "how do I use a USB drive as my NAS?" end in the same answer: **don't even bother**. And for a long time, this was a reasonable (if curt) answer because USB was *dog slow*.
 
-An hour of h.264 1080p video @ 24-30fps is ~ 10Gb.
+An hour of h.264 1080p video @ 24-30fps is ~ 10Gb.[^1]
 
 USB 2.0 speed is 480 megabits/second. = transfer time of ~ 3 minutes
 
 USB 3.0 5Gbps = transfer time of ~ 17 seconds
 
-USB 3.0 10Gbps = transfer time of ~ 8 seconds
+USB 3.0 10Gbps = transfer time of ~ 8 seconds[^2]
 
 For comparison, an internal SATA 3 drive is around 6Gbps, or between USB 3.1 & 3.2! Now, most servers don't have high speed USB, but my laptop does! And even if I wanted to make use of fast new NVME ssd's, my network is only 1GbE, as I imagine 99% of consumers networks are as well. My wireless network theoretically could acheive multi gigabit with wifi-6, but running file transfer over wifi gives me the heebijeebies.
 
@@ -96,8 +95,18 @@ Configuration tips:
 
 - Check your backups! Backups that do not work are not backups at all. Restore a file, delete a file, modify a file, download a few gigabytes. Test, test, test!
 
-[^1]: <https://www.proxmox.com/en/proxmox-virtual-environment/requirements>
-[^2]: <https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/>
+### Rule #4: This is not Prod
+
+Please do not apply these to production deployments. Do not suggest these to your company if you enjoy being employed. Heed my warning or suffer.
+
+### Rule #5: Don't talk about USB Drive NAS's
+
+The final rule is the first rule. We have mitigated the downsides to USB drives, increased our homelab server, and have a backup system for when the USB drives eventually break. And hey, we didn't have to buy anything new & we're re-using old technology!
+
+##### Footnotes
+
+[^1]: <https://www.omnicalculator.com/other/video-size>
+[^2]: <https://techinternets.com/copy_calc>
 [^3]: If your production deployment relies on external drives to begin with, you may have problems that an internet blog post cannot solve.
 [^4]: Since my laptops are also docker hosts, this would also mean all containers would be halted even if they did not interact with the external storage.
 [^5]: Make sure to have the entire `defaults,nobootwait,nofail` section without any spaces. The spaces are what designate the columns in the `fstab` file.
