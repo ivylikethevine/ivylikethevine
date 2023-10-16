@@ -17,7 +17,7 @@ tags = [
 
 # Sustainable Software
 
-Ok, so the title is "Software Engineer" or "Software Developer", but writing code and building software is only part of the solution. The other half (or more) of the job is *designing software solutions for humans to interact with*. Software only is useful because **we humans** use it. Without us, the software is just some meaningless electricity in some far away warehouse. UI/UX design is important, but just as critical is **developer operations** (dev ops).
+Ok, so the title is Software Engineer or Software Developer, but writing code and building software is only part of the solution. The other half (or more) of the job is *designing software solutions for humans to interact with*. Software only is useful because **we humans** use it. Without us, the software is just some meaningless electricity in some far away warehouse. UI/UX design is important, but just as critical is **developer operations** (dev ops).
 
 Dev Ops
 : outlines a software development process and an organizational culture shift that speeds the delivery of higher quality software by automating and integrating the efforts of development and IT operations teams – two groups that traditionally practiced separately from each other, or in silos.[^1]
