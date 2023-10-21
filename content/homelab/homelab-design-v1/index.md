@@ -15,7 +15,7 @@ tags = [
 ]
 +++
 
-![image](/img/macbook-panera.webp "Back when I developed on my Macbook! Source: <a href='https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start'>Las Vegas Review Journal</a>")
+![image](images/macbook-panera.webp "Back when I developed on my Macbook! Source: <a href='https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start'>Las Vegas Review Journal</a>")
 
 # The Background
 
