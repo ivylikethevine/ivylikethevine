@@ -30,7 +30,7 @@ But the reality of the situation is my laptop has one internal drive and I want 
 
 ## My Setup
 
-As mentioned in my [homelab design post]({{< ref "homelab-design-v1" >}}), my NAS is a late 2011 Macbook Pro, and even with my swapped-in SSD, I have only 2TB of storage on a single drive.
+As mentioned in my <a href='/projects/homelab-design-v1'>homelab design post</a>, my NAS is a late 2011 Macbook Pro, and even with my swapped-in SSD, I have only 2TB of storage on a single drive.
 
 But, thats not my full homelab. I have recently configured another laptop as per my previous post for 2 hosts:
 
