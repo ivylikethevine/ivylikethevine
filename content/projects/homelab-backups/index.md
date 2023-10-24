@@ -128,18 +128,13 @@ USB drives are going to fail, so we need to design our system to fail non-destru
     * Always test your implementation for this oversight. (Even if the backup software handles this situation properly, adding in our docker environment could lead to weird & undocumented behaviour.)
     * I personally tested this on my duplicati/docker instance, and my deployment properly errors and stops the backup process when it cannot mount our data directory.
 1. Don't Break Local
-    * Our backup system and our software design account for failure, so our last step is to fail gracefully as a NAS. This can be accomplished via symlinks!
-    * Instead of sharing `/mnt/sandisk`, which could fail, we can create a folder `/nas`, and then link `/mnt/sandisk` inside of that folder! Then, our failure state will be not having a directory instead of failing to mount anything at all.
-    * This also allows us to easily add more USB drives, following a similar pattern.
-
-On our server we simply run:
+    * Our backup system and our software design account for failure, so our last step is to fail gracefully as a NAS. Just like how we used specific `fstab` options above, here are the important options for an NFS NAS (USB or not):
 
 ```bash
-sudo mkdir /nas
-sudo ln -s /nas/sandisk /mnt/sandisk
+maccy.local:/mnt/sandisk   /mnt/maccy/sandisk   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
 ```
 
-Then, we can add `/nas` as an nfs or SAMBA share via the Cockpit UI, and any drives that are symlinked under that folder will also be shared.
+If we want to add more USB drives (such as for local backups), we can repeat the above proces, adding any number of `/mnt/<driveName>`'s as an NFS share via the Cockpit UI!
 
 ### Rule #5: Don't talk about USB Drive NAS's
 
