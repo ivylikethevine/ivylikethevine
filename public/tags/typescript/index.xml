@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>typescript on ivy (likethevine)</title>
+    <link>https://ivylikethevine.com/tags/typescript/</link>
+    <description>Recent content in typescript on ivy (likethevine)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ivylikethevine.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resumé</title>
+      <link>https://ivylikethevine.com/resume/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivylikethevine.com/resume/</guid>
+      <description>This browser does not support PDFs. Please download the PDF to view it: Download PDF Made with Reactive Resume</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ivy (likethevine)</title>
+    <link>https://ivylikethevine.com/</link>
+    <description>Recent content on ivy (likethevine)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ivylikethevine.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NAS Backups and the Dark USB Arts</title>
+      <link>https://ivylikethevine.com/projects/homelab-backups/</link>
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivylikethevine.com/projects/homelab-backups/</guid>
+      <description>Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD. The Backups SpeechEvery discussion about file backups generally revolves around the same paradigm:
+You need to have 3 copies of your data: the production data, a local copy, and an off-site backup.
+Similarly, when reading about home servers, there are lots of pieces of (good) advice that talk about the importance of redundancy at every level:</description>
+    </item>
+    
+    <item>
+      <title>Dev Ops are not Optional.</title>
+      <link>https://ivylikethevine.com/projects/site/</link>
+      <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivylikethevine.com/projects/site/</guid>
+      <description>We want to automate as much as possible! &amp;lt;a href=&amp;#39;https://www.ta-systems.com/system-categories/automated-assembly-lines/&amp;#39;&amp;gt;Source&amp;lt;/a&amp;gt; Sustainable SoftwareOk, so the title is Software Engineer or Software Developer, but writing code and building software is only part of the solution. The other half (or more) of the job is designing software solutions for humans to interact with. Software only is useful because we humans use it. Without us, the software is just some meaningless electricity in some far away warehouse.</description>
+    </item>
+    
+    <item>
+      <title>Laptop Homelab in 5 Commands</title>
+      <link>https://ivylikethevine.com/projects/homelab-design-v1/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivylikethevine.com/projects/homelab-design-v1/</guid>
+      <description>Back when I developed on my Macbook! Source: &amp;lt;a href=&amp;#39;https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start&amp;#39;&amp;gt;Las Vegas Review Journal&amp;lt;/a&amp;gt; The BackgroundI have been in tech for over 10 years (look at little me up there), and I have seen firsthand that a proper workflow is essential for any decent project. So, when I bought a 3D printer a few months ago, it was embarrassing to see my lack of workflow. Dealing with the dozens of STL files was a hassle by itself, but then, it came: Raspberry Pi SD card corruption.</description>
+    </item>
+    
+    <item>
+      <title>Resumé</title>
+      <link>https://ivylikethevine.com/resume/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivylikethevine.com/resume/</guid>
+      <description>This browser does not support PDFs. Please download the PDF to view it: Download PDF Made with Reactive Resume</description>
+    </item>
+    
+  </channel>
+</rss>

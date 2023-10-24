@@ -12,8 +12,11 @@ tags = [
     'dev ops',
 ]
 +++
+<a href='https://www.ta-systems.com/system-categories/automated-assembly-lines/'>
 
-![image](images/assembly-line.jpg "We want to automate as much as possible! <a href='https://www.ta-systems.com/system-categories/automated-assembly-lines/'>Source</a>")
+  ![image](images/assembly-line.jpg "We want to automate as much as possible! ")
+  
+</a>
 
 # Sustainable Software
 
@@ -42,9 +45,9 @@ Here is my list of main dev ops goals. Some may seem obvious, but all of these a
 
 Dev Ops takes time to setup, but it is absolutely worth it. Here's a story from my days as a contractor. At one company, it took 2 developers at least 4 hours each to deploy our application (at a *generous* minimum). Here's how that math works out over just a single year:
 
-{{< math >}}
-\(devHours >= 2\dfrac{deployments}{month} *8\dfrac{devHours}{deployment}* 12\dfrac{months}{year} \approxeq 192\)
-{{</ math >}}
+{{< katex "devHours >= 2\frac{deployments}{month} *8\dfrac{devHours}{deployment}* 12\frac{months}{year}" />}}
+
+{{< katex "devHours \gtrapprox 192" />}}
 
 That's over a month of dev hours lost per year! Does any dev want to waste a month every single year running the same deployments? However, this is just the tip of the iceberg. If your system takes a day to patch, what happens when a major exploit is found in production?
 
@@ -60,7 +63,7 @@ Talking to my college friends, it seems a lot of CS majors do not learn Source V
 
 `git` is very powerful and very complex, but we only need a few commands to set up a useable CI/CD environment. This graph is a simple version of "git flow", or a semi-standard way to use github branches.
 
-{{< mermaid >}}
+```mermaid
 gitGraph
     commit
     branch develop
@@ -81,7 +84,7 @@ gitGraph
     merge fix-bug
     checkout main
     merge develop
-{{< /mermaid >}}
+```
 
 `main` (previously defaulted to `master`): this is our production code. Never work  directly from main. Never interact with main via CLI.
 

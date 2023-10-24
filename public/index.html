@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.119.0">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>ivy (likethevine)</title><meta name="description" content="My personal projects &amp; writings">
+  <meta name="keywords" content="blog,developer,personal">
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ivylikethevine.com/"/>
+
+<meta name="twitter:title" content="ivy (likethevine)"/>
+<meta name="twitter:description" content="My personal projects &amp; writings"/>
+
+  <meta property="og:title" content="ivy (likethevine)" />
+<meta property="og:description" content="My personal projects &amp; writings" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ivylikethevine.com/" /><meta property="og:image" content="https://ivylikethevine.com/"/>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/sass/main.css">
+
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  <script src=/js/lazysizes.min.js></script>
+
+  <link rel="alternate" type="application/json" href="/index.json" title="ivy (likethevine)" />
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="ivy (likethevine)" />
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top ">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ivylikethevine.com/">ivy (likethevine)</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li><a href="/" title="home">home</a></li>
+          
+          <li><a href="/resume/" title="resume">resume</a></li>
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+<header class="intro-header" style="background-image: url('/img/front-horizontal2.jpg')">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>ivy (likethevine)</h1>
+          
+          
+          
+          
+          <span class="subheading">My personal projects &amp; writings</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+  
+  <div class="container">
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12
+      col-xs-12 postlist-container">
+        
+
+
+   <div class="post-preview">
+  <a href="/projects/homelab-backups/">
+      <h2 class="post-title">NAS Backups and the Dark USB Arts</h2>
+      
+      <h3 class="post-subtitle">How to do what you should never do, the best way possible.</h3>
+      
+      <div class="post-content-preview">
+        
+        Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD. The Backups SpeechEvery discussion about file backups generally revolves around the same paradigm: …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by  Ivy Duggan  on Fri, Oct 20, 2023
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/projects/site/">
+      <h2 class="post-title">Dev Ops are not Optional.</h2>
+      
+      <h3 class="post-subtitle">Deploying a modern website with SVM/CI/CD.</h3>
+      
+      <div class="post-content-preview">
+        
+        We want to automate as much as possible! &amp;lt;a href=&amp;#39;https://www.ta-systems.com/system-categories/automated-assembly-lines/&amp;#39;&amp;gt;Source&amp;lt;/a&amp;gt; Sustainable SoftwareOk, so …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by  Ivy Duggan  on Sun, Oct 15, 2023
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/projects/homelab-design-v1/">
+      <h2 class="post-title">Laptop Homelab in 5 Commands</h2>
+      
+      <h3 class="post-subtitle">A quick &amp; simple NAS/server from my old laptop.</h3>
+      
+      <div class="post-content-preview">
+        
+        Back when I developed on my Macbook! Source: &amp;lt;a href=&amp;#39;https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start&amp;#39;&amp;gt;Las Vegas Review …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by  Ivy Duggan  on Thu, Oct 12, 2023
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/resume/">
+      <h2 class="post-title">Resumé</h2>
+      
+      <div class="post-content-preview">
+         Most recent resumé.
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by  Ivy Duggan  on Sun, Oct 1, 2023
+  </p>
+</div>
+<hr>
+
+
+
+
+      </div>
+      
+      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12
+      col-xs-12 sidebar-container">
+
+        
+        <section>
+  
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/3d-printing/">3d-printing</a>
+    
+    <a href="/tags/backups/">backups</a>
+    
+    <a href="/tags/ci/cd/">CI/CD</a>
+    
+    <a href="/tags/cloudflare/">Cloudflare</a>
+    
+    <a href="/tags/cognitive-science/">cognitive science</a>
+    
+    <a href="/tags/data-redundancy/">data redundancy</a>
+    
+    <a href="/tags/dev-ops/">dev ops</a>
+    
+    <a href="/tags/devops/">devops</a>
+    
+    <a href="/tags/dns/">DNS</a>
+    
+    <a href="/tags/docker/">docker</a>
+    
+    <a href="/tags/full-stack/">full stack</a>
+    
+    <a href="/tags/github/">github</a>
+    
+    <a href="/tags/homelab/">homelab</a>
+    
+    <a href="/tags/hugo/">hugo</a>
+    
+    <a href="/tags/linux/">linux</a>
+    
+    <a href="/tags/nas/">nas</a>
+    
+    <a href="/tags/networking/">networking</a>
+    
+    <a href="/tags/storage/">storage</a>
+    
+    <a href="/tags/typescript/">typescript</a>
+    
+    <a href="/tags/usb/">usb</a>
+    
+  </div>
+</section>
+        
+<section class="visible-md visible-lg">
+  <hr>
+  
+  <h5>ABOUT ME</h5>
+  
+
+  
+  <div class="short-about">
+    
+    
+    
+    <ul class="list-inline">
+
+<li>
+  <a href="https://github.com/ivylikethevine" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/ivylikethevine" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://medium.com/@ivylikethevine" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+  </div>
+</section>
+
+        
+        
+
+
+      </div>
+      
+
+    </div>
+  </div>
+
+  
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <ul class="list-inline text-center">
+
+<li>
+  <a href="https://github.com/ivylikethevine" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://linkedin.com/in/ivylikethevine" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="https://medium.com/@ivylikethevine" target="_blank">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+</li></ul>
+
+        <p class="copyright text-muted">
+          Copyright &copy; ivy (likethevine) 2023  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>
