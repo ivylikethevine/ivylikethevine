@@ -13,6 +13,12 @@ You need to have 3 copies of your data: the production data, a local copy, and a
 Similarly, when reading about home servers, there are lots of pieces of (good) advice that talk about the importance of redundancy at every level:">
   <meta name="keywords" content="blog,developer,personal">
 
+  
+
+  
+
+  
+
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ivylikethevine.com/"/>
 
@@ -28,7 +34,7 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ivylikethevine.com/projects/homelab-backups/" /><meta property="og:image" content="https://ivylikethevine.com/"/><meta property="article:section" content="projects" />
 <meta property="article:published_time" content="2023-10-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-10-24T09:36:41-07:00" />
 
   <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
   
@@ -69,7 +75,7 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           
-          <li><a href="/" title="home">home</a></li>
+          <li><a href="/" title="projects">projects</a></li>
           
           <li><a href="/resume/" title="resume">resume</a></li>
           
@@ -187,6 +193,10 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
             Posted by  Ivy Duggan 
             on Fri, Oct 20, 2023
           </span>
+          <br/>
+          <span class="meta">
+            Last edited on Tue, Oct 24, 2023
+          </span>
         </div>
       </div>
     </div>
@@ -206,48 +216,14 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p>
-
-
-
-
-
-
-
-
-
-
-
-
+        <p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/sata-vs-usb3.png" data-action="zoom" alt="image"  title="Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD." class="lazyload">
+  </a>
   
+  <figcaption class="image-caption">Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.</figcaption>
   
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    <figure class="figure ">
-      <picture>
-    <source srcset="/projects/homelab-backups/images/sata-vs-usb3_huaa2edd057d999666619108a3c8a005a5_120399_1920x1010_resize_q75_h2_box_3.webp" type="image/webp" />
-  <img
-    class="figure-img img-fluid"
-    src="/projects/homelab-backups/images/sata-vs-usb3.b327fbc4e84a2d1055072a771c88172e.png"
-    alt="image"
-    loading="lazy"
-    height="1010"
-    width="1920"
-    
-    
-    
-     />
-</picture>
-
-      <figcaption class="figure-caption">Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.</figcaption>
-    </figure></p>
+</figure></p>
 <h1 id="the-backups-speech">The Backups Speech<a class="anchorjs-link" href="#the-backups-speech"></a></h1><p>Every discussion about file backups generally revolves around the same paradigm:</p>
 <blockquote>
 <p>You need to have 3 copies of your data: the production data, a local copy, and an off-site backup.</p>
@@ -353,48 +329,14 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
 <p>There are a myriad storage providers, and a myriad of backup solutions. Here is what I have found to work for my uses and be cost effective:</p>
 <p><a href="https://www.duplicati.com/" target="_blank">Duplicati</a> running inside a Portainer template from <a href="https://github.com/Lissy93/portainer-templates" target="_blank">this repo</a>
 - This docker image then mounts our data directory (<code>/mnt/sandisk/</code>), allowing it to access the data directory.</p>
-<p>
-
-
-
-
-
-
-
-
-
-
-
-
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/duplicati-mounts.png" data-action="zoom" alt="image"  title="This is the portainer config for our volumes. The only one I have added is the `sandisk` one." class="lazyload">
+  </a>
   
+  <figcaption class="image-caption">This is the portainer config for our volumes. The only one I have added is the `sandisk` one.</figcaption>
   
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    <figure class="figure ">
-      <picture>
-    <source srcset="/projects/homelab-backups/images/duplicati-mounts_hu4cdeb24cebc51f079e2a2edc0eee05df_76818_947x615_resize_q75_h2_box_3.webp" type="image/webp" />
-  <img
-    class="figure-img img-fluid"
-    src="/projects/homelab-backups/images/duplicati-mounts.2335e227e76d1f9bee2d4aff39fbe795.png"
-    alt="image"
-    loading="lazy"
-    height="615"
-    width="947"
-    
-    
-    
-     />
-</picture>
-
-      <figcaption class="figure-caption">This is the portainer config for our volumes. The only one I have added is the `sandisk` one.</figcaption>
-    </figure></p>
+</figure></p>
 <p><a href="https://www.backblaze.com/cloud-storage" target="_blank">Backblaze B2</a> for bulk storage. My original pick was AWS, but B2 is easier for deployments that don&rsquo;t utilize the AWS/AIM/CLI ecosystem.<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
 <p>Configuration tips:</p>
 <ul>
@@ -483,6 +425,13 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
             </a>
           </li>
           
+          
+          <li class="next">
+            <a href="/projects/life-of-a-word/" data-toggle="tooltip" data-placement="top" title="Big Data Question">
+              Next<br>
+              <span>Big Data Question</span>
+            </a>
+          </li>
           
         </ul>
         <hr style="visibility: hidden;" />

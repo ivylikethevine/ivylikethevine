@@ -15,7 +15,4 @@ google trends -- need list of common words
 
     maybe food/eating/drink terms?
 
-
-
-    -- jupyter notebook python type question i think
-{{< notebook "jupyter/life-of-a-word" 1200 >}}
+{{< jupyter "./jupyter/life-of-a-word.html" >}}

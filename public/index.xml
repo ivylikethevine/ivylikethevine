@@ -6,7 +6,19 @@
     <description>Recent content on ivy (likethevine)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ivylikethevine.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ivylikethevine.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Big Data Question</title>
+      <link>https://ivylikethevine.com/projects/life-of-a-word/</link>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivylikethevine.com/projects/life-of-a-word/</guid>
+      <description>has the internet reduced the life time of a slang term?
+how long is a common phrase used in 1) writing 2) internet writing
+google trends &amp;ndash; need list of common words
+what are words throughout time that change name? maybe food/eating/drink terms? </description>
+    </item>
+    
     <item>
       <title>NAS Backups and the Dark USB Arts</title>
       <link>https://ivylikethevine.com/projects/homelab-backups/</link>
@@ -24,7 +36,7 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
       <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ivylikethevine.com/projects/site/</guid>
-      <description>We want to automate as much as possible! &amp;lt;a href=&amp;#39;https://www.ta-systems.com/system-categories/automated-assembly-lines/&amp;#39;&amp;gt;Source&amp;lt;/a&amp;gt; Sustainable SoftwareOk, so the title is Software Engineer or Software Developer, but writing code and building software is only part of the solution. The other half (or more) of the job is designing software solutions for humans to interact with. Software only is useful because we humans use it. Without us, the software is just some meaningless electricity in some far away warehouse.</description>
+      <description>We want to automate as much as possible! Sustainable SoftwareOk, so the title is Software Engineer or Software Developer, but writing code and building software is only part of the solution. The other half (or more) of the job is designing software solutions for humans to interact with. Software only is useful because we humans use it. Without us, the software is just some meaningless electricity in some far away warehouse.</description>
     </item>
     
     <item>
@@ -33,7 +45,7 @@ Similarly, when reading about home servers, there are lots of pieces of (good) a
       <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ivylikethevine.com/projects/homelab-design-v1/</guid>
-      <description>Back when I developed on my Macbook! Source: &amp;lt;a href=&amp;#39;https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start&amp;#39;&amp;gt;Las Vegas Review Journal&amp;lt;/a&amp;gt; The BackgroundI have been in tech for over 10 years (look at little me up there), and I have seen firsthand that a proper workflow is essential for any decent project. So, when I bought a 3D printer a few months ago, it was embarrassing to see my lack of workflow. Dealing with the dozens of STL files was a hassle by itself, but then, it came: Raspberry Pi SD card corruption.</description>
+      <description>Back when I developed on my Macbook! The BackgroundI have been in tech for over 10 years (look at little me up there), and I have seen firsthand that a proper workflow is essential for any decent project. So, when I bought a 3D printer a few months ago, it was embarrassing to see my lack of workflow. Dealing with the dozens of STL files was a hassle by itself, but then, it came: Raspberry Pi SD card corruption.</description>
     </item>
     
     <item>

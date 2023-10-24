@@ -24,15 +24,17 @@
           </div>
           <h1>{{ .Title }}</h1>
           <h2 class="subheading">{{ $.Params.subtitle }}</h2>
+          {{ $date := .Date.Format "Mon, Jan 2, 2006"}}
+          {{ $lastmod := .Lastmod.Format "Mon, Jan 2, 2006" }}
+
           <span class="meta">
             Posted by {{ with $.Params.author }} {{ $.Params.author }} {{ else }} {{ .Site.Params.author }} {{ end }}
-            on {{ .Date.Format "Mon, Jan 2, 2006" }}
-          </span>
-          <br/>
-          <span class="meta">
-            Last edited on {{ .Lastmod.Format "Mon, Jan 2, 2006" }}
+            on {{ $date }}
           </span>
         </div>
+        {{ if ne $lastmod $date }}
+        <i>Edited: {{ $lastmod}}</i>
+        {{ end }}
       </div>
     </div>
   </div>
