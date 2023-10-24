@@ -20,7 +20,7 @@ ignoreErrors = ['error-remote-getjson']
 [module]
 [module.hugoVersion]
 extended = true
-min = '0.110.0'
+min = '0.119.0'
 
 # Ordering here matters, higher imports in this file have authority
 [[module.imports]]
