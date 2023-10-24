@@ -1,13 +1,12 @@
-baseURL = 'https://ivylikethevine.pages.dev/'
+baseURL = 'https://localhost:1313/'
 languageCode = 'en-us'
-title = 'ivy (development)'
-
-cleanDestinationDir = true
+title = 'ivy (local dev)'
 
 copyright = ''
 paginate = 10
 defaultContentLanguage = 'en'
 
+cleanDestinationDir = true
 hasCJKLanguage = true
 enableInlineShortcodes = true
 enableEmoji = true
@@ -74,4 +73,4 @@ linkedin = 'ivylikethevine'
 medium = '@ivylikethevine'
 
 [params.mermaid]
-  js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
+js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
