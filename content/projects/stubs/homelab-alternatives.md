@@ -1,6 +1,6 @@
 +++
-title = "Laptop NAS - Build v1"
-date = "2023-10-02"
+title = "Alternatives"
+date = "2023-10-25"
 author = "Ivy Duggan"
 draft = true
 +++

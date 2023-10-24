@@ -66,8 +66,7 @@ weight = 10
 [params]
 description = "My personal projects & writings"
 keywords = "blog,developer,personal"
-img_home = "/img/front-horizontal2.jpg"
-# img_404 = "img/404-bg.jpg"
+img_home = "/img/header-miata.webp"
 
 [params.social]
 github = 'ivylikethevine'
