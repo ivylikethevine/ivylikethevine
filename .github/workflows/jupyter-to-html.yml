@@ -1,0 +1,30 @@
+name: Convert Jupyter Notebooks
+
+on:
+  push:
+    paths:
+      - "content/**.ipynb"
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install Jupyter
+        run: pip install notebook
+
+      - name: Convert Notebooks
+        run: |
+          for notebook in $(find -name "*.ipynb"); do
+            jupyter nbconvert --to html "$notebook"
+          done
+
+          # from https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/

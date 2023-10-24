@@ -1,18 +1,37 @@
 baseURL = 'https://ivylikethevine.pages.dev/'
 languageCode = 'en-us'
 title = 'ivy (development)'
-theme = 'puppet'
+
+cleanDestinationDir = true
 
 copyright = ''
-paginate = 3
+paginate = 10
 defaultContentLanguage = 'en'
 
 hasCJKLanguage = true
 enableInlineShortcodes = true
 enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ['error-remote-getjson']
+
+[module]
+[module.hugoVersion]
+extended = true
+min = '0.110.0'
+
+# Ordering here matters, higher imports in this file have authority
+[[module.imports]]
+  path = 'github.com/hugomods/images'
+[[module.imports]]
+  path = 'github.com/hugomods/katex'
+[[module.imports]]
+  path = "github.com/hugomods/mermaid"
+[[module.imports]]
+  path = 'github.com/roninro/hugo-theme-puppet'
 
 [outputs]
 home = ['HTML', 'JSON', 'RSS']
@@ -34,8 +53,8 @@ unsafe = true
 
 [menu]
 [[menu.main]]
-identifier = 'home'
-name = 'home'
+identifier = 'projects'
+name = 'projects'
 url = '/'
 weight = -100
 [[menu.main]]
@@ -43,16 +62,6 @@ identifier = 'resume'
 name = 'resume'
 url = '/resume/'
 weight = 10
-[[menu.main]]
-identifier = 'homelab'
-name = 'homelab'
-url = '/homelab/'
-weight = 20
-[[menu.main]]
-identifier = 'projects'
-name = 'projects'
-url = '/projects/'
-weight = 30
 
 [params]
 description = "My personal projects & writings"
@@ -64,3 +73,6 @@ img_home = "/img/front-horizontal2.jpg"
 github = 'ivylikethevine'
 linkedin = 'ivylikethevine'
 medium = '@ivylikethevine'
+
+[params.mermaid]
+  js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
