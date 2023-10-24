@@ -26,3 +26,5 @@ jobs:
           for notebook in $(find -name "*.ipynb"); do
             jupyter nbconvert --to html "$notebook"
           done
+
+          # from https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/

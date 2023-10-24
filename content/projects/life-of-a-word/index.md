@@ -2,7 +2,7 @@
 title = "Big Data Question"
 date = "2023-10-24"
 author = "Ivy Duggan"
-draft = false
+draft = true
 +++
 
 has the internet reduced the life time of a slang term?
