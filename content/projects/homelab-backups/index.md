@@ -45,21 +45,7 @@ Most questions online about "how do I use a USB drive on my NAS?" end in the sam
 
 And for a long time, this was a reasonable (if curt) answer because USB was **unbearably slow**. Here's a table showing file transfer times on all USB versions, SATA 3, and Gigabit ethernet:
 
-| Version | Speed (Gbps)[^1] | Transfer Time 10GB[^2] | Transfer Time 100GB[^3] |
-| ------- | ------------ | ------------------ | ------------------- |
-| USB 1.0 | 0.002 | **16 hours** | **168 hours**\*\*\* |
-| USB 1.1 | 0.012  | **2 hours** | **21 hours** |
-| USB 2.0 | 0.5 | 3 minutes | **0.5 hours** |
-| Ethernet** | 1 | 1.5 minutes | 15 minutes |
-| USB 3.0 | 5 | 17 seconds | 3 minutes |
-| USB 3.1 | 10 | 8 seconds | 1.5 minutes |
-| USB 3.2 | 20 | 4 seconds | 44 seconds |
-| USB 4/TB3 | 40 | 2 seconds | 20 seconds |
-| SATA 3 | 6 | 14 seconds | 2.5 minutes |
-
-\*\* 99% of consumers are still using 1 gigabit ethernet in the home/workplace.
-
-\*\*\* Bolded transfer times are those over 30 minutes, my benchmark for being "annoyingly long to wait".
+{{% usb-speed-chart %}}
 
 Before USB 3.0, USB storage was too slow for most applications. Even now, 5Gbps is not incredibly fast, but since an internal SATA 3 drive is around 6gbps, it is not as dreadful as it once seemed. Now, most servers don't have high speed USB, but plenty of laptops do! `maccy` has USB 3.0, at 5gbps. However, since `nessie` only has USB 2.0, it is not viable.
 
@@ -148,9 +134,6 @@ Being a fault-tolerant, slightly janky system is good for home use, but it is al
 
 ##### Footnotes
 
-[^1]: While file sizes are given in gigabytes, file transfer speeds are given in gigabits per second. <https://en.wikipedia.org/wiki/Data-rate_units>
-[^2]: An hour of h.264 1080p video @ 24-30fps is ~ 10GB <https://www.omnicalculator.com/other/video-size>
-[^3]: Calculations via <https://techinternets.com/copy_calc>
 [^4]: If your production deployment relies on external drives to begin with, you may have problems that an internet blog post cannot solve.
 [^5]: Since my laptops are also docker hosts, this would also mean all containers would be halted even if they did not interact with the external storage.
 [^6]: Make sure to have the entire `defaults,nofail` section without any spaces. The spaces are what designate the columns in the `fstab` file.
