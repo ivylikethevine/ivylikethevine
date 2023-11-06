@@ -1,9 +1,9 @@
 +++
-title = 'A Quick Printing Workflow'
-date = '2023-11-02'
-subtitle = '3d printing should be easy!'
+title = '3D Printing 0-100'
+date = '2023-11-06'
+subtitle = 'Creating a low friction 3D printing system.'
 author = 'Ivy Duggan'
-draft = false
+draft = true
 tags = [
   'workflow',
   'backups',
@@ -19,6 +19,23 @@ tags = [
 
 [Raspberry Pi 3 Model B Plus Rev 1.3](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
 
+lvl 1 printer
+-extra build plates
+-downsides - no connectivity/monitoring
+-slicer picking
+
+lvl 2 octoprint
+-camera stuff
+-power cable stuff
+lvl 3 octoprint plugins
+-power stuff
+-monitoring
+
+lvl 4
+-obico
+intense modifications - enclosure (psu moving
+)
+
 <https://www.raspberrypi.com/software/>
 <https://octoprint.org/>
 <https://www.prusa3d.com/page/prusaslicer_424/>
@@ -26,19 +43,11 @@ tags = [
 <https://community.octoprint.org/t/raspberry-pi-usb-power/12430>
 
 <https://www.amazon.com/dp/B07P8337J7> ribbon cable
-
 <https://www.amazon.com/gp/product/B07X3WBNPX> extra build plate
-
 <https://www.amazon.com/gp/product/B00WV7GMA2> relay
 <https://www.amazon.com/gp/product/B07TYQRXTK> power supply
-
 <https://www.amazon.com/gp/product/B07ZK5F8HP> connectors
-<https://www.amazon.com/gp/product/B07TGJGJGD> wires
-<https://www.amazon.com/gp/product/B08YDCTHMS> wire strippers
-<https://www.amazon.com/gp/product/B084GDLSCK> heatshrink
-
 <https://www.amazon.com/gp/product/B088KJ93M3> fire alarm
-<https://www.amazon.com/gp/product/B0BRB8L63T> wago
 
 software - prusa slicer over cura, upload to api with octoprint
 

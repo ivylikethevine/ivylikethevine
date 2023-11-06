@@ -24,6 +24,18 @@
         "archive": "https://github.com/OllisGit/OctoPrint-PrintJobHistory/releases/latest/download/master.zip"
     },
     {
+        "key": "preheat",
+        "name": "Preheat Button",
+        "url": "https://github.com/marian42/octoprint-preheat",
+        "archive": "https://github.com/marian42/octoprint-preheat/archive/master.zip"
+    },
+    {
+        "key": "SlicerSettingsParser",
+        "name": "SlicerSettingsParser",
+        "url": "https://github.com/larsjuhw/OctoPrint-SlicerSettingsParser",
+        "archive": "https://github.com/larsjuhw/OctoPrint-SlicerSettingsParser/archive/master.zip"
+    },
+    {
         "key": "psucontrol",
         "name": "PSU Control",
         "url": "https://github.com/kantlivelong/OctoPrint-PSUControl",
@@ -42,10 +54,28 @@
         "archive": "https://github.com/markwal/OctoPrint-PortLister/archive/master.zip"
     },
     {
+        "key": "obico",
+        "name": "Obico for OctoPrint",
+        "url": "https://www.obico.io/",
+        "archive": "https://github.com/TheSpaghettiDetective/OctoPrint-Obico/archive/master.zip"
+    },
+    {
+        "key": "filemanager",
+        "name": "FileManager",
+        "url": "https://github.com/Salandora/OctoPrint-FileManager",
+        "archive": "https://github.com/Salandora/OctoPrint-FileManager/archive/master.zip"
+    },
+    {
         "key": "filamentmanager",
         "name": "Filament Manager",
         "url": "https://github.com/OllisGit/OctoPrint-FilamentManager",
         "archive": "https://github.com/OllisGit/OctoPrint-FilamentManager/releases/latest/download/master.zip"
+    },
+    {
+        "key": "extrafileinfo",
+        "name": "ExtraFileInfo",
+        "url": "https://github.com/larsjuhw/OctoPrint-ExtraFileInfo",
+        "archive": "https://github.com/larsjuhw/OctoPrint-Extrafileinfo/archive/master.zip"
     },
     {
         "key": "display_eta",
@@ -72,10 +102,10 @@
         "archive": "https://github.com/paukstelis/OctoPrint-Cancelobject/archive/master.zip"
     },
     {
-        "key": "octolapse",
-        "name": "Octolapse",
-        "url": "https://github.com/FormerLurker/Octolapse",
-        "archive": "https://github.com/FormerLurker/Octolapse/archive/master.zip"
+        "key": "autoscroll",
+        "name": "Autoscroll",
+        "url": "https://github.com/MoonshineSG/OctoPrint-Autoscroll",
+        "archive": "https://github.com/MoonshineSG/OctoPrint-Autoscroll/archive/master.zip"
     },
     {
         "key": "DisplayLayerProgress",
@@ -88,12 +118,6 @@
         "name": "Creality-2x-temperature-reporting-fix",
         "url": "https://simplyprint.dk/",
         "archive": "https://github.com/SimplyPrint/OctoPrint-Creality2xTemperatureReportingFix/archive/master.zip"
-    },
-    {
-        "key": "consolidate_temp_control",
-        "name": "Consolidate Temp Control",
-        "url": "https://github.com/jneilliii/OctoPrint-ConsolidateTempControl",
-        "archive": "https://github.com/jneilliii/OctoPrint-ConsolidateTempControl/archive/master.zip"
     },
     {
         "key": "bedlevelvisualizer",
