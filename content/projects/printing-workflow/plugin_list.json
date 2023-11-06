@@ -1,0 +1,140 @@
+[
+    {
+        "key": "uicustomizer",
+        "name": "UI Customizer",
+        "url": "https://github.com/LazeMSS/OctoPrint-UICustomizer",
+        "archive": "https://github.com/LazeMSS/OctoPrint-UICustomizer/archive/main.zip"
+    },
+    {
+        "key": "timelapsepurger",
+        "name": "Timelapse Purger",
+        "url": "https://github.com/jneilliii/OctoPrint-TimelapsePurger",
+        "archive": "https://github.com/jneilliii/OctoPrint-TimelapsePurger/archive/master.zip"
+    },
+    {
+        "key": "prusaslicerthumbnails",
+        "name": "Slicer Thumbnails",
+        "url": "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails",
+        "archive": "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/master.zip"
+    },
+    {
+        "key": "PrintJobHistory",
+        "name": "PrintJobHistory",
+        "url": "https://github.com/OllisGit/OctoPrint-PrintJobHistory",
+        "archive": "https://github.com/OllisGit/OctoPrint-PrintJobHistory/releases/latest/download/master.zip"
+    },
+    {
+        "key": "preheat",
+        "name": "Preheat Button",
+        "url": "https://github.com/marian42/octoprint-preheat",
+        "archive": "https://github.com/marian42/octoprint-preheat/archive/master.zip"
+    },
+    {
+        "key": "SlicerSettingsParser",
+        "name": "SlicerSettingsParser",
+        "url": "https://github.com/larsjuhw/OctoPrint-SlicerSettingsParser",
+        "archive": "https://github.com/larsjuhw/OctoPrint-SlicerSettingsParser/archive/master.zip"
+    },
+    {
+        "key": "psucontrol",
+        "name": "PSU Control",
+        "url": "https://github.com/kantlivelong/OctoPrint-PSUControl",
+        "archive": "https://github.com/kantlivelong/OctoPrint-PSUControl/archive/master.zip"
+    },
+    {
+        "key": "PrintTimeGenius",
+        "name": "PrintTimeGenius Plugin",
+        "url": "https://github.com/eyal0/OctoPrint-PrintTimeGenius",
+        "archive": "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/master.zip"
+    },
+    {
+        "key": "portlister",
+        "name": "PortLister",
+        "url": "https://github.com/markwal/OctoPrint-PortLister",
+        "archive": "https://github.com/markwal/OctoPrint-PortLister/archive/master.zip"
+    },
+    {
+        "key": "obico",
+        "name": "Obico for OctoPrint",
+        "url": "https://www.obico.io/",
+        "archive": "https://github.com/TheSpaghettiDetective/OctoPrint-Obico/archive/master.zip"
+    },
+    {
+        "key": "filemanager",
+        "name": "FileManager",
+        "url": "https://github.com/Salandora/OctoPrint-FileManager",
+        "archive": "https://github.com/Salandora/OctoPrint-FileManager/archive/master.zip"
+    },
+    {
+        "key": "filamentmanager",
+        "name": "Filament Manager",
+        "url": "https://github.com/OllisGit/OctoPrint-FilamentManager",
+        "archive": "https://github.com/OllisGit/OctoPrint-FilamentManager/releases/latest/download/master.zip"
+    },
+    {
+        "key": "extrafileinfo",
+        "name": "ExtraFileInfo",
+        "url": "https://github.com/larsjuhw/OctoPrint-ExtraFileInfo",
+        "archive": "https://github.com/larsjuhw/OctoPrint-Extrafileinfo/archive/master.zip"
+    },
+    {
+        "key": "display_eta",
+        "name": "Octoprint Display ETA",
+        "url": "https://github.com/AlexVerrico/Octoprint-Display-ETA",
+        "archive": "https://github.com/AlexVerrico/Octoprint-Display-ETA/archive/master.zip"
+    },
+    {
+        "key": "CrealityTemperature",
+        "name": "Creality Temperature",
+        "url": "https://github.com/RomainOdeval/OctoPrint-CrealityTemperature/",
+        "archive": "https://github.com/RomainOdeval/OctoPrint-CrealityTemperature/releases/latest/download/master.zip"
+    },
+    {
+        "key": "costestimation",
+        "name": "Cost Estimation",
+        "url": "https://github.com/OllisGit/OctoPrint-CostEstimation",
+        "archive": "https://github.com/OllisGit/OctoPrint-CostEstimation/releases/latest/download/master.zip"
+    },
+    {
+        "key": "cancelobject",
+        "name": "Cancel Objects",
+        "url": "https://github.com/paukstelis/OctoPrint-Cancelobject",
+        "archive": "https://github.com/paukstelis/OctoPrint-Cancelobject/archive/master.zip"
+    },
+    {
+        "key": "autoscroll",
+        "name": "Autoscroll",
+        "url": "https://github.com/MoonshineSG/OctoPrint-Autoscroll",
+        "archive": "https://github.com/MoonshineSG/OctoPrint-Autoscroll/archive/master.zip"
+    },
+    {
+        "key": "DisplayLayerProgress",
+        "name": "DisplayLayerProgress Plugin",
+        "url": "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress",
+        "archive": "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress/releases/latest/download/master.zip"
+    },
+    {
+        "key": "ender3v2tempfix",
+        "name": "Creality-2x-temperature-reporting-fix",
+        "url": "https://simplyprint.dk/",
+        "archive": "https://github.com/SimplyPrint/OctoPrint-Creality2xTemperatureReportingFix/archive/master.zip"
+    },
+    {
+        "key": "bedlevelvisualizer",
+        "name": "Bed Visualizer",
+        "url": "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer",
+        "archive": "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/master.zip"
+    },
+    {
+        "key": "backupscheduler",
+        "name": "Backup Scheduler",
+        "url": "https://github.com/jneilliii/OctoPrint-BackupScheduler",
+        "archive": "https://github.com/jneilliii/OctoPrint-BackupScheduler/archive/master.zip"
+    },
+    {
+        "key": "arc_welder",
+        "name": "Arc-Welder",
+        "url": "https://github.com/FormerLurker/ArcWelderPlugin",
+        "archive": "https://github.com/FormerLurker/ArcWelderPlugin/archive/master.zip"
+    }
+]

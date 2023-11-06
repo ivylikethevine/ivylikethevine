@@ -63,9 +63,15 @@ url = '/resume/'
 weight = 10
 
 [params]
-description = "My personal projects & writings"
+description = "Documenting my Homelab, 3D printing, and Software Development projects."
 keywords = "blog,developer,personal"
 img_home = "/img/header-miata.webp"
+
+
+[params.sidebar]
+enable = true
+bio = "Long time tech enthusiast, recent UCSD Cognitive Science graduate."
+
 
 [params.social]
 github = 'ivylikethevine'
