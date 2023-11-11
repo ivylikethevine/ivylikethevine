@@ -1,2 +1,3 @@
 baseURL = 'https://development.ivylikethevine.pages.dev/'
 title = 'ivy (staging)'
+buildDrafts = false

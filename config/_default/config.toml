@@ -1,6 +1,7 @@
 baseURL = 'https://localhost:1313/'
 languageCode = 'en-us'
 title = 'ivy (local dev)'
+buildDrafts = true # only on local, to preview
 
 copyright = ''
 paginate = 10

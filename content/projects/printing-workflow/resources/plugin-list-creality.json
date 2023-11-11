@@ -1,0 +1,14 @@
+[
+    {
+        "key": "CrealityTemperature",
+        "name": "Creality Temperature",
+        "url": "https://github.com/RomainOdeval/OctoPrint-CrealityTemperature/",
+        "archive": "https://github.com/RomainOdeval/OctoPrint-CrealityTemperature/releases/latest/download/master.zip"
+    },
+    {
+        "key": "ender3v2tempfix",
+        "name": "Creality-2x-temperature-reporting-fix",
+        "url": "https://simplyprint.dk/",
+        "archive": "https://github.com/SimplyPrint/OctoPrint-Creality2xTemperatureReportingFix/archive/master.zip"
+    }
+]
