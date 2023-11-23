@@ -1,6 +1,6 @@
 +++
 title = '3D Printing 0-100'
-date = '2023-11-10'
+date = '2023-11-21'
 subtitle = 'Creating a low friction 3D printing system.'
 author = 'Ivy Duggan'
 draft = true
@@ -112,29 +112,18 @@ Hardware Selection
 
 I'd recommend selecting an SBC if possible. While most of the octoprint configuration I've found useful so far has been entirely reproducable on the other systems, the easy ability to add sensors & switches (such as auto-on/off) is worth it. Most guides are built for Raspberry Pi's, but any moderately common SBC with >1GB of ram would work. A brief comparison of some SBC's
 
-SBC Requirements for Octoprint
-
-- Wifi
-- 2+ USB
-- GPIO pins
-- lower power use
-- CSI camera connectors
-- \>1GB ram
-
 {{% sbc-compare-chart %}}
 
-I ended up using a Raspberry Pi 3B+ because I had it on hand, but my current pick would be a 4Gb Orange Pi 3B. The M.2 M-key plus USB C power and normal HDMI output is a killer combination. While other ones may be slightly cheaper, the overall re-usability of the O-Pi 3B is great.
+I ended up using a Raspberry Pi 3B+ because I had it on hand, but anything newer is also fine.
 
-Webcam selection
-
-- csi versus usb
+### Webcam selection
 
 On many SBC's, there are 1-2 CSI camera connectors. These use this flat flex ribbon cable + Zero Force (ZF) connectors:
 ![image](images/rpicam.jpg "CSI camera & cable.")
 
 ![image](images/rpi3-picam.jpg "ZF CSI connector on an RPI3 ")
 
-While these are useful and plentifulm, I would recommend a USB webcam over these if you don't already have one or more. It is much easier to disconnect USB than a CSI connector, which can be a hassle when working on the printer. That being said, another upside of the O-Pi 3B is 2x CSI connectors.
+While these are useful and plentifulm, I would recommend a USB webcam over these if you don't already have one or more. It is much easier to disconnect USB than a CSI connector, which can be a hassle when working on the printer.
 
 <https://www.raspberrypi.com/products/camera-module-v2/> vs c920
 
@@ -168,47 +157,11 @@ Plugins - <a href='resources/plugin-list-creality.json' download>Plus Creality T
 ![image](images/verbose-and-label.png "Your grandpa's 3d printer. Kiss the ring.")
 ![image](images/g-code-thumbnails.png "Your grandpa's 3d printer. Kiss the ring.")
 
-Other software
+{{% octoprint-setup %}}
 
-- cockpit
-- nfs/rsync/cron backups
-- fish shell
+{{% octoprint-backup %}}
 
-```bash
-sudo apt install -y zip git htop software-properties-common apt-transport-https wget xclip net-tools curl python3 python3-pip nodejs npm ca-certificates gnupg &&
-  sudo apt update -y &&
-  sudo apt upgrade -y &&
-  sudo apt --fix-broken install -fy &&
-  sudo apt autoremove -y 
-  sudo apt install -y cockpit cockpit-pcp fish nfs-common rsync cron &&
-  chsh -s /usr/bin/fish &&
-  echo 
-
-  ssh-copy-id -i /home/ivy/.ssh/id_ed25519 ivy@nessie.local &&
-  sudo mkdir "${client_nas_path}" &&
-  sudo echo "${nas_static_ip}:${nas_path}   ${client_nas_path}   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" | sudo tee -a /etc/fstab &&
-  sudo mount -a
-
-  sudo mkdir -p "/home/ivy/.ssh/"
-  ssh-keygen -t ed25519 -C "ivylikethevine@gmail.com"
-
-  eval "$(ssh-agent -s)"
-  ssh-add ~/.ssh/id_ed25519
-  crontab -l > cron-copy
-  echo "0 0 * * * rsync --mkpath -ra /home/ivy/projects ivy@maccy.local:/nas/expy/projects" >> cron-copy
-
-  crontab cron-copy
-  rm cron-copy
-
-
-  0 0 * * * rsync --mkpath --delete -ravh /home/${USER}/.octoprint/data/backup ${USER}@${NAS_HOSTNAME}.local:/${NAS_PATH}/${RPI_HOSTNAME}
-  ${NAS_HOSTNAME}.local:/nas   /mnt/${NAS_HOSTNAME}   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
-  ssh-key gen
-  ssh-key add
-  mkdir /mnt/${NAS_HOSTNAME}
-```
-
-##### Level 3: Modifications & Enclosure
+#### Level 3: Modifications & Enclosure
 
 lvl 3
 -obico
@@ -220,3 +173,5 @@ optional print failure detection - hook into homelab
 <https://www.lets-talk-about.tech/2020/02/3d-printing-famous-ikea-lack-enclosure.html>
 <https://www.instructables.com/3D-Filament-Storage-Box-in-an-IKEA-SAMLA-Box/>
 <https://clevercreations.org/samla-filament-storage-dry-box/>
+
+<https://www.simplify3d.com/resources/print-quality-troubleshooting/>

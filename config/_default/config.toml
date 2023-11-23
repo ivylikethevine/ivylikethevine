@@ -53,10 +53,15 @@ unsafe = true
 
 [menu]
 [[menu.main]]
+identifier = 'poli-statement'
+name = 'political statement'
+url = '/poli-statement/'
+weight = -100
+[[menu.main]]
 identifier = 'projects'
 name = 'projects'
 url = '/'
-weight = -100
+weight = 0
 [[menu.main]]
 identifier = 'resume'
 name = 'resume'
