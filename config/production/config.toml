@@ -1,5 +1,6 @@
 baseURL = 'https://ivylikethevine.com/'
 title = 'ivy (likethevine)'
+buildDrafts = false
 
 # See https://giscus.app/
 [params.giscus]
