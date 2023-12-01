@@ -1,6 +1,6 @@
 +++
 title = '3D Printing 0-100'
-date = '2023-11-30'
+date = '2023-12-01'
 subtitle = 'Creating a low friction 3D printing system.'
 author = 'Ivy Duggan'
 draft = false
@@ -11,10 +11,8 @@ tags = [
   '3d-printing',
   'dev ops',
 ]
-header_img = ""
-description = ""
-subtitle = ""
-header_img = ""
+header_img = ''
+description = ''
 toc = true
 categories = []
 series = []
@@ -117,18 +115,14 @@ Now here is where things get interesting! We're going to add a single board comp
 
 Hardware Selection
 
-I'd recommend selecting an SBC if possible. While most of the octoprint configuration I've found useful so far has been entirely reproducable on the other systems, the easy ability to add sensors & switches (such as auto-on/off) is worth it. Most guides are built for Raspberry Pi's, but any moderately common SBC with >1GB of ram would work. A brief comparison of some SBC's
-
-{{% sbc-compare-chart %}}
-
-I ended up using a Raspberry Pi 3B+ because I had it on hand, but anything newer is also fine.
+I'd recommend selecting an SBC if possible. While most of the octoprint configuration I've found useful so far has been entirely reproducable on the other systems, the easy ability to add sensors & switches (such as auto-on/off) is worth it. I ended up using a Raspberry Pi 3B+ because I had it on hand, but anything newer is also fine.
 
 ### Webcam selection
 
-On many SBC's, there are 1-2 CSI camera connectors. These use this flat flex ribbon cable + Zero Force (ZF) connectors:
-![image](images/rpicam.jpg "CSI camera & cable.")
+On many SBC's, there is usually a CSI camera connector(s). These use this flat flex ribbon cable + Zero Force (ZF) connectors (quick tip: there are many other names ffor these cables/connectors):
+![image](images/rpicam.jpg 'CSI camera & cable.')
 
-![image](images/rpi3-picam.jpg "ZF CSI connector on an RPI3 ")
+![image](images/rpi3-picam.jpg 'ZF CSI connector on an RPI3 ')
 
 While these are useful and plentifulm, I would recommend a USB webcam over these if you don't already have one or more. It is much easier to disconnect USB than a CSI connector, which can be a hassle when working on the printer.
 
@@ -136,37 +130,47 @@ While these are useful and plentifulm, I would recommend a USB webcam over these
 
 <https://www.amazon.com/dp/B07P8337J7> ribbon cable
 
-Putting it Together
-<https://www.printables.com/model/106225-modular-snap-together-raspberry-pi-2b3b3b4-case-w-> rpi case
-<https://www.printables.com/model/161185-snap-fit-case-for-raspberry-pi-camera-module-2> rpi cam case
-<https://www.printables.com/model/347669-v-slot-mounting-base-modular-mounting-system-gopro> modular mounting ender mount
-<https://www.printables.com/model/9693-modular-mounting-system-gopro-genderaxis-changer> mounting axis switcher
-<https://www.thingiverse.com/thing:2194278> modular mounting systems
+#### Putting it Together
 
-Another classic octoprint gotcha - make sure to tape over the +5v pin on the USB cable from the SBC to the printer. Otherwise weird power things can occur. Kaptan tape or electrical tape are both solid options.
-<https://community.octoprint.org/t/raspberry-pi-usb-power/12430>
+For my build, I ended up with the following 3d prints (after many other options as my setup has evolved & changed):
+
+- RPI 3B Case: <https://www.printables.com/model/106225-modular-snap-together-raspberry-pi-2b3b3b4-case-w-> rpi case
+- RPI Cam Case for MMS: <https://www.printables.com/model/161185-snap-fit-case-for-raspberry-pi-camera-module-2> rpi cam case
+- MMS anchor for Ender aluminum extrusions: <https://www.printables.com/model/347669-v-slot-mounting-base-modular-mounting-system-gopro>
+- MMS Axis Changer: <https://www.printables.com/model/9693-modular-mounting-system-gopro-genderaxis-changer>
+- Modular Mounting System/MMS (GoPro compatible mounts): <https://www.thingiverse.com/thing:2194278>
+
+Another classic octoprint gotcha - make sure to tape over the +5v pin on the USB cable from the SBC to the printer. Otherwise weird power things can occur. Kaptan tape or electrical tape are both solid options. See: <https://community.octoprint.org/t/raspberry-pi-usb-power/12430>
+
 A good quality power supply is essential! save yourself the headache and buy one that specifically says its rating, such as <https://www.amazon.com/gp/product/B07TYQRXTK> power supply
 
-A major feature that I wanted is to turn the entire printer on/off from the WebUI. This is easily done with a relay like [this one](https://www.amazon.com/gp/product/B00WV7GMA2). I have my SBC on the "always on" outlet, then my printer & lamp on the "normally off" outlets. It's also very easy to create your own header to attach to the SBC GPIO pins, such as [this](https://www.amazon.com/gp/product/B07ZK5F8HP). (No soldering required!)
+A major feature that I wanted is to turn the entire printer on/off from the WebUI. This is easily done with a relay like [this one](https://www.amazon.com/gp/product/B00WV7GMA2). I have my SBC on the 'always on' outlet, then my printer & lamp on the 'normally off' outlets. It's also very easy to create your own header to attach to the SBC GPIO pins, such as [this](https://www.amazon.com/gp/product/B07ZK5F8HP). (No soldering required!)
+
+##### More SBC Gotcha's
 
 Software:
 <https://www.raspberrypi.com/software/>
 
 rpi imager & flash
 
-note config settings
-Slicer
-<https://www.prusa3d.com/page/prusaslicer_424/>
-<https://help.prusa3d.com/article/sending-files-to-octoprint-duet_1663>
+##### Configuration
 
+Now that we have Octoprint, we can configure it.
 Plugins - <a href='resources/plugin-list.json' download>Download Plugin_list.json</a>
 Plugins - <a href='resources/plugin-list-creality.json' download>Plus Creality Temp Fix Plugins</a>
-![image](images/verbose-and-label.png "Your grandpa's 3d printer. Kiss the ring.")
-![image](images/g-code-thumbnails.png "Your grandpa's 3d printer. Kiss the ring.")
 
 {{% octoprint-setup %}}
 
+And here is a quick script to backup our octoprint files to the local NAS as per my previous homelab posts.
+
 {{% octoprint-backup %}}
+
+And with Octoprint configured, we can setup [PrusaSlicer](https://www.prusa3d.com/page/prusaslicer_424/) with some useful defaults and send our processed g-code directly to Octoprint, giving us fully remote control. I recommend PrusaSlicer because it has a vast array of settings, as well as incredibly good documentation.
+
+![image](images/verbose-and-label.png "Some Octoprint plugins rely on these options to know when to execute.")
+![image](images/g-code-thumbnails.png "And these are just nice to have.")
+
+And here is how we send files to octoprint: <https://help.prusa3d.com/article/sending-files-to-octoprint-duet_1663>
 
 #### Level 3: Modifications & Enclosure
 
@@ -182,3 +186,7 @@ optional print failure detection - hook into homelab
 <https://clevercreations.org/samla-filament-storage-dry-box/>
 
 <https://www.simplify3d.com/resources/print-quality-troubleshooting/>
+
+#### Note on Links
+
+None of these links are sponsored in any way, and I really selected these arbitrarily on convenience.

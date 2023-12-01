@@ -1,7 +1,7 @@
 +++
-title = "Alternatives"
-date = "3023-10-25"
-author = "Ivy Duggan"
+title = 'Alternatives'
+date = '3023-10-25'
+author = 'Ivy Duggan'
 draft = true
 +++
 
@@ -45,6 +45,6 @@ draft = true
 ### Server List
 
 - Maccy: Up & Down
-  - 2012 Macbook Pro 13" - Ubuntu 22 Server
+  - 2012 Macbook Pro 13' - Ubuntu 22 Server
 - Nessie: Up & Down
-  - 2015 Macbook Pro 15" - Ubuntu 22 Server
+  - 2015 Macbook Pro 15' - Ubuntu 22 Server

@@ -5,9 +5,9 @@ buildDrafts = false
 # See https://giscus.app/
 [params.giscus]
 enable = true
-repo = "ivylikethevine/ivylikethevine"
-repo_id = "R_kgDOKTpUbw"
-category = "General"
-category_id = "DIC_kwDOKTpUb84CZ09b"
-input_position = "top"
-lang = "en"
+repo = 'ivylikethevine/ivylikethevine'
+repo_id = 'R_kgDOKTpUbw'
+category = 'General'
+category_id = 'DIC_kwDOKTpUb84CZ09b'
+input_position = 'top'
+lang = 'en'

@@ -1,8 +1,8 @@
 +++
-title = "NAS Backups and the Dark USB Arts"
+title = 'NAS Backups and the Dark USB Arts'
 subtitle = 'How to do what you should never do, the best way possible.'
-date = "2023-10-20"
-author = "Ivy Duggan"
+date = '2023-10-20'
+author = 'Ivy Duggan'
 draft = false
 tags = [
     'linux',
@@ -14,7 +14,7 @@ tags = [
 ]
 +++
 
-![image](images/sata-vs-usb3.png "Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.")
+![image](images/sata-vs-usb3.png 'Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.')
 
 # The Backups Speech
 
@@ -23,8 +23,8 @@ Every discussion about file backups generally revolves around the same paradigm:
 
 Similarly, when reading about home servers, there are lots of pieces of (good) advice that talk about the importance of redundancy at every level:
 
-* "Fast and redundant storage, best results with SSD disks." - [Proxmox Recommended Hardware](https://www.proxmox.com/en/proxmox-virtual-environment/requirements)
-* "We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so." - [TrueNas Minimum Hardware Requirements](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/)
+* 'Fast and redundant storage, best results with SSD disks.' - [Proxmox Recommended Hardware](https://www.proxmox.com/en/proxmox-virtual-environment/requirements)
+* 'We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so.' - [TrueNas Minimum Hardware Requirements](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/)
 
 But the reality of the situation is my laptop has one internal drive and I want more NAS storage as cheap as possible. This led me to research USB external storage.
 
@@ -41,7 +41,7 @@ But, thats not my full homelab. I have recently configured another laptop as per
 
 ### Rule #1: Check Your Speed
 
-Most questions online about "how do I use a USB drive on my NAS?" end in the same answer: **don't even bother**.
+Most questions online about 'how do I use a USB drive on my NAS?' end in the same answer: **don't even bother**.
 
 And for a long time, this was a reasonable (if curt) answer because USB was **unbearably slow**. Here's a table showing file transfer times on all USB versions, SATA 3, and Gigabit ethernet:
 
@@ -77,7 +77,7 @@ This option means that when booting, we will not fail to boot if we are unable t
 
 ### Rule #3: Offsite Backups
 
-Another data backup quote I see bounce around often is "local copies are not a replacement for remote backups", which is true, but is focused again at a business environment.
+Another data backup quote I see bounce around often is 'local copies are not a replacement for remote backups', which is true, but is focused again at a business environment.
 
 If a production hard drive dies, you need a copy of those files, right now. Servers typically do this via data redundancy over RAID (or other software solutions) with a drive already connected. Switchover is instant, the database never goes down, the business never loses a client due to a service outtage.
 
@@ -88,7 +88,7 @@ There are a myriad storage providers, and a myriad of backup solutions. Here is 
 [Duplicati](https://www.duplicati.com/) running inside a Portainer template from [this repo](https://github.com/Lissy93/portainer-templates)
     - This docker image then mounts our data directory (`/mnt/sandisk/`), allowing it to access the data directory.
 
-![image](images/duplicati-mounts.png "This is the portainer config for our volumes. The only one I have added is the `sandisk` one.")
+![image](images/duplicati-mounts.png 'This is the portainer config for our volumes. The only one I have added is the `sandisk` one.')
 
 [Backblaze B2](https://www.backblaze.com/cloud-storage) for bulk storage. My original pick was AWS, but B2 is easier for deployments that don't utilize the AWS/AIM/CLI ecosystem.[^7]
 

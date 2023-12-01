@@ -1,13 +1,13 @@
 +++
-title = "Resume"
-description = "Most recent resume."
-author = "Ivy Duggan"
-date = "2023-10-01"
+title = 'Resume'
+description = 'Most recent resume.'
+author = 'Ivy Duggan'
+date = '2023-10-01'
 tags = [
-    "typescript",
-    "devops",
-    "full stack",
-    "cognitive science"
+    'typescript',
+    'devops',
+    'full stack',
+    'cognitive science'
 ]
 comment = false
 +++

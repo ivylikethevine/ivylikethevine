@@ -29,7 +29,7 @@ min = '0.119.0'
 [[module.imports]]
   path = 'github.com/hugomods/katex'
 [[module.imports]]
-  path = "github.com/hugomods/mermaid"
+  path = 'github.com/hugomods/mermaid'
 [[module.imports]]
   path = 'github.com/roninro/hugo-theme-puppet'
 
@@ -60,7 +60,7 @@ weight = -100
 [[menu.main]]
 identifier = 'projects'
 name = 'projects'
-url = '/'
+url = '/projects/'
 weight = 0
 [[menu.main]]
 identifier = 'resume'
@@ -69,15 +69,13 @@ url = '/resume/'
 weight = 10
 
 [params]
-description = "Documenting my Homelab, 3D printing, and Software Development projects."
-keywords = "blog,developer,personal"
-img_home = "/img/header-miata.webp"
-
+description = 'Documenting my Homelab, 3D printing, and Software Development projects.'
+keywords = 'blog,developer,personal'
+img_home = '/img/header-miata.webp'
 
 [params.sidebar]
 enable = true
-bio = "Long time tech enthusiast, recent UCSD Cognitive Science graduate."
-
+bio = 'Long time tech enthusiast, recent UCSD Cognitive Science graduate.'
 
 [params.social]
 github = 'ivylikethevine'

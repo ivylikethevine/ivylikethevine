@@ -1,7 +1,7 @@
 +++
-title = "An Entire Makerspace for $500USD"
-date = "3000-10-10"
-author = "Ivy Duggan"
+title = 'An Entire Makerspace for $500USD'
+date = '3000-10-10'
+author = 'Ivy Duggan'
 draft = true
 +++
 

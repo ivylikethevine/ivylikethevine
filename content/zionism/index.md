@@ -1,10 +1,10 @@
 +++
-title = "On Zionism"
-description = "A paper I wrote in 2022 for UCSD history."
-author = "Ivy Duggan"
-date = "2023-11-30"
+title = 'On Zionism'
+description = 'A paper I wrote in 2022 for UCSD history.'
+author = 'Ivy Duggan'
+date = '2023-11-30'
 tags = [
-    "op-ed",
+    'op-ed',
 ]
 comment = false
 +++
