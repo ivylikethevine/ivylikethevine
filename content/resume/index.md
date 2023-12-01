@@ -9,6 +9,7 @@ tags = [
     "full stack",
     "cognitive science"
 ]
+comment = false
 +++
 
 {{< pdf "resume_v4.pdf" >}}
