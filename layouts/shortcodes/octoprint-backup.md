@@ -1,5 +1,3 @@
-#
-
 ```bash
 nas_name=maccy # user configurable
 nas_path=/mnt/sandisk # user configurable

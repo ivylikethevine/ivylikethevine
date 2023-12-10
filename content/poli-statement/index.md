@@ -1,6 +1,7 @@
 +++
 title = 'Political Statement'
-description = 'A brief summary of what I stand for.'
+description = ''
+subtitle = 'A brief summary of what I stand for.'
 author = 'Ivy Duggan'
 date = '2023-11-22'
 tags = [

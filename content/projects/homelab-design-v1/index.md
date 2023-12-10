@@ -13,6 +13,11 @@ tags = [
     'homelab',
     'nas'
 ]
+header_img = ''
+description = ''
+toc = true
+categories = []
+series = []
 +++
 <a href='https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start'>
 
@@ -26,7 +31,7 @@ I have been in tech for over 10 years (look at little me up there), and I have s
 
 With least an hour of configuration per corruption, I finally bit the bullet and started setting up my own server. **tl;dr? here's the [full setup script](https://gist.github.com/ivylikethevine/adba9472047741476e5a19b8741e906a)**
 
-### Why a Home Server?
+## Why a Home Server?
 
 I have avoided making my own server for the past few years because I did not have a need for one. At Amazon Music, we had access to the internal architecture & work flows, and during my contracting work, our applications were usually relatively straightforward GIT/CI/CD Node/similar applications.[^1] But now, I have graduated college and have the time & skill to setup my own, so lets do it --- on the cheap.
 
@@ -189,7 +194,7 @@ sudo echo '<hostname>.local:/<nfs_folder>    /<local_mount>   nfs rw,auto,nofail
 
 **Next up, we'll configure offsite backups via a containerized application since our server has ZERO redundancy!**
 
-##### Footnotes
+#### Footnotes
 
 [^1]: I also had an experience with a developer above me that "pushed changes to his local server, but forgot to push the changes to us" around every week or so.
 [^2]: I **often** broke my ability to communicate with the server during network configuration and had to run commands on the laptop itself to fix it.

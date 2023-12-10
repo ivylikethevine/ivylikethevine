@@ -1,6 +1,6 @@
 +++
 title = 'Adventures with SBCs'
-date = '2023-12-02'
+date = '2023-12-10'
 subtitle = ''
 author = 'Ivy Duggan'
 draft = true

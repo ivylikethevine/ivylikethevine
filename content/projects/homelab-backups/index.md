@@ -12,6 +12,11 @@ tags = [
     'usb',
     'nas'
 ]
+header_img = ''
+description = ''
+toc = true
+categories = []
+series = []
 +++
 
 ![image](images/sata-vs-usb3.png 'Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.')
@@ -132,7 +137,7 @@ We have mitigated the downsides to USB drives, increased our homelab server stor
 
 Being a fault-tolerant, slightly janky system is good for home use, but it is always worth doing it right when actual business is on the line. Please do not apply these to production deployments!
 
-##### Footnotes
+#### Footnotes
 
 [^4]: If your production deployment relies on external drives to begin with, you may have problems that an internet blog post cannot solve.
 [^5]: Since my laptops are also docker hosts, this would also mean all containers would be halted even if they did not interact with the external storage.

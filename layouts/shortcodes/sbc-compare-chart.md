@@ -1,5 +1,3 @@
-#
-
 | Name | Ram & Price | Power Input | Storage | Video Output | CSI Cam | USB Ports |
 | ---- | ----------- | ----------- | ------- | ------------ | ------- | --------- |
 | Raspberry Pi Zero 2W | [0.5Gb - 32](https://www.amazon.com/B07P4LSDYV) | Micro-USB | Micro-SD | Micro-HDMI | 1x | 0 (1x with adapter) |

@@ -1,6 +1,6 @@
 +++
 title = 'Overcoming Jank with Design'
-date = '2023-11-22'
+date = '2023-12-06'
 subtitle = 'A realistic approach to software development.'
 author = 'Ivy Duggan'
 draft = true
@@ -8,6 +8,11 @@ tags = [
   'dev ops',
   'op-ed'
 ]
+header_img = ''
+description = ''
+toc = true
+categories = []
+series = []
 +++
 
 # Code Doesn't Matter
@@ -65,7 +70,7 @@ Technology is one of the only industries that can thrive off of unconceivable ja
 1. Money (which you don't)
 1. Well Configured Software and Hardware (which you can do yourself)
 
-All systems in a data center are designed for when they fail. Apply that to your system and you can reach acceptable levels of uptime. I personally know someone who became a millionaire from a stack of bitcoin mining milk crates. I've seen terrible developers 
+All systems in a data center are designed for when they fail. Apply that to your system and you can reach acceptable levels of uptime. I personally know someone who became a millionaire from a stack of bitcoin mining milk crates. I've seen terrible developers
 
 learnxinyminutes.com
 

@@ -1,15 +1,20 @@
 +++
 title = 'Resume'
-description = 'Most recent resume.'
+description = ''
+subtitle = 'Most recent resume.'
 author = 'Ivy Duggan'
 date = '2023-10-01'
 tags = [
     'typescript',
-    'devops',
+    'dev ops',
     'full stack',
     'cognitive science'
 ]
 comment = false
+header_img = ''
+toc = false
+categories = []
+series = []
 +++
 
 {{< pdf "resume_v4.pdf" >}}
