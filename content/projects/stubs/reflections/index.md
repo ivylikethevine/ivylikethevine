@@ -1,6 +1,6 @@
 +++
 title = 'Overcoming Jank with Design'
-date = '2023-11-22'
+date = '2023-12-06'
 subtitle = 'A realistic approach to software development.'
 author = 'Ivy Duggan'
 draft = true
@@ -8,6 +8,11 @@ tags = [
   'dev ops',
   'op-ed'
 ]
+header_img = ''
+description = ''
+toc = true
+categories = []
+series = []
 +++
 
 # Code Doesn't Matter
@@ -16,7 +21,7 @@ In an ideal world, all code would be 100% unit tested and analyzed perfectly opt
 
 >Most Code Is Bad.
 
-My favorite phrase I've ever heard in my work as a software developer was "almost certainly suboptimal". It's so perfect. It describes every single solution except for the Optimal One(s)[^1].
+My favorite phrase I've ever heard in my work as a software developer was 'almost certainly suboptimal'. It's so perfect. It describes every single solution except for the Optimal One(s)[^1].
 
 ## Suboptimal Software
 
@@ -38,17 +43,17 @@ Working as a software developer means to work within and around all of the tech 
 
 ##### Mitigation
 
-In software development, there's already the idea of defensive programming, which has been a personal lifesaver many times. I propose that this concept applies even more broadly, to the entire design and architecture of a system. From language, toolchain, and framework selection all the way to the naming of a file, every choice made should be made with as "little faith" in them as possible.
+In software development, there's already the idea of defensive programming, which has been a personal lifesaver many times. I propose that this concept applies even more broadly, to the entire design and architecture of a system. From language, toolchain, and framework selection all the way to the naming of a file, every choice made should be made with as 'little faith' in them as possible.
 
 ###### Ye of Little Faith
 
 I love JavaScript & TypeScript. It's my confession. But most of the time, it is a bad option. I also don't like Python, but many of my projects ARE in it. These choices are made because the needs of the project are more important than what I personally want.
 
-"Little faith" means that I have little faith in any choice being perfect. It is indescribably important to be nimble, especially in the early stages of a project, and almost no project is made of a single technical choice. Computer Science classes love to talk about abstraction, but abstraction between the different layers of a project allows for easier replacement when different requirements arise. If we design our entire project as a system of parts, each of which can be described and build (more or less) independently of each other, then we can mitigate poor technical decisions by quite literally ripping that part out and replacing it.
+'Little faith' means that I have little faith in any choice being perfect. It is indescribably important to be nimble, especially in the early stages of a project, and almost no project is made of a single technical choice. Computer Science classes love to talk about abstraction, but abstraction between the different layers of a project allows for easier replacement when different requirements arise. If we design our entire project as a system of parts, each of which can be described and build (more or less) independently of each other, then we can mitigate poor technical decisions by quite literally ripping that part out and replacing it.
 
 Fully integrated systems with poor decisions are the downfall of companies. Technical debt is an exponential monster, but it is often somewhat bounded by the size of the system it inhabits. Here's an example from my work.
 
-A client brought in a graphical planning/organizing application, and upon code inspection, the previous "team" had written an entirely bespoke C++ web server as well as the business logic of the application. Ignoring for a moment the fact that Apache web server has been out since 1996, and nginx has been out since 2004, since the (horrible) web server was intimitately intertwined with the business logic, none of the previous work was salvagable.
+A client brought in a graphical planning/organizing application, and upon code inspection, the previous 'team' had written an entirely bespoke C++ web server as well as the business logic of the application. Ignoring for a moment the fact that Apache web server has been out since 1996, and nginx has been out since 2004, since the (horrible) web server was intimitately intertwined with the business logic, none of the previous work was salvagable.
 
 ##### In Upside Down Land
 
@@ -65,7 +70,7 @@ Technology is one of the only industries that can thrive off of unconceivable ja
 1. Money (which you don't)
 1. Well Configured Software and Hardware (which you can do yourself)
 
-All systems in a data center are designed for when they fail. Apply that to your system and you can reach acceptable levels of uptime. I personally know someone who became a millionaire from a stack of bitcoin mining milk crates. I've seen terrible developers 
+All systems in a data center are designed for when they fail. Apply that to your system and you can reach acceptable levels of uptime. I personally know someone who became a millionaire from a stack of bitcoin mining milk crates. I've seen terrible developers
 
 learnxinyminutes.com
 

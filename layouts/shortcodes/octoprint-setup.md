@@ -1,5 +1,3 @@
-#
-
 ```bash
 sudo apt install -y zip git htop software-properties-common apt-transport-https wget xclip net-tools curl python3 python3-pip nodejs npm ca-certificates gnupg &&
   sudo apt update -y &&

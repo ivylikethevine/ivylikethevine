@@ -1,5 +1,3 @@
-#
-
 | Version | Speed (Gbps)[^1] | Transfer Time 10GB[^2] | Transfer Time 100GB[^3] |
 | ------- | ------------ | ------------------ | ------------------- |
 | USB 1.0 | 0.002 | **16 hours** | **168 hours** |

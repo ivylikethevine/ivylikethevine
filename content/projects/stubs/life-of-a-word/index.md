@@ -1,8 +1,15 @@
 +++
-title = "Big Data Question"
-date = "3023-10-24"
-author = "Ivy Duggan"
+title = 'Big Data Question'
+date = '3023-10-24'
+author = 'Ivy Duggan'
 draft = true
+tags = [
+]
+header_img = ''
+description = ''
+toc = true
+categories = []
+series = []
 +++
 
 has the internet reduced the life time of a slang term?
@@ -15,4 +22,4 @@ google trends -- need list of common words
 
     maybe food/eating/drink terms?
 
-{{< jupyter "./jupyter/life-of-a-word.html" >}}
+{{< jupyter './jupyter/life-of-a-word.html' >}}
