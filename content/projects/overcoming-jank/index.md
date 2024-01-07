@@ -1,9 +1,9 @@
 +++
 title = 'Overcoming Jank with Design'
-date = '2023-12-06'
+date = '2023-12-10'
 subtitle = 'A realistic approach to software development.'
 author = 'Ivy Duggan'
-draft = true
+draft = false
 tags = [
   'dev ops',
   'op-ed'
@@ -17,9 +17,7 @@ series = []
 
 # Code Doesn't Matter
 
-In an ideal world, all code would be 100% unit tested and analyzed perfectly optimized C++, but in reality, most code is bad.
-
->Most Code Is Bad.
+In an ideal world, all code would be 100% unit tested and analyzed perfectly optimized C++, but in reality, __**most code is bad**__.
 
 My favorite phrase I've ever heard in my work as a software developer was 'almost certainly suboptimal'. It's so perfect. It describes every single solution except for the Optimal One(s)[^1].
 

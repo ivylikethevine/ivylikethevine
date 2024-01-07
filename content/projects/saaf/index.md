@@ -1,10 +1,11 @@
 +++
-title = 'Using the Standards We Have'
-date = '2023-12-07'
+title = ''
+date = '2023-12-10'
 subtitle = ''
 author = 'Ivy Duggan'
-draft = true
+draft = false
 tags = [
+  'dev ops',
 ]
 header_img = ''
 description = ''
@@ -13,6 +14,3 @@ categories = []
 series = []
 +++
 
-# Start
-
-dockge vs. portainer
