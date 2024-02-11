@@ -18,10 +18,39 @@ categories = []
 series = []
 +++
 
+![image](images/dashboard.png "My saffron dashboard")
 
 ## [Saffron](https://github.com/ivylikethevine/saffron) is a docker compose implementation of a server deployable via static files, managed as a git repository
 
 Ever since my last <a href='/projects/homelab-design-v1'>homelab design post</a>, I have been trying to find a workflow that takes better advantage of docker compose based services. After literal months of trying various versions of container management systems, performing unholy command line shenanigans, and bashing my head into my keyboard, I have settled on `saffron`, a simple, static folder structure with docker compose files & leveraging git SVM, running a modern web interface for easy configuration & modification. And I am releasing it with all of my preconfigured docker compose services on github: [Saffron](https://github.com/ivylikethevine/saffron).
+
+### V0.15 Tested Services
+
+* &#x2705; [dockge](https://github.com/louislam/dockge) - Web UI to manage docker compose files (integral to `saffron`)
+* &#x2705; [duplicati](https://docs.linuxserver.io/images/docker-duplicati/) - backup to AWS/Backblaze/etc.
+* &#x2705; [heimdall](https://docs.linuxserver.io/images/docker-heimdall/) - home page
+* &#x2705; [homeassistant](https://www.home-assistant.io/installation/linux#docker-compose) - smart home automation
+* media-clients - various media streaming services
+  * &#x2705; [jellyfin](https://docs.linuxserver.io/images/docker-jellyfin/) - tv/movie streaming
+  * &#x2705; [jellyseer](https://hub.docker.com/r/fallenbagel/jellyseerr) - media requests
+  * &#x2705; [kavita](https://github.com/Kareadita/Kavita) - ebook reader
+  * &#x2705; [navidrome](https://github.com/navidrome/navidrome/) - music streaming
+  * &#x2705; [audiobookshelf](https://github.com/advplyr/audiobookshelf) - audiobook streaming
+* &#x2705; [midarr](https://github.com/midarrlabs/midarr-server) - simple, lightweight media server directly integrated with sonarr & radarr
+* &#x2705; [netboot](https://docs.linuxserver.io/images/docker-netbootxyz/) - PXE boot system
+* &#x2705; [netdata](https://learn.netdata.cloud/docs/installing/docker) - hardware usage/monitoring (incl. containers)
+* torrent - full torrenting suite
+  * &#x2705; [qbittorrentvpn](https://github.com/MarkusMcNugen/docker-qBittorrentvpn) - torrent client that runs only on VPN connection
+  * &#x2705; [prowlarr](https://docs.linuxserver.io/images/docker-prowlarr/) - search aggregator
+  * &#x2705; [flaresolverr](https://github.com/FlareSolverr/FlareSolverr) - search proxy (required for some search engines)
+* [servarr](https://wiki.servarr.com/docker-guide) - media library system
+  * &#x2705; [sonarr](https://docs.linuxserver.io/images/docker-sonarr/) - tv
+  * &#x2705; [radarr](https://docs.linuxserver.io/images/docker-radarr/) - movies
+  * &#x2705; [lidarr](https://docs.linuxserver.io/images/docker-lidarr/) - music
+  * &#x2705; [readarr](https://docs.linuxserver.io/images/docker-readarr/) - ebooks
+  * &#x2705; [bazarr](https://docs.linuxserver.io/images/docker-bazarr/) - subtitles for movies/tv
+* &#x2705; [speedtest-tracker](https://github.com/alexjustesen/speedtest-tracker) - internet speed monitoring
+* &#x2705; [watchtower](https://github.com/containrrr/watchtower) - automatically update & restart docker containers
 
 ### Why Docker? Why Compose?
 
