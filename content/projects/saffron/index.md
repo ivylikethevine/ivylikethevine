@@ -102,6 +102,14 @@ Docker compose also allows us the ability to reconfigure our homelab dynamically
 
 In comes [Dockge](https://github.com/louislam/dockge), a very nice tool that allows us to leverage the power of docker compose with very minimal difference from using a command line interface (CLI), which is (let's be real here) unbearable UI/UX for 99% of people. Instead of running its own templating system on top of docker compose, it is a simple Web UI to edit our compose files, stop, start, and edit networking & environment variables. There are some downsides when compared to editing `saffron` directly on the host device inside of a code editor (as I do on swervy, my new homelab node), but with some slight workarounds, it is much easier to diagnose issues and find solutions using docker compose & dockge than portainer or yacht in my experience.
 
+##### Tools We Can Use
+
+Since we're using docker compose, we can leverage a ton of useful existing tools to allow us to migrate existing container systems to `saffron`, such as:
+
+* [composerize](https://github.com/composerize/composerize) - to turn `docker run...` into docker compose yaml (though dockge does have an implementation of this in the UI)
+* [decomposerize](https://github.com/composerize/decomposerize) - inverse of above
+* [autocompose](https://github.com/Red5d/docker-autocompose) - to turn running containers into docker compose yaml
+
 ##### Source Version Management
 
 Additionally, dockge allows us to create an entire git managed repository that houses our compose files, `saffron`. The repository contains dockge, in addition to preconfigured docker compose files for the services I currently run on my homelab nodes. They can be turned on or off, and the user maintains complete control of their compose files.
