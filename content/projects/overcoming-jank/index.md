@@ -3,7 +3,7 @@ title = 'Overcoming Jank with Design'
 date = '2023-12-10'
 subtitle = 'A realistic approach to software development.'
 author = 'Ivy Duggan'
-draft = false
+draft = true
 tags = [
   'dev ops',
   'op-ed'
