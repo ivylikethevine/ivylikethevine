@@ -92,7 +92,11 @@ Compose takes that further, allowing us to statically define services with confi
 
 There are exisitng solutions for this problemspace, namely [portainer](https://www.portainer.io/) and [yacht](https://github.com/SelfhostedPro/Yacht). I've used both of these, but my primary issue with them for the simple homelab use-case is that the user does not maintain full control of the docker compose files. These solutions add a level of complexity on top of compose files, allowing (supposedly) one-click templates, complex networking, and many features that are no doubt useful in some scenario.
 
+![image](images/portainer.png "Portainer's Web UI")
+
 However, the homelab is a space where we need to maximize our compatibility and searchability. Portainer/yacht exist as supersets of docker compose, so if we can base our system on the lower level technology, we have more compability with the wealth of knowledge already on the internet. The level of tech-saviness required to grab someone else's compose file is about as simple as copy/pasting an emoji on a laptop.
+
+![image](images/yacht.png "Yacht's Web UI")
 
 Docker compose also allows us the ability to reconfigure our homelab dynamically. It is easy to run multiple different types or configurations of containers, test them for a while, then stop & remove any eliminated contenders.
 
