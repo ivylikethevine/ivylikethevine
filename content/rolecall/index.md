@@ -10,12 +10,13 @@ tags = [
     'linux',
     'nas',
     'networking',
-    'raspberry pi'
+    'raspberry pi',
+    'saffron',
 ]
 header_img = ''
 description = ''
 toc = true
-categories = []
+categories = ['saffron']
 series = []
 +++
 
@@ -28,7 +29,7 @@ Part of the modus operandi of my work in the homelab space is to re-use old hard
 
 As such, here's the current information on my homelab hardware, none of which is very specialized or powerful.
 
-## 2024 Update: Swervy, the Node 202 Build
+## 2024 Update: Swervy, the Node 202 Build - Stable [Saffron](https://github.com/ivylikethevine/saffron) Host
 
 - [PcPartPicker](https://pcpartpicker.com/list/kF8HQP)
 - [Intel Core i3-12100](https://www.intel.com/content/www/us/en/products/sku/134584/intel-core-i312100-processor-12m-cache-up-to-4-30-ghz/specifications.html) - 4 cores + hyperthreading, 3.3-4.3Ghz, Intel UHD 730
@@ -36,13 +37,36 @@ As such, here's the current information on my homelab hardware, none of which is
 - Asrock Z690M-ITX/ax
   - 1x Intel 1GBe
   - 1x Dragon 2.5GBe
-- Corsair SF450W PSU
-- Fractal Design Node 202
-- 1TB Intel 660p M.2 NVME
-- 2TB Crucial P3 M.2 NVME
-- 2TB Crucial SATA SSD
-- 3TB Seagate 7200RPM HDD
+- Corsair SF450W PSU *
+- Fractal Design Node 202 *
+- 1TB Intel 660p M.2 NVME **
+- 2TB Crucial P3 M.2 NVME **
+- 2TB Crucial SATA SSD **
+- 3TB Seagate 7200RPM HDD **
 - Geekbench 6 Scores: ~2100 Single Core/~6500 Multi Core
+
+*: Gifted by a friend
+
+**: Repurposed from other computers
+
+## Maccy, the 2015 Macbook Pro - Experimental [Saffron](https://github.com/ivylikethevine/saffron) Host
+
+- [Intel Core i5-5257U CPU @ 2.70GHz](https://www.intel.com/content/www/us/en/products/sku/53450/intel-core-i52430m-processor-3m-cache-up-to-3-00-ghz/specifications.html): 2 cores + hyperthreading, 2.7-3.1Ghz
+- 2 x 4GB DDR3 1867MT/s RAM
+- 1x Gigabit Ethernet (using 1x Thunderbolt -> 1GbE)
+- 2x Thunderbolt 2 Port (1x in use)
+- 1x USB 3.0 (5Gbps) (in use with 1TB Sandisk Extreme SSD)
+- 128GB SSD
+- Geekbench 6 Scores: ~900 Single Core/~1800 Multi Core
+
+## Raspi, the Raspberry Pi 3B+ [MIA]
+
+- [Raspberry Pi 3 Model B Plus Rev 1.3](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
+- Broadcom BCM2837B0, ARM 4 cores, 1.4GHz
+- 1GB LPDDR2 RAM
+- 1x Gigabit Ethernet
+- 128GB Micro-SD
+- Geekbench 4 (**not 6**) Scores: ~500 Single Core/~1200 Multi Core
 
 ## Nessie, the 2012 Macbook Pro [Retired]
 
@@ -50,20 +74,10 @@ As such, here's the current information on my homelab hardware, none of which is
 - 2 x 2GB DDR3 1333MT/s RAM
 - 1x Gigabit Ethernet
 - 1x Thunderbolt 2 Port
-- 2TB Crucial SATA SSD - Upgraded from original 128GB SSD.
+- 2TB Crucial SATA SSD - Upgraded from original 128GB SSD. [Moved to swervy]
 - Geekbench 6 Scores: ~500 Single Core/~750 Multi Core
 
-## Maccy, the 2015 Macbook Pro
-
-- [Intel Core i5-5257U CPU @ 2.70GHz](https://www.intel.com/content/www/us/en/products/sku/53450/intel-core-i52430m-processor-3m-cache-up-to-3-00-ghz/specifications.html): 2 cores + hyperthreading, 2.7-3.1Ghz
-- 2 x 4GB DDR3 1867MT/s RAM
-- 1x Gigabit Ethernet (using 1x Thunderbolt -> 1GbE)
-- 2x Thunderbolt 2 Port (1x in use)
-- 1x USB 3.0 (5Gbps)
-- 128GB SSD
-- Geekbench 6 Scores: ~900 Single Core/~1800 Multi Core
-
-## Opie, the Orange Pi 3B [Water Damaged]
+## Opie, the Orange Pi 3B [Water Damaged &#9785;]
 
 - [Orange Pi 3B 4GB](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-3B.html)
 - Rockchip RK3566 - ARM 4 cores, 0.4-1.8Ghz
@@ -72,12 +86,3 @@ As such, here's the current information on my homelab hardware, none of which is
 - 1x USB 3.0 (5Gbps)
 - 128GB M.2 2230 SSD
 - Geekbench 6 Scores: ~150 Single Core/~500 Multi Core
-
-## Raspi, the Raspberry Pi 3B+ [Dead?]
-
-- [Raspberry Pi 3 Model B Plus Rev 1.3](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
-- Broadcom BCM2837B0, ARM 4 cores, 1.4GHz
-- 1GB LPDDR2 RAM
-- 1x Gigabit Ethernet
-- 128GB Micro-SD
-- Geekbench 4 (**not 6**) Scores: ~500 Single Core/~1200 Multi Core
