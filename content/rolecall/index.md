@@ -37,17 +37,17 @@ As such, here's the current information on my homelab hardware, none of which is
 - Asrock Z690M-ITX/ax
   - 1x Intel 1GBe
   - 1x Dragon 2.5GBe
-- Corsair SF450W PSU *
-- Fractal Design Node 202 *
-- 1TB Intel 660p M.2 NVME **
-- 2TB Crucial P3 M.2 NVME **
-- 2TB Crucial SATA SSD **
-- 3TB Seagate 7200RPM HDD **
+- Corsair SF450W PSU \*
+- Fractal Design Node 202 \*
+- 1TB Intel 660p M.2 NVME \*\*
+- 2TB Crucial P3 M.2 NVME \*\*
+- 2TB Crucial SATA SSD \*\*
+- 3TB Seagate 7200RPM HDD \*\*
 - Geekbench 6 Scores: ~2100 Single Core/~6500 Multi Core
 
-*: Gifted by a friend
+\*: Gifted by a friend
 
-**: Repurposed from other computers
+\*\*: Repurposed from other computers
 
 ## Maccy, the 2015 Macbook Pro - Experimental [Saffron](https://github.com/ivylikethevine/saffron) Host
 

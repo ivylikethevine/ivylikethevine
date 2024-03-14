@@ -14,7 +14,6 @@ categories = []
 series = []
 +++
 
-
 # Is Zionism Inherently Colonial?
 
 ## Ivy Duggan

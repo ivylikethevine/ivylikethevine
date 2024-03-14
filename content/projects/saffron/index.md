@@ -19,7 +19,7 @@ categories = ['saffron']
 series = []
 +++
 
-![image](images/dashboard.png "My saffron dashboard")
+![image](images/dashboard.png 'My saffron dashboard')
 
 ## [Saffron](https://github.com/ivylikethevine/saffron) is a docker compose implementation of a server deployable via static files, managed as a git repository
 
@@ -29,7 +29,7 @@ Ever since my last <a href='/projects/homelab-design-v1'>homelab design post</a>
 
 ## And I am releasing it with all of my preconfigured docker compose services: [Saffron](https://github.com/ivylikethevine/saffron)
 
-** Note: the best place to keep updated on saffron is the repository [README](https://github.com/ivylikethevine/saffron/blob/main/README.md)
+## Documentation is on the [wiki](https://ivylikethevine.github.io/saffron/#/)!
 
 ### Features
 
@@ -68,7 +68,7 @@ cd saffron
 
 ```yaml
 # This compose file defines netdata, a Web UI for hardware monitoring.
-version: "3"
+version: '3'
 services:
   netdata:
     image: netdata/netdata

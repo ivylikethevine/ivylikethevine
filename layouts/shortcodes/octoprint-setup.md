@@ -3,6 +3,6 @@ sudo apt install -y zip git htop software-properties-common apt-transport-https 
   sudo apt update -y &&
   sudo apt upgrade -y &&
   sudo apt --fix-broken install -fy &&
-  sudo apt autoremove -y 
+  sudo apt autoremove -y
   sudo apt install -y cockpit cockpit-pcp nfs-common rsync cron
 ```

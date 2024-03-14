@@ -19,15 +19,16 @@ toc = true
 categories = []
 series = []
 +++
+
 <a href='https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start'>
 
-  ![image](images/macbook-panera.webp "Back when I developed on my Macbook! ")
-  
+![image](images/macbook-panera.webp 'Back when I developed on my Macbook! ')
+
 </a>
 
 # The Background
 
-I have been in tech for over 10 years (look at little me up there), and I have seen firsthand that a proper workflow is essential for any decent project. So, when I bought a 3D printer a few months ago, it was embarrassing to see **my** lack of workflow. Dealing with the dozens of STL files was a hassle by itself, but then, it came: *Raspberry Pi SD card corruption.* And it came again... and again... and again...
+I have been in tech for over 10 years (look at little me up there), and I have seen firsthand that a proper workflow is essential for any decent project. So, when I bought a 3D printer a few months ago, it was embarrassing to see **my** lack of workflow. Dealing with the dozens of STL files was a hassle by itself, but then, it came: _Raspberry Pi SD card corruption._ And it came again... and again... and again...
 
 With least an hour of configuration per corruption, I finally bit the bullet and started setting up my own server. **tl;dr? here's the [full setup script](https://gist.github.com/ivylikethevine/adba9472047741476e5a19b8741e906a)**
 
@@ -46,7 +47,7 @@ No, a laptop is not the ideal server. They lack multiple ethernet connections, e
    - Small, easy to place wherever. (Mine sits under my TV)
    - Instead of a UPS, the laptop battery itself provides a healthy backup when power is cut-out (or more likely, when there are power fluctuations).
    - Built in keyboard/monitor for debugging **when** something breaks.[^2]
-1. I already have one. While I would love a full custom rack setup, **the best server is the server you have *right now***.
+1. I already have one. While I would love a full custom rack setup, **the best server is the server you have _right now_**.
 
 ### The Hardware - Nessie, the 2012 Macbook Pro
 
@@ -89,10 +90,10 @@ Although we're installing a server OS, there are a few things we want to configu
 
 {{< highlight bash >}}
 sudo echo $'HandleLidSwitch=ignore\nHandleLidSwitchDocked=ignore' | sudo tee -a /etc/systemd/logind.conf &&
-  sudo echo "GRUB_CMDLINE_LINUX_DEFAULT=\"consoleblank=60\"" | sudo tee -a /etc/default/grub &&
-  sudo update-grub
+sudo echo "GRUB_CMDLINE_LINUX_DEFAULT=\"consoleblank=60\"" | sudo tee -a /etc/default/grub &&
+sudo update-grub
 {{< / highlight >}}
-** The `&&` chaining syntax means that the next command will not execute until/if the previous command executes successfully.
+\*\* The `&&` chaining syntax means that the next command will not execute until/if the previous command executes successfully.
 
 ### II. Thou Shalt Have Basics
 
@@ -104,10 +105,10 @@ Ubuntu 22.04LTS comes with many useful packages, but there are a few that I alwa
 
 {{< highlight bash >}}
 sudo echo "\$nrconf{restart} = 'l'" | sudo tee -a /etc/needrestart/needrestart.conf &&
-  sudo apt update -y &&
-  sudo apt upgrade -y &&
-  sudo apt install -fy zip git htop software-properties-common apt-transport-https wget xclip net-tools curl python3 python3-pip nodejs npm ca-certificates gnupg avahi-daemon avahi-utils nfs-common &&
-  sudo apt autoremove -y
+sudo apt update -y &&
+sudo apt upgrade -y &&
+sudo apt install -fy zip git htop software-properties-common apt-transport-https wget xclip net-tools curl python3 python3-pip nodejs npm ca-certificates gnupg avahi-daemon avahi-utils nfs-common &&
+sudo apt autoremove -y
 {{< / highlight >}}
 
 ### III. Thou Shall have Containers
@@ -116,17 +117,17 @@ In the Homelab/Selfhosted/NAS space, containerized applications are common (and 
 
 {{< highlight bash >}}
 sudo install -m 0755 -d /etc/apt/keyrings &&
-  curl -fsSL <https://download.docker.com/linux/ubuntu/gpg> | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg &&
-  sudo chmod a+r /etc/apt/keyrings/docker.gpg &&
-  echo \
-    "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |
-  sudo tee /etc/apt/sources.list.d/docker.list >/dev/null &&
-  sudo apt update -y &&
-  sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin &&
-  sudo usermod -aG docker $USER &&
-  newgrp docker &&
-  sudo systemctl enable docker
+curl -fsSL <https://download.docker.com/linux/ubuntu/gpg> | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg &&
+sudo chmod a+r /etc/apt/keyrings/docker.gpg &&
+echo \
+ "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+ "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |
+sudo tee /etc/apt/sources.list.d/docker.list >/dev/null &&
+sudo apt update -y &&
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin &&
+sudo usermod -aG docker $USER &&
+newgrp docker &&
+sudo systemctl enable docker
 {{< / highlight >}}
 
 ### IV. Thou Shalt be Web Monitored
@@ -134,17 +135,17 @@ sudo install -m 0755 -d /etc/apt/keyrings &&
 For this server, two different monitoring solutions are needed.
 
 1. `cockpit` - managing the host device & NAS file sharing
-    - we also install `cockpit-file-sharing` from 45Drives, which allows easy NAS setup from the cockpit webUI
+   - we also install `cockpit-file-sharing` from 45Drives, which allows easy NAS setup from the cockpit webUI
 1. `portainer` - a containerized application that allows the monitoring & deployment of other containerized applications
 
 {{< highlight bash >}}
 sudo mkdir /portainer_data &&
-  docker volume create portainer_data &&
-  docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/portainer_data portainer/portainer-ce:latest &&
-  sudo apt install -y cockpit cockpit-pcp &&
-  curl -LO <https://github.com/45Drives/cockpit-file-sharing/releases/download/v3.2.9/cockpit-file-sharing_3.2.9-2focal_all.deb> &&
-  sudo apt install -y ./cockpit-file-sharing_3.2.9-2focal_all.deb &&
-  rm ./cockpit-file-sharing_3.2.9-2focal_all.deb
+docker volume create portainer_data &&
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/portainer_data portainer/portainer-ce:latest &&
+sudo apt install -y cockpit cockpit-pcp &&
+curl -LO <https://github.com/45Drives/cockpit-file-sharing/releases/download/v3.2.9/cockpit-file-sharing_3.2.9-2focal_all.deb> &&
+sudo apt install -y ./cockpit-file-sharing_3.2.9-2focal_all.deb &&
+rm ./cockpit-file-sharing_3.2.9-2focal_all.deb
 {{< / highlight >}}
 
 ### V. Thou Shalt Not Break DNS
@@ -157,13 +158,13 @@ After hours of blood, sweat, and tears, I've arrived at a networking configurati
 
 {{< highlight bash >}}
 sudo echo "network:
-  version: 2
-  renderer: NetworkManager
-  ethernets:
-    $(ip -o -4 route show to default | awk '{print $5}'):
-      dhcp4: true
-      link-local: [ ipv4 ]" | sudo tee /etc/netplan/00-installer-config.yaml &&
-  sudo netplan apply
+version: 2
+renderer: NetworkManager
+ethernets:
+$(ip -o -4 route show to default | awk '{print $5}'):
+dhcp4: true
+link-local: [ ipv4 ]" | sudo tee /etc/netplan/00-installer-config.yaml &&
+sudo netplan apply
 {{< / highlight >}}
 
 Essentially what I am doing here is overwriting the default wired `netplan` with my own configuration. The renderer is set to `NetworkManager` to work with `cockpit`'s UI. The line `$(ip -o -4 route show to default | awk '{print $5}'):` is a nifty way to grab the current active ethernet connection and configure it (versus unconfigured or virtual interfaces). On my macbook, it evalutes to `ens9`, the name of the built-in ethernet interface. We enable `dhcp4`, since my home network only uses `ipv4`, not `ipv6`, and my router uses DHCP instead of static IPs (as do most home networks).[^5] [^6] [^7]
@@ -181,10 +182,10 @@ Now just configure the software we've installed & enjoy:
 - [Configure SAMBA on the server for Windows Clients](https://github.com/45Drives/cockpit-file-sharing#samba-management-tab)
 - [Configure NFS on the server for linux clients](https://github.com/45Drives/cockpit-file-sharing#nfs-management-tab)
 - Optional: Mount folder at boot on Linux client with the following command (requires `sudo apt install -y nfs-common` first):
-{{< highlight bash >}}
-sudo echo '<hostname>.local:/<nfs_folder>    /<local_mount>   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0' | sudo tee -a /etc/fstab &&
+  {{< highlight bash >}}
+  sudo echo '<hostname>.local:/<nfs_folder> /<local_mount> nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0' | sudo tee -a /etc/fstab &&
   sudo mount -a
-{{< / highlight >}}
+  {{< / highlight >}}
 
   - `<hostname>` - ex: nessie
   - `<nfs_folder>` - the name of the nfs folder created above

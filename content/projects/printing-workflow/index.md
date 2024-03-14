@@ -24,8 +24,8 @@ Okay so obviously 3d printing is not new. I've been aware of it for about 10 yea
 
 <a href='https://www.cnet.com/reviews/makerbot-replicator-review/'>
 
-  ![image](images/makerbot-plywood.webp "Your grandpa's 3d printer. Kiss the ring.")
-  
+![image](images/makerbot-plywood.webp "Your grandpa's 3d printer. Kiss the ring.")
+
 </a>
 
 ## The Problem with the King
@@ -158,12 +158,12 @@ Plus, since we're running a simple linux based machine, we can use the following
 
 And with Octoprint configured, we can setup [PrusaSlicer](https://www.prusa3d.com/page/prusaslicer_424/) with some useful defaults and send our processed g-code directly to Octoprint, giving us fully remote control. I recommend PrusaSlicer because it has a vast array of settings, as well as incredibly good documentation.
 
-![image](images/verbose-and-label.png "Some Octoprint plugins rely on these options to know when to execute. Additionally, the {print_preset} is always useful to have in the gcode file names.")
-![image](images/g-code-thumbnails.png "And these are just nice to have.")
+![image](images/verbose-and-label.png 'Some Octoprint plugins rely on these options to know when to execute. Additionally, the {print_preset} is always useful to have in the gcode file names.')
+![image](images/g-code-thumbnails.png 'And these are just nice to have.')
 
 And [here](https://help.prusa3d.com/article/sending-files-to-octoprint-duet_1663) is how we send files to Octoprint, **no more SD cards required**.
 
-![image](images/send-to-prusa.png "API Key & hostname.local are all we need!")
+![image](images/send-to-prusa.png 'API Key & hostname.local are all we need!')
 
 ### Level 3: Advanced Modifications
 
