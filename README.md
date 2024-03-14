@@ -1,4 +1,4 @@
-# Hi, I'm Ivy
+# Hi, I'm Ivy (likethevine)
 
 This is my github repo for my personal blog, [ivylikethevine.com](http://ivylikethevine.com), complete with continuous integration and deployment, staging & production environments, automatic file compression, and a variety of add-ons for rich content (such as [JupyterNotebook](https://jupyter.org/) integrations, equations, and diagrams).
 
@@ -32,3 +32,9 @@ hugo serve # development preview (drafts visible)
 hugo serve -e staging # staging preview (drafts hidden)
 hugo serve -e production # production preview (drafts hidden, giscus enabled)
 ```
+
+#### Resources
+
+https://learnxinyminutes.com/docs/markdown/
+
+https://learnxinyminutes.com/docs/toml/

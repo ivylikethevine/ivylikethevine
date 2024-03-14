@@ -1,6 +1,6 @@
 +++
 title = 'Microservices in the Homelab'
-date = '2024-02-16'
+date = '2024-03-11'
 subtitle = 'Explaining servarr & why it matters.'
 author = 'Ivy Duggan'
 draft = true
@@ -16,7 +16,6 @@ toc = true
 categories = []
 series = []
 +++
-
 
 Sonarr/Radarr/Lidarr/Readarr
 

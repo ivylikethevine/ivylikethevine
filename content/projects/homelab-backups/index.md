@@ -24,12 +24,13 @@ series = []
 # The Backups Speech
 
 Every discussion about file backups generally revolves around the same paradigm:
+
 > You need to have 3 copies of your data: the production data, a local copy, and an off-site backup.
 
 Similarly, when reading about home servers, there are lots of pieces of (good) advice that talk about the importance of redundancy at every level:
 
-* 'Fast and redundant storage, best results with SSD disks.' - [Proxmox Recommended Hardware](https://www.proxmox.com/en/proxmox-virtual-environment/requirements)
-* 'We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so.' - [TrueNas Minimum Hardware Requirements](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/)
+- 'Fast and redundant storage, best results with SSD disks.' - [Proxmox Recommended Hardware](https://www.proxmox.com/en/proxmox-virtual-environment/requirements)
+- 'We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so.' - [TrueNas Minimum Hardware Requirements](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/)
 
 But the reality of the situation is my laptop has one internal drive and I want more NAS storage as cheap as possible. This led me to research USB external storage.
 
@@ -90,8 +91,7 @@ Again, at home, I am the client and my server needs are not critical to my abili
 
 There are a myriad storage providers, and a myriad of backup solutions. Here is what I have found to work for my uses and be cost effective:
 
-[Duplicati](https://www.duplicati.com/) running inside a Portainer template from [this repo](https://github.com/Lissy93/portainer-templates)
-    - This docker image then mounts our data directory (`/mnt/sandisk/`), allowing it to access the data directory.
+[Duplicati](https://www.duplicati.com/) running inside a Portainer template from [this repo](https://github.com/Lissy93/portainer-templates) - This docker image then mounts our data directory (`/mnt/sandisk/`), allowing it to access the data directory.
 
 ![image](images/duplicati-mounts.png 'This is the portainer config for our volumes. The only one I have added is the `sandisk` one.')
 
@@ -99,27 +99,27 @@ There are a myriad storage providers, and a myriad of backup solutions. Here is 
 
 Configuration tips:
 
-* I prefer to create a separate Application Key for each folder that my NAS uploads to B2. This way, each folder has its own configuration and is slightly more portable. Most of the backup software will upload files to the cloud provider in a binary format (not readable without the backup software itself).
+- I prefer to create a separate Application Key for each folder that my NAS uploads to B2. This way, each folder has its own configuration and is slightly more portable. Most of the backup software will upload files to the cloud provider in a binary format (not readable without the backup software itself).
 
-* Make sure each Application Key only has access to a single bucket. Always keep permissions as minimal as possible, its just a good security practice.
+- Make sure each Application Key only has access to a single bucket. Always keep permissions as minimal as possible, its just a good security practice.
 
-* Encrypt your backups. It's built-in to most backup software, so why risk it?
+- Encrypt your backups. It's built-in to most backup software, so why risk it?
 
-* Check your backups! Backups that do not work are not backups at all. Restore a file, delete a file, modify a file, download a few gigabytes. Test, test, test!
+- Check your backups! Backups that do not work are not backups at all. Restore a file, delete a file, modify a file, download a few gigabytes. Test, test, test!
 
 ### Rule #4: Fail Gracefully
 
 USB drives are going to fail, so we need to design our system to fail non-destructively. We've already started to account for this with our new mount options above, which allows our system to continue operating if the USB drive is not found during boot, but there are a few other considerations:
 
 1. Nothing Critical
-    * Our system is designed with the ability for our USB drive to fail, but our software implementation also depends on us continuing this assumption. Like we already keep our OS on the built-in drive, we should keep all of our programs, software, docker images, etc. on our built-in drive.
-    * The USB drive should only store data files & folders.
+   - Our system is designed with the ability for our USB drive to fail, but our software implementation also depends on us continuing this assumption. Like we already keep our OS on the built-in drive, we should keep all of our programs, software, docker images, etc. on our built-in drive.
+   - The USB drive should only store data files & folders.
 1. Don't Break Remote
-    * If our USB drive is not found, it is possible that some backup software could error out and assume that the files were deleted, thus causing a mess of our backups.
-    * Always test your implementation for this oversight. (Even if the backup software handles this situation properly, adding in our docker environment could lead to weird & undocumented behaviour.)
-    * I personally tested this on my duplicati/docker instance, and my deployment properly errors and stops the backup process when it cannot mount our data directory.
+   - If our USB drive is not found, it is possible that some backup software could error out and assume that the files were deleted, thus causing a mess of our backups.
+   - Always test your implementation for this oversight. (Even if the backup software handles this situation properly, adding in our docker environment could lead to weird & undocumented behaviour.)
+   - I personally tested this on my duplicati/docker instance, and my deployment properly errors and stops the backup process when it cannot mount our data directory.
 1. Don't Break Local
-    * Our backup system and our software design account for failure, so our last step is to fail gracefully as a NAS. Just like how we used specific `fstab` options above, here are the important options for an NFS NAS (USB or not):
+   - Our backup system and our software design account for failure, so our last step is to fail gracefully as a NAS. Just like how we used specific `fstab` options above, here are the important options for an NFS NAS (USB or not):
 
 ```bash
 maccy.local:/mnt/sandisk   /mnt/maccy/sandisk   nfs rw,auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0

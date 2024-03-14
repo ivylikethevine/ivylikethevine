@@ -17,15 +17,16 @@ toc = true
 categories = []
 series = []
 +++
+
 <a href='https://www.ta-systems.com/system-categories/automated-assembly-lines/'>
 
-  ![image](images/assembly-line.jpg "We want to automate as much as possible! ")
-  
+![image](images/assembly-line.jpg 'We want to automate as much as possible! ')
+
 </a>
 
 # Sustainable Software
 
-Ok, so the title is Software Engineer or Software Developer, but writing code and building software is only part of the solution. The other half (or more) of the job is *designing software solutions for humans to interact with*. Software only is useful because **we humans** use it. Without us, the software is just some meaningless electricity in some far away warehouse. UI/UX design is important, but just as critical is **developer operations** (dev ops).
+Ok, so the title is Software Engineer or Software Developer, but writing code and building software is only part of the solution. The other half (or more) of the job is _designing software solutions for humans to interact with_. Software only is useful because **we humans** use it. Without us, the software is just some meaningless electricity in some far away warehouse. UI/UX design is important, but just as critical is **developer operations** (dev ops).
 
 Dev Ops
 : outlines a software development process and an organizational culture shift that speeds the delivery of higher quality software by automating and integrating the efforts of development and IT operations teams – two groups that traditionally practiced separately from each other, or in silos.[^1]
@@ -48,7 +49,7 @@ Here is my list of main dev ops goals. Some may seem obvious, but all of these a
 
 ## The Fallacy of Saving Time
 
-Dev Ops takes time to setup, but it is absolutely worth it. Here's a story from my days as a contractor. At one company, it took 2 developers at least 4 hours each to deploy our application (at a *generous* minimum). Here's how that math works out over just a single year:
+Dev Ops takes time to setup, but it is absolutely worth it. Here's a story from my days as a contractor. At one company, it took 2 developers at least 4 hours each to deploy our application (at a _generous_ minimum). Here's how that math works out over just a single year:
 
 {{< katex "devHours >= 2\frac{deployments}{month} *8\dfrac{devHours}{deployment}* 12\frac{months}{year}" />}}
 
@@ -91,7 +92,7 @@ gitGraph
     merge develop
 ```
 
-`main` (previously defaulted to `master`): this is our production code. Never work  directly from main. Never interact with main via CLI.
+`main` (previously defaulted to `master`): this is our production code. Never work directly from main. Never interact with main via CLI.
 
 `development`: this is our staging code. This is where we start new branches
 
@@ -99,7 +100,7 @@ gitGraph
 
 This is how we would setup a repository to follow basic git flow.
 
-``` bash
+```bash
 git config --global init.defaultBranch "main" # By default, git may still use `master`, so we set default to `main`.
 cd projectFolder
 git init
@@ -113,7 +114,7 @@ Now, we can work on `featureName` without impacting anything else. Additionally,
 
 Once our feature is added:
 
-``` bash
+```bash
 git add . # the '.' convention will add ALL modified files. Only modify files that you need to. git restore fileName will undo any changes.
 git commit -m "Added feature" # -m only allows inline commit messages. A commit is basically a checkpoint we can go back to later.
 git push
@@ -134,7 +135,7 @@ Luckily, Cloudflare has a pretty slick Github integration, so we can follow the 
 
 Github & Cloudflare pages host websites, but they do so using their own domains. Github uses a `.github.io` extension and Cloudflare uses a `.pages.dev extension`. We would obviously prefer our own custom domain, so what we have to do is change the DNS records for our site to point to the content deployed by our hosting platform. In Cloudflare, here is what my DNS settings look like for my website.
 
-![image](images/cloudflare-dns.png "Middle entry unrelated & redacted.")
+![image](images/cloudflare-dns.png 'Middle entry unrelated & redacted.')
 
 Our `CNAME` allow us to load the content of the `pages.dev`, but access it via our custom domain name. My domain name servers are with Cloudflare, which makes the setup very easy. If moving from Github Pages, make sure to remove the custom domain from the Github Pages site & to transfer name servers. We also redirect the `www` subdomain since it is still sometimes used, and we just want it to redirect to the same content anyways. We can also see that on our Workers/Pages configuration we have setup our custom domains.
 
@@ -146,7 +147,7 @@ Now, we have automatic deployments from our main branch, as well as automatic pr
 
 On the 'Workers & Pages' tab of Cloudflare, we can click on the details for our site, then head to "Settings", then "Builds & deployments". We can leave the top production branch alone, but here is my configuration for the preview deployments:
 
-![image](images/staging-site.png "Now only commits pushed/merged to development will have preview pages.")
+![image](images/staging-site.png 'Now only commits pushed/merged to development will have preview pages.')
 
 So now we only publish a live version of our `development` branch at `https://development.repoName.pages.dev`!
 
@@ -163,7 +164,7 @@ Having two environments now means we need to have configurations for each. Hugo 
 
 Hugo uses the `_default` config, but it can apply the `production` config if passed a flag during deployment. Luckily, since Cloudflare Pages supports Hugo out of the box, we simply need to set a few environment variables in the GUI. Back at the settings for our website, we can define the following flags. These will be passed to the `hugo build` command when we deploy:
 
-![image](images/environment-variables.png "Simple configuration, huh.")
+![image](images/environment-variables.png 'Simple configuration, huh.')
 
 **Note**: Environment variables are also useful for securing data that absolutely should not be in the main git repository, such as SSH/application keys.
 
@@ -171,11 +172,11 @@ Hugo uses the `_default` config, but it can apply the `production` config if pas
 
 Now that we have our SVM and our automatic deployments, lets talk workflow. Github (and other SVMs) provide many automated checks and systems to prevent the dreaded "new dev destroys prod" disaster. [Branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) are super simple and useful. Common rules include preventing direct pushes to `main`, requiring pull requests to be approved by others before being merged, and tons of more complex versions.
 
-![image](images/pull-request-check.png "Additionally, integrations (such as the Cloudflare Pages one), will actually show if the staging deployment works on the PR, providing even more feedback and warning if something is awry.")
+![image](images/pull-request-check.png 'Additionally, integrations (such as the Cloudflare Pages one), will actually show if the staging deployment works on the PR, providing even more feedback and warning if something is awry.')
 
-![image](images/branch-protection.png "And this branch protection rule option will not allow deployments with failed Cloudflare statuses on their Pull Requests.")
+![image](images/branch-protection.png 'And this branch protection rule option will not allow deployments with failed Cloudflare statuses on their Pull Requests.')
 
- Here are the basic steps to working within a system like this:
+Here are the basic steps to working within a system like this:
 
 1. Create a `featureName` branch off of `development`.
 1. Add a feature/bugfix/etc, modifying as few files as possible.
@@ -187,18 +188,18 @@ Now that we have our SVM and our automatic deployments, lets talk workflow. Gith
 
 {{< mermaid >}}
 gitGraph
-    commit
-    branch develop
-    checkout develop
-    commit
-    branch featureName
-    checkout featureName
-    commit
-    checkout develop
-    merge featureName
-    checkout main
-    merge develop
-    checkout develop
+commit
+branch develop
+checkout develop
+commit
+branch featureName
+checkout featureName
+commit
+checkout develop
+merge featureName
+checkout main
+merge develop
+checkout develop
 {{< /mermaid >}}
 
 ### Reap the Benefits
