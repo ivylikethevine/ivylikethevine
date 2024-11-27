@@ -15,18 +15,13 @@ header_img = ''
 description = ''
 toc = true
 categories = []
-series = []
 +++
 
 # Impetus
 
 Okay so obviously 3d printing is not new. I've been aware of it for about 10 years or so, and I remember vividly seeing so many of these plywood boxes in every makerspace & home workshop in the Las Vegas tech scene:
 
-<a href='https://www.cnet.com/reviews/makerbot-replicator-review/'>
-
-![image](images/makerbot-plywood.webp "Your grandpa's 3d printer. Kiss the ring.")
-
-</a>
+[![Little Old Me](images/makerbot-plywood.webp?fit=500x500#center "Your grandpa's 3d printer. Kiss the ring.")](https://www.cnet.com/reviews/makerbot-replicator-review/)
 
 ## The Problem with the King
 
@@ -46,7 +41,7 @@ And even then, results were not that great. Filament composition was poor, the s
 
 Until Amazon showed me an [Ender 3 v2 Neo](https://store.creality.com/products/ender-3-v2-neo-3d-printer) for under 300$ shipped to my apartment in 2 days and I just bought it. Conspicuous consurism got me.
 
-![image](images/ender3.webp 'A handsome young printer.')
+![image](images/ender3.webp?fit=500x500#center 'A handsome young printer.')
 
 Why the Ender 3 v2 Neo? It had a few quality of life improvements over other Ender 3 priced printers:
 
@@ -116,9 +111,9 @@ I'd recommend selecting an SBC if possible. While most of the octoprint configur
 #### Webcam selection
 
 On many SBC's, there is often a CSI camera connector(s). These use this flat flex ribbon cable + Zero Force (ZF) connectors (quick tip: there are many other names ffor these cables/connectors):
-![image](images/rpicam.jpg 'CSI camera & cable.')
+![image](images/rpicam.jpg?fit=500x500#center 'CSI camera & cable.')
 
-![image](images/rpi3-picam.jpg 'ZF CSI connector on an RPI3 ')
+![image](images/rpi3-picam.jpg?fit=500x500#center 'ZF CSI connector on an RPI3 ')
 
 While these are useful and plentifulm, I would recommend a USB webcam over these if you don't already have one or more. It is much easier to disconnect USB than a CSI connector, which can be a hassle when working on the printer.
 
@@ -134,7 +129,7 @@ For my build, I ended up with the following 3d prints (after many other options 
 
 Another classic octoprint gotcha - make sure to tape over the +5v pin on the USB cable from the SBC to the printer. Otherwise weird power things can occur. Kaptan tape or electrical tape are both solid options. See [this great explanation](https://community.octoprint.org/t/put-tape-on-the-5v-pin-why-and-how/13574).
 
-![image](images/usb-5v-tape.jpeg 'Example of electrical tape on the +5v.')
+![image](images/usb-5v-tape.jpeg?fit=500x500#center 'Example of electrical tape on the +5v.')
 
 A good quality power supply is essential! save yourself the headache and buy one that specifically says its rating, such as [this](https://www.amazon.com/gp/product/B07TYQRXTK). A vast majority of SBC issues I've encountered are due to power supply weirdness.
 
@@ -158,12 +153,13 @@ Plus, since we're running a simple linux based machine, we can use the following
 
 And with Octoprint configured, we can setup [PrusaSlicer](https://www.prusa3d.com/page/prusaslicer_424/) with some useful defaults and send our processed g-code directly to Octoprint, giving us fully remote control. I recommend PrusaSlicer because it has a vast array of settings, as well as incredibly good documentation.
 
-![image](images/verbose-and-label.png 'Some Octoprint plugins rely on these options to know when to execute. Additionally, the {print_preset} is always useful to have in the gcode file names.')
-![image](images/g-code-thumbnails.png 'And these are just nice to have.')
+![image](images/verbose-and-label.png?width=1000#center 'Some Octoprint plugins rely on these options to know when to execute. Additionally, the {print_preset} is always useful to have in the gcode file names.')
+
+![image](images/g-code-thumbnails.png?width=700#center 'And these are just nice to have.')
 
 And [here](https://help.prusa3d.com/article/sending-files-to-octoprint-duet_1663) is how we send files to Octoprint, **no more SD cards required**.
 
-![image](images/send-to-prusa.png 'API Key & hostname.local are all we need!')
+![image](images/send-to-prusa.png?fit=500x500#center 'API Key & hostname.local are all we need!')
 
 ### Level 3: Advanced Modifications
 

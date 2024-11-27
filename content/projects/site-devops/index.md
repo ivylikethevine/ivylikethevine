@@ -1,9 +1,11 @@
 +++
-title = 'Dev Ops are not Optional.'
+title = 'Dev Ops are not Optional'
+slug = 'Dev Ops are not Optional'
 date = '2023-10-15'
+description = 'Deploying a modern website with SVM/CI/CD.'
 subtitle = 'Deploying a modern website with SVM/CI/CD.'
-author = 'Ivy Duggan'
 draft = false
+toc = true
 tags = [
     'CI/CD',
     'hugo',
@@ -11,27 +13,19 @@ tags = [
     'github',
     'dev ops',
 ]
-header_img = ''
-description = ''
-toc = true
-categories = []
-series = []
+categories = ['dev-ops', 'git']
 +++
 
-<a href='https://www.ta-systems.com/system-categories/automated-assembly-lines/'>
-
-![image](images/assembly-line.jpg 'We want to automate as much as possible! ')
-
-</a>
+[![Automated Assembly Machines](images/assembly-line.jpg?width=750#center "We want to automate as much as possible!")](https://www.ta-systems.com/system-categories/automated-assembly-lines/)
 
 # Sustainable Software
 
 Ok, so the title is Software Engineer or Software Developer, but writing code and building software is only part of the solution. The other half (or more) of the job is _designing software solutions for humans to interact with_. Software only is useful because **we humans** use it. Without us, the software is just some meaningless electricity in some far away warehouse. UI/UX design is important, but just as critical is **developer operations** (dev ops).
 
-Dev Ops
-: outlines a software development process and an organizational culture shift that speeds the delivery of higher quality software by automating and integrating the efforts of development and IT operations teams – two groups that traditionally practiced separately from each other, or in silos.[^1]
+## Dev Ops
+- outlines a software development process and an organizational culture shift that speeds the delivery of higher quality software by automating and integrating the efforts of development and IT operations teams – two groups that traditionally practiced separately from each other, or in silos.[^1]
 
-## What as Dev Ops?
+### What is Dev Ops?
 
 Don't get me wrong, large scale production deployments can have very complex dev ops! However, even for a single developer, the tools and systems required are very easy, often free, and can massively improve productivity.
 
@@ -51,25 +45,25 @@ Here is my list of main dev ops goals. Some may seem obvious, but all of these a
 
 Dev Ops takes time to setup, but it is absolutely worth it. Here's a story from my days as a contractor. At one company, it took 2 developers at least 4 hours each to deploy our application (at a _generous_ minimum). Here's how that math works out over just a single year:
 
-{{< katex "devHours >= 2\frac{deployments}{month} *8\dfrac{devHours}{deployment}* 12\frac{months}{year}" />}}
+{{< katex "devHours \gtrapprox 2\frac{deployments}{month} *8\dfrac{devHours}{deployment}* 12\frac{months}{year}" />}}
 
 {{< katex "devHours \gtrapprox 192" />}}
 
 That's over a month of dev hours lost per year! Does any dev want to waste a month every single year running the same deployments? However, this is just the tip of the iceberg. If your system takes a day to patch, what happens when a major exploit is found in production?
 
-![image](images/spongebob-panic.gif "This is what happens. I've been in the room.")
+![image](images/spongebob-panic.gif?height=400#center "This is what happens. I've been in the room.")
 
 This is a single example of poor dev ops, but time is money and similar math applies to dozens of scenarios.
 
-### So Let's Do It Right
+## So Let's Do It Right
 
-## i. Source Version Mangement (svm/git)
+### i. Source Version Mangement (svm/git)
 
 Talking to my college friends, it seems a lot of CS majors do not learn Source Version Management (or SVM). Basically, we want a history of all of our code changes, and the ability to go back to specific checkpoints and fix things that break. There are a few tools for this, but I use `git` as the SVM and github.com to hold my repositories (as well as provide other dev ops tools, discussed later).
 
 `git` is very powerful and very complex, but we only need a few commands to set up a useable CI/CD environment. This graph is a simple version of "git flow", or a semi-standard way to use github branches.
 
-```mermaid
+{{< mermaid >}}
 gitGraph
     commit
     branch develop
@@ -90,7 +84,8 @@ gitGraph
     merge fixBug
     checkout main
     merge develop
-```
+{{< / mermaid >}}
+
 
 `main` (previously defaulted to `master`): this is our production code. Never work directly from main. Never interact with main via CLI.
 
@@ -100,7 +95,7 @@ gitGraph
 
 This is how we would setup a repository to follow basic git flow.
 
-```bash
+{{< highlight bash >}}
 git config --global init.defaultBranch "main" # By default, git may still use `master`, so we set default to `main`.
 cd projectFolder
 git init
@@ -108,22 +103,22 @@ git push -u origin main # here we setup the remote copy of our repo
 git checkout -b development # -b is only needed when creating a branch
 git push
 git checkout -b featureName
-```
+{{< / highlight >}}
 
 Now, we can work on `featureName` without impacting anything else. Additionally, other devs on our team can branch from `development` and any merge conflicts will be dealt with on the `development` branch before merging into `main`.
 
 Once our feature is added:
 
-```bash
+{{< highlight bash >}}
 git add . # the '.' convention will add ALL modified files. Only modify files that you need to. git restore fileName will undo any changes.
 git commit -m "Added feature" # -m only allows inline commit messages. A commit is basically a checkpoint we can go back to later.
 git push
 git checkout develop
-```
+{{< / highlight >}}
 
 Now, we could immediately create a pull request from `development` into `production`, but it is preferable to have a staging or development site. A staging site is a live site that usually only devs/testers can access. So let's deploy a staging site!
 
-## ii. Continuous Integration and Continuous Deployment (CI/CD)
+### ii. Continuous Integration and Continuous Deployment (CI/CD)
 
 My website is made with [Hugo](https://gohugo.io/), a static site generator written in Go. It has a theme called [Puppet](https://themes.gohugo.io/themes/hugo-theme-puppet/), and I have it deployed to a custom domain (ivylikethevine.com) Originally I had used [Github Pages](https://pages.github.com/) alongside [Jekyll](https://jekyllrb.com/), but found that the setup for a staging & production environment was tedious.[^3]
 
@@ -131,27 +126,27 @@ Eventually, I switched to [Cloudflare Pages](https://pages.Cloudflare.com/), whi
 
 Luckily, Cloudflare has a pretty slick Github integration, so we can follow the instructions [here](https://developers.Cloudflare.com/pages/platform/git-integration). Note: only allow the minimum required permissions for a service integration. Cloudflare Integration should only have access to the repository(ies) that are deployed to Cloudflare Pages.
 
-### Custom Domains & DNS Pains
+#### Custom Domains & DNS Pains
 
 Github & Cloudflare pages host websites, but they do so using their own domains. Github uses a `.github.io` extension and Cloudflare uses a `.pages.dev extension`. We would obviously prefer our own custom domain, so what we have to do is change the DNS records for our site to point to the content deployed by our hosting platform. In Cloudflare, here is what my DNS settings look like for my website.
 
-![image](images/cloudflare-dns.png 'Middle entry unrelated & redacted.')
+![image](images/cloudflare-dns.png?width=750#center "Middle entry unrelated & redacted.")
 
 Our `CNAME` allow us to load the content of the `pages.dev`, but access it via our custom domain name. My domain name servers are with Cloudflare, which makes the setup very easy. If moving from Github Pages, make sure to remove the custom domain from the Github Pages site & to transfer name servers. We also redirect the `www` subdomain since it is still sometimes used, and we just want it to redirect to the same content anyways. We can also see that on our Workers/Pages configuration we have setup our custom domains.
 
-![image](images/custom-domains.png "Cloudflare 'Workers & Pages' tab.")
+![image](images/custom-domains.png?width=500#center "Cloudflare 'Workers & Pages' tab.")
 
-### Staging Environment
+#### Staging Environment
 
 Now, we have automatic deployments from our main branch, as well as automatic preview branches! We could be done, but I prefer to just have one staging site, at least for now. In future, I will cover using Cloudflare Zero Trust to password protect all staging sites.
 
 On the 'Workers & Pages' tab of Cloudflare, we can click on the details for our site, then head to "Settings", then "Builds & deployments". We can leave the top production branch alone, but here is my configuration for the preview deployments:
 
-![image](images/staging-site.png 'Now only commits pushed/merged to development will have preview pages.')
+![image](images/staging-site.png?width=750#center "Now only commits pushed/merged to development will have preview pages.")
 
 So now we only publish a live version of our `development` branch at `https://development.repoName.pages.dev`!
 
-### Two Environments, both alike in config
+#### Two Environments, both alike in config
 
 Having two environments now means we need to have configurations for each. Hugo allows multiple configs, and we only need two:
 
@@ -164,17 +159,17 @@ Having two environments now means we need to have configurations for each. Hugo 
 
 Hugo uses the `_default` config, but it can apply the `production` config if passed a flag during deployment. Luckily, since Cloudflare Pages supports Hugo out of the box, we simply need to set a few environment variables in the GUI. Back at the settings for our website, we can define the following flags. These will be passed to the `hugo build` command when we deploy:
 
-![image](images/environment-variables.png 'Simple configuration, huh.')
+![image](images/environment-variables.png?width=750#center "Simple configuration, huh.")
 
 **Note**: Environment variables are also useful for securing data that absolutely should not be in the main git repository, such as SSH/application keys.
 
-## iii. Prevent Disaster with Automatic Checks
+### iii. Prevent Disaster with Automatic Checks
 
 Now that we have our SVM and our automatic deployments, lets talk workflow. Github (and other SVMs) provide many automated checks and systems to prevent the dreaded "new dev destroys prod" disaster. [Branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) are super simple and useful. Common rules include preventing direct pushes to `main`, requiring pull requests to be approved by others before being merged, and tons of more complex versions.
 
-![image](images/pull-request-check.png 'Additionally, integrations (such as the Cloudflare Pages one), will actually show if the staging deployment works on the PR, providing even more feedback and warning if something is awry.')
+![image](images/pull-request-check.png?width=750#center "Additionally, integrations (such as the Cloudflare Pages one), will actually show if the staging deployment works on the PR, providing even more feedback and warning if something is awry.")
 
-![image](images/branch-protection.png 'And this branch protection rule option will not allow deployments with failed Cloudflare statuses on their Pull Requests.')
+![image](images/branch-protection.png?width=750#center "And this branch protection rule option will not allow deployments with failed Cloudflare statuses on their Pull Requests.")
 
 Here are the basic steps to working within a system like this:
 
@@ -227,6 +222,9 @@ The initial setup takes time, for certain, but now we will gain efficiency almos
 #### Footnotes
 
 [^1]: <https://www.ibm.com/topics/devops>
+
 [^2]: Slight caveat here, some systems require lots of permissions/database access, which could increase this time, but the repository setup should be quick.
+
 [^3]: If you are migrating github -> Cloudflare with a custom domain, I recommend changing the domain registrar to Cloudflare for easier integration. Additionally, if your repo followed the `username.github.io` nomenclature, rename it before you deploy to Cloudflare, otherwise your staging site will end up as development.<username>-github-io.pages.dev.
+
 [^4]: Stay tuned, I am working on an article about using Cloudflare Zero Trust to safely access self hosted services without network configuration.

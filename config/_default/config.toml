@@ -1,96 +1,148 @@
 baseURL = 'https://localhost:1313/'
-languageCode = 'en-us'
 title = 'ivy (local dev)'
-buildDrafts = true                  # only on local, to preview
-
-copyright = ''
-paginate = 10
+languageCode = 'en-us'
 defaultContentLanguage = 'en'
-
+pagination.pagerSize = 10
 cleanDestinationDir = true
 hasCJKLanguage = true
 enableInlineShortcodes = true
 enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = true
+ignoreLogs = ['warning-goldmark-raw-html']
 
-# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
-# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
-ignoreErrors = ['error-remote-getjson']
+theme = 'hello-friend-ng'
+buildDrafts = true        # only on local, to preview
+buildFuture = true
+buildExpired = true
+
+PygmentsCodeFences = false
+PygmentsStyle = 'monokai'
 
 [module]
 [module.hugoVersion]
 extended = true
-min = '0.119.0'
+min = '0.130.0'
 
 # Ordering here matters, higher imports in this file have authority
 [[module.imports]]
+path = 'github.com/hugomods/katex'
+[[module.imports]]
 path = 'github.com/hugomods/images'
 [[module.imports]]
-path = 'github.com/hugomods/katex'
+path = 'github.com/hugomods/shortcodes'
 [[module.imports]]
 path = 'github.com/hugomods/mermaid'
 [[module.imports]]
-path = 'github.com/roninro/hugo-theme-puppet'
-
-[outputs]
-home = ['HTML', 'JSON', 'RSS']
-
-# prevent build failures when using Hugo's template _internal/opengraph.html 
-[taxonomies]
-category = 'categories'
-tag = 'tags'
-series = 'series'
+path = 'github.com/hugomods/icons/vendors/font-awesome'
+[[module.imports]]
+path = 'github.com/rhazdon/hugo-theme-hello-friend-ng'
 
 [markup]
 [markup.highlight]
-lineNos = false
-style = 'dracula'
+style = 'monokai'
 tabWidth = 2
+guessSyntax = true
+wrap = true
+highlightWrap = true
+lineNos = false
+lineNumbersInTable = false
+anchorLineNos = true
+codeFences = true
+hl_inline = false
+
+# [markup.tableOfContents]
+# endLevel = 3
+# ordered = false
+# startLevel = 2
 
 [markup.goldmark.renderer]
 unsafe = true
 
 [menu]
 [[menu.main]]
-identifier = 'poli-statement'
-name = 'beliefs'
-url = '/poli-statement/'
-weight = -100
+name = 'projects'
+url = '/projects/'
+weight = 1
+
 [[menu.main]]
-identifier = 'resume'
 name = 'resume'
 url = '/resume/'
-weight = -50
+weight = 2
+
 [[menu.main]]
-identifier = 'blog'
-name = 'blog'
-url = '/projects/'
-weight = 0
+name = 'beliefs'
+url = '/beliefs/'
+weight = 3
+
 [[menu.main]]
-identifier = 'saffron'
-name = 'saffron wiki'
-url = 'https://ivylikethevine.github.io/saffron/#/'
-weight = 20
-# [[menu.main]]
-# identifier = 'estimatorrr'
-# name = 'estimatorrr'
-# url = 'https://estimatorrr.ivylikethevine.com'
-# weight = 20
+name = 'links'
+url = '/links/'
+weight = 4
+
+[taxonomies]
+tag = 'tags'
+category = 'categories'
 
 [params]
+gitUrl = 'https://github.com/ivylikethevine/ivylikethevine/commit/'
+dateform = 'Jan 2, 2006'
+dateformShort = 'Jan 2'
+dateformNum = 'Jan 2, 2006'
+dateformNumTime = '15:04 Jan 2, 2006'
+homeSubtitle = 'Documenting my Homelab, 3D printing, and Software Development projects.'
 description = 'Documenting my Homelab, 3D printing, and Software Development projects.'
-keywords = 'blog,developer,personal'
-img_home = '/img/header-miata.webp'
+keywords = 'blog, developer, personal'
+backgroundImage = '/img/header-miata.webp'
+enableSharingButtons = true
+enableThemeToggle = false
 
-[params.sidebar]
-enable = true
-bio = 'Long time tech enthusiast, recent UCSD Cognitive Science graduate.'
+[params.emgithub]
+border = false
+branch = 'main'
+copy_button = true
+endpoint = 'https://emgithub.com/embed-v2.js'
+file_meta = false
+full_path = false
+js_delivr = false
+line_numbers = false
+style = 'monokai'
+type = 'markdown'
 
-[params.social]
-github = 'ivylikethevine'
-linkedin = 'ivylikethevine'
-medium = '@ivylikethevine'
+[[params.social]]
+name = 'github'
+url = 'https://github.com/ivylikethevine'
 
-[params.mermaid]
-js_url = 'https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs'
+[[params.social]]
+name = 'medium'
+url = 'https://medium.com/@ivylikethevine'
+
+[[params.social]]
+name = 'linkedin'
+url = 'https://linkedin.com/in/ivylikethevine'
+
+[params.author]
+name = 'Ivy Duggan'
+
+[params.footer]
+topText = ['Made with &#10084 by Ivy Duggan']
+
+[params.hugomods]
+[params.hugomods.images]
+figure_class_name = 'center'
+figure_caption_class_name = 'center'
+
+[params.logo]
+logoMark = '>'
+logoText = 'cd /ivy/'
+logoHomeLink = '/'
+logoCursorColor = '#e7ed3e'
+logoCursorAnimate = '2s'
+logoCursorPathname = true
+
+# [params.portrait]
+#   path     = '/img/image.jpg'
+#   alt      = 'Portrait'
+#   maxWidth = '50px'
+# Colors for favicons
+#
