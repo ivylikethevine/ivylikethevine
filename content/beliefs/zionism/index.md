@@ -1,17 +1,12 @@
 +++
 title = 'On Zionism'
-description = ''
-subtitle = 'A paper I wrote in 2022 for UCSD history.'
-author = 'Ivy Duggan'
+slug = 'On Zionism'
 date = '2023-11-30'
-tags = [
-    'op-ed',
-]
-comment = false
-header_img = ''
+description = 'A paper I wrote in 2022 for UCSD history.'
+subtitle = 'A paper I wrote in 2022 for UCSD history.'
 toc = true
-categories = []
-series = []
+tags = ['op-ed']
+categories = ['politics']
 +++
 
 # Is Zionism Inherently Colonial?

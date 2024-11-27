@@ -1,15 +1,14 @@
 +++
 title = 'An Entire Makerspace for $500USD'
+slug = ''
 date = '3000-10-10'
 author = 'Ivy Duggan'
-draft = true
-tags = [
-]
-header_img = ''
 description = ''
+subtitle = ''
+draft = true
 toc = true
+tags = []
 categories = []
-series = []
 +++
 
 3d printer

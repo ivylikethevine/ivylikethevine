@@ -1,9 +1,11 @@
 +++
 title = 'Current Homelab Hardware'
+slug = 'Current Homelab Hardware'
 date = '2023-12-09'
 subtitle = 'The janky hardware I use.'
-author = 'Ivy Duggan'
+description = 'The janky hardware I use.'
 draft = false
+toc = true
 tags = [
     'dev ops',
     'homelab',
@@ -13,11 +15,7 @@ tags = [
     'raspberry pi',
     'saffron',
 ]
-header_img = ''
-description = ''
-toc = true
 categories = ['saffron']
-series = []
 +++
 
 # Rolecall
@@ -29,7 +27,9 @@ Part of the modus operandi of my work in the homelab space is to re-use old hard
 
 As such, here's the current information on my homelab hardware, none of which is very specialized or powerful.
 
-## 2024 Update: Swervy, the Node 202 Build - Stable [Saffron](https://github.com/ivylikethevine/saffron) Host
+## 2024 Update: Swervy, the Node 202 Build
+
+Role: Stable [Saffron](https://github.com/ivylikethevine/saffron) Host
 
 - [PcPartPicker](https://pcpartpicker.com/list/kF8HQP)
 - [Intel Core i3-12100](https://www.intel.com/content/www/us/en/products/sku/134584/intel-core-i312100-processor-12m-cache-up-to-4-30-ghz/specifications.html) - 4 cores + hyperthreading, 3.3-4.3Ghz, Intel UHD 730
@@ -49,7 +49,9 @@ As such, here's the current information on my homelab hardware, none of which is
 
 \*\*: Repurposed from other computers
 
-## Maccy, the 2015 Macbook Pro - Experimental [Saffron](https://github.com/ivylikethevine/saffron) Host
+## Maccy, the 2015 Macbook Pro
+
+Role:  Experimental [Saffron](https://github.com/ivylikethevine/saffron) Host
 
 - [Intel Core i5-5257U CPU @ 2.70GHz](https://www.intel.com/content/www/us/en/products/sku/53450/intel-core-i52430m-processor-3m-cache-up-to-3-00-ghz/specifications.html): 2 cores + hyperthreading, 2.7-3.1Ghz
 - 2 x 4GB DDR3 1867MT/s RAM
