@@ -1,5 +1,6 @@
 +++
 title = 'Saffron - (S)erver (A)s a (F)ile (F)older (R)unning (O)n (N)etwork'
+slug =  'Saffron - (S)erver (A)s a (F)ile (F)older (R)unning (O)n (N)etwork'
 date = '2024-02-10'
 subtitle = 'Distributing a docker compose system via git.'
 author = 'Ivy Duggan'
@@ -10,26 +11,54 @@ tags = [
   'git',
   'homelab',
   'workflow',
-  'saffron'
 ]
 header_img = ''
-description = ''
+description = 'Distributing a docker compose system via git.'
 toc = true
-categories = ['saffron']
-series = []
+categories = ['saffron', 'docker', 'docker compose', 'git']
 +++
 
-![image](images/dashboard.png 'My saffron dashboard')
+![Dashboard](images/dashboard.png?width=750#center "My saffron dashboard")
 
-## [Saffron](https://github.com/ivylikethevine/saffron) is a docker compose implementation of a server deployable via static files, managed as a git repository
+# **Saffron** is a docker compose based homelab
 
-![GitHub repo size](https://img.shields.io/github/repo-size/ivylikethevine/saffron) ![GitHub last commit](https://img.shields.io/github/last-commit/ivylikethevine/saffron) ![GitHub Repo stars](https://img.shields.io/github/stars/ivylikethevine/saffron) ![GitHub forks](https://img.shields.io/github/forks/ivylikethevine/saffron) ![GitHub License](https://img.shields.io/github/license/ivylikethevine/saffron)
+It is deployable via static files, and managed as a git repository: *[Public Git Repository](https://github.com/ivylikethevine/saffron)*
+
+<table>
+<tr>
+<td style="border: none">
+
+![GitHub repo size](https://img.shields.io/github/repo-size/ivylikethevine/saffron)
+
+</td>
+<td style="border: none">
+
+![GitHub last commit](https://img.shields.io/github/last-commit/ivylikethevine/saffron)
+
+</td>
+<td style="border: none">
+
+![GitHub Repo stars](https://img.shields.io/github/stars/ivylikethevine/saffron)
+
+</td>
+<td style="border: none">
+
+![GitHub forks](https://img.shields.io/github/forks/ivylikethevine/saffron)
+
+</td>
+<td style="border: none">
+
+![GitHub License](https://img.shields.io/github/license/ivylikethevine/saffron)
+
+</td>
+</tr>
+</table>
 
 Ever since my last <a href='/projects/homelab-design-v1'>homelab design post</a>, I have been trying to find a workflow that takes better advantage of docker compose based services. After literal months of trying various versions of container management systems, performing unholy command line shenanigans, and bashing my head into my keyboard, I have settled on `saffron`, a simple, static folder structure with docker compose files & leveraging git SVM, running a modern web interface for easy configuration & modification.
 
-## And I am releasing it with all of my preconfigured docker compose services: [Saffron](https://github.com/ivylikethevine/saffron)
+## And I am releasing it with all of my preconfigured docker compose services!
 
-## Documentation is on the [wiki](https://ivylikethevine.github.io/saffron/#/)!
+Documentation is on the [wiki](https://ivylikethevine.github.io/saffron/#/)!
 
 ### Features
 
@@ -39,36 +68,26 @@ Ever since my last <a href='/projects/homelab-design-v1'>homelab design post</a>
 - Automated backup to cloud storage.
 - Smart home automation & integration.
 - Network speedtests + hardware monitoring.
-- Minecraft server hosting.
-- PXE environment for OS booting on other nodes.
 - Zero DNS or networking configuration outside of docker.
-
-#### Features (Under Development)
-
-1. Automatic traefik routing of containers using docker integration.
-1. Netdata streaming between nodes.
-1. Dockge multi-node deployment support.
-1. Git submodules/subtrees for additional services.
-1. SSL certs
 
 ##### To deploy
 
 Requires: git, docker, docker compose
 
-```bash
+{{< highlight bash>}}
 # Grab saffron
 git clone git@github.com:ivylikethevine/saffron.git
 cd saffron
 
 # Create file paths with correct permissions & start dockge
 ./install-saffron.sh
-```
+{{< / highlight >}}
 
 ### Why Docker? Why Compose?
 
-```yaml
+{{< highlight yaml>}}
 # This compose file defines netdata, a Web UI for hardware monitoring.
-version: '3'
+version: "3"
 services:
   netdata:
     image: netdata/netdata
@@ -94,7 +113,7 @@ services:
       - NETDATA_EXTRA_DEB_PACKAGES=lm_sensors
 networks: {}
 # This is all we need to deploy an entire service
-```
+{{< / highlight >}}
 
 Containers are great for a homelab because, like their physical counterparts, they are repositionable and movable. Servers are a pain because configuration is tedious and complicated, but containers let us use someone else's configuration.
 
@@ -104,17 +123,17 @@ Compose takes that further, allowing us to statically define services with confi
 
 There are exisitng solutions for this problemspace, namely [portainer](https://www.portainer.io/) and [yacht](https://github.com/SelfhostedPro/Yacht). I've used both of these, but my primary issue with them for the simple homelab use-case is that the user does not maintain full control of the docker compose files. These solutions add a level of complexity on top of compose files, allowing (supposedly) one-click templates, complex networking, and many features that are no doubt useful in some scenario.
 
-![image](images/portainer.png "Portainer's Web UI")
+![image](images/portainer.png?width=750#center "Portainer's Web UI")
 
 However, the homelab is a space where we need to maximize our compatibility and searchability. Portainer/yacht exist as supersets of docker compose, so if we can base our system on the lower level technology, we have more compability with the wealth of knowledge already on the internet. The level of tech-saviness required to grab someone else's compose file is about as simple as copy/pasting an emoji on a laptop.
 
-![image](images/yacht.png "Yacht's Web UI")
+![image](images/yacht.png?width=750#center "Yacht's Web UI")
 
 Docker compose also allows us the ability to reconfigure our homelab dynamically. It is easy to run multiple different types or configurations of containers, test them for a while, then stop & remove any eliminated contenders.
 
 #### Dockge
 
-![image](images/dockge.png 'Dockge Web UI')
+![image](images/dockge.png?width=750#center "Dockge Web UI")
 
 In comes [Dockge](https://github.com/louislam/dockge), a very nice tool that allows us to leverage the power of docker compose with very minimal difference from using a command line interface (CLI), which is (let's be real here) unbearable UI/UX for 99% of people. Instead of running its own templating system on top of docker compose, it is a simple Web UI to edit our compose files, stop, start, and edit networking & environment variables. There are some downsides when compared to editing `saffron` directly on the host device inside of a code editor (as I do on swervy, my new homelab node), but with some slight workarounds, it is much easier to diagnose issues and find solutions using docker compose & dockge than portainer or yacht in my experience.
 
@@ -132,7 +151,7 @@ Additionally, dockge allows us to create an entire git managed repository that h
 
 Git allows us to track our changes, and restore working versions when things (eventually) go wrong. Our `.env` files are not stored in git, so we can (mostly) safely keep personal directory pathings, vpn credentials, and other secrets out of SVM/git.
 
-```bash
+{{< highlight bash >}}
 git commit -m "initial working version"
 git checkout -b changeMediaServer # trying out new client
 git commit -m "new client"
@@ -140,9 +159,10 @@ git commit -m "hot fix"
 git stash # new client isn't satisfactory, return to previous
 git checkout main # back to functional
 git commit -m "different change"
-```
+{{< / highlight >}}
 
-```mermaid
+
+{{< mermaid >}}
 gitGraph
     commit
     branch changeMediaServer
@@ -152,7 +172,7 @@ gitGraph
     commit
     checkout main
     commit
-```
+{{< / mermaid >}}
 
 ##### Planned Features
 

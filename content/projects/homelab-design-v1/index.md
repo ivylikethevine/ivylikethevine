@@ -1,9 +1,11 @@
 +++
 title = 'Laptop Homelab in 5 Commands'
+slug = 'Laptop Homelab in 5 Commands'
 date = '2023-10-12'
 subtitle = 'A quick & simple NAS/server from my old laptop.'
-author = 'Ivy Duggan'
+description = 'A quick & simple NAS/server from my old laptop.'
 draft = false
+toc = true
 tags = [
     'linux',
     '3d-printing',
@@ -13,18 +15,10 @@ tags = [
     'homelab',
     'nas'
 ]
-header_img = ''
-description = ''
-toc = true
-categories = []
-series = []
+categories = ['homelab', 'docker', 'dev-ops']
 +++
 
-<a href='https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start'>
-
-![image](images/macbook-panera.webp 'Back when I developed on my Macbook! ')
-
-</a>
+[![Little Old Me](images/macbook-panera.webp?fit=1000x1000#center 'Back when I developed on my Macbook!')](https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start)
 
 # The Background
 
@@ -93,6 +87,7 @@ sudo echo $'HandleLidSwitch=ignore\nHandleLidSwitchDocked=ignore' | sudo tee -a 
 sudo echo "GRUB_CMDLINE_LINUX_DEFAULT=\"consoleblank=60\"" | sudo tee -a /etc/default/grub &&
 sudo update-grub
 {{< / highlight >}}
+
 \*\* The `&&` chaining syntax means that the next command will not execute until/if the previous command executes successfully.
 
 ### II. Thou Shalt Have Basics

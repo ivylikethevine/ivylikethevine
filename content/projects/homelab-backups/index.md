@@ -1,25 +1,22 @@
 +++
 title = 'NAS Backups and the Dark USB Arts'
-subtitle = 'How to do what you should never do, the best way possible.'
+slug = 'NAS Backups and the Dark USB Arts'
 date = '2023-10-20'
-author = 'Ivy Duggan'
+subtitle = 'How to do what you should never do, the best way possible.'
+description = 'How to do what you should never do, the best way possible.'
 draft = false
+toc = true
 tags = [
     'linux',
     'storage',
     'data redundancy',
     'backups',
     'usb',
-    'nas'
-]
-header_img = ''
-description = ''
-toc = true
-categories = []
-series = []
+    'nas' ]
+categories = ['homelab', 'docker', 'dev-ops']
 +++
 
-![image](images/sata-vs-usb3.png 'Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.')
+![image](images/sata-vs-usb3.png?width=750#center 'Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.')
 
 # The Backups Speech
 
@@ -93,7 +90,7 @@ There are a myriad storage providers, and a myriad of backup solutions. Here is 
 
 [Duplicati](https://www.duplicati.com/) running inside a Portainer template from [this repo](https://github.com/Lissy93/portainer-templates) - This docker image then mounts our data directory (`/mnt/sandisk/`), allowing it to access the data directory.
 
-![image](images/duplicati-mounts.png 'This is the portainer config for our volumes. The only one I have added is the `sandisk` one.')
+![image](images/duplicati-mounts.png?width=750#center 'This is the portainer config for our volumes. The only one I have added is the `sandisk` one.')
 
 [Backblaze B2](https://www.backblaze.com/cloud-storage) for bulk storage. My original pick was AWS, but B2 is easier for deployments that don't utilize the AWS/AIM/CLI ecosystem.[^7]
 
