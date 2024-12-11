@@ -121,6 +121,10 @@ url = 'https://medium.com/@ivylikethevine'
 name = 'linkedin'
 url = 'https://linkedin.com/in/ivylikethevine'
 
+[[params.social]]
+name = 'printables'
+url = 'https://www.printables.com/@likethevine_877903'
+
 [params.author]
 name = 'Ivy Duggan'
 
@@ -140,9 +144,7 @@ logoCursorColor = '#e7ed3e'
 logoCursorAnimate = '2s'
 logoCursorPathname = true
 
-# [params.portrait]
-#   path     = '/img/image.jpg'
-#   alt      = 'Portrait'
-#   maxWidth = '50px'
-# Colors for favicons
-#
+[params.portrait]
+  path     = '/img/pfp.png'
+  alt      = 'Picture of me (Ivy Duggan)'
+  maxWidth = '200px'
