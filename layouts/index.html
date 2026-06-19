@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-    <main style="background-color: rgba(26, 27, 28, 0.50); padding: 2rem; border-radius: 2rem;">
+    <main style="background-color: rgba(26, 27, 28, 0.50); padding: 2rem; border-radius: 2rem; margin-top: 10rem">
       <div>
             {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width: {{ .Site.Params.Portrait.MaxWidth }}" />
