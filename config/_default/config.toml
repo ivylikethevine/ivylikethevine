@@ -1,6 +1,6 @@
 baseURL = 'https://localhost:1313/'
 title = 'ivy (local dev)'
-languageCode = 'en-us'
+locale = 'en-us'
 defaultContentLanguage = 'en'
 pagination.pagerSize = 10
 cleanDestinationDir = true
@@ -22,7 +22,7 @@ PygmentsStyle = 'monokai'
 [module]
 [module.hugoVersion]
 extended = true
-min = '0.130.0'
+min = '0.163.0'
 
 # Ordering here matters, higher imports in this file have authority
 [[module.imports]]
@@ -97,6 +97,9 @@ backgroundImage = '/img/header-miata.webp'
 enableSharingButtons = true
 enableThemeToggle = false
 
+[params.sass]
+transpiler = "dartsass"
+
 [params.emgithub]
 border = false
 branch = 'main'
@@ -145,6 +148,6 @@ logoCursorAnimate = '2s'
 logoCursorPathname = true
 
 [params.portrait]
-  path     = '/img/pfp.png'
-  alt      = 'Picture of me (Ivy Duggan)'
-  maxWidth = '200px'
+path     = '/img/pfp.png'
+alt      = 'Picture of me (Ivy Duggan)'
+maxWidth = '200px'

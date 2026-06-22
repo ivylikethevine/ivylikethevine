@@ -15,6 +15,6 @@ tags = [
 categories = []
 +++
 
-{{< pdf "resume_v5.pdf" >}}
+{{< pdf "resume_v5.5.pdf" >}}
 
 Made with [Reactive Resume](https://rxresu.me/)
