@@ -7,7 +7,7 @@ description = 'The janky hardware I use.'
 draft = false
 toc = true
 tags = [
-    'dev ops',
+    'dev-ops',
     'homelab',
     'linux',
     'nas',
@@ -15,7 +15,6 @@ tags = [
     'raspberry pi',
     'saffron',
 ]
-categories = ['saffron']
 +++
 
 # Rolecall

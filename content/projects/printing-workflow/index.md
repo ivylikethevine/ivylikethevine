@@ -2,6 +2,7 @@
 title = '3D Printing 0-100'
 date = '2023-12-10'
 subtitle = 'Creating a low friction 3D printing system.'
+description = 'Creating a low friction 3D printing system.'
 author = 'Ivy Duggan'
 draft = false
 tags = [
@@ -9,12 +10,10 @@ tags = [
   'backups',
   'raspberry pi',
   '3d-printing',
-  'dev ops',
+  'dev-ops',
 ]
 header_img = ''
-description = ''
 toc = true
-categories = []
 +++
 
 # Impetus

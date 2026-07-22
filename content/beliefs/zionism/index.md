@@ -5,8 +5,7 @@ date = '2023-11-30'
 description = 'A paper I wrote in 2022 for UCSD history.'
 subtitle = 'A paper I wrote in 2022 for UCSD history.'
 toc = true
-tags = ['op-ed']
-categories = ['politics']
+tags = ['op-ed', 'ethics']
 +++
 
 # Is Zionism Inherently Colonial?
@@ -52,13 +51,23 @@ Zionism is inherently colonial. Its architects were colonialists, its adherents 
 #### Citations
 
 [^1]: Rashid Khalidi, The Hundred Years' War on Palestine: A History of Settler Colonialism and Resistance, 1917-2017 (New York: Metropolitan Books, Henry Holt and Company, 2020), 5-7.
+
 [^2]: Avi Shlaim, The Iron Wall: Israel and the Arab World (New York: W.W. Norton, 2000), 3.
+
 [^3]: Khalidi, The Hundred Years' War, 28.
+
 [^4]: Khalidi, The Hundred Years' War, 43-51.
+
 [^5]: Charles D. Smith, Palestine and the Arab-Israeli Conflict (Boston: Bedford/St. Martin's, 2017), 38.
+
 [^6]: Smith, Palestine, 104-105.
+
 [^7]: Shlaim, The Iron Wall, 9-10.
+
 [^8]: Shlaim, The Iron Wall, 12-16.
+
 [^9]: Sebag Simon Montefiore, Jerusalem: The Biography (New York: Vintage Books, 2012), 452-456.
+
 [^10]: Khalidi, The Hundred Years' War, 24.
+
 [^11]: Khalidi, The Hundred Years' War, 24.

@@ -5,8 +5,7 @@ date = '2023-11-22'
 description = 'A brief summary of what I stand for.'
 subtitle = 'A brief summary of what I stand for.'
 comment = false
-tags = ['op-ed']
-categories = ['politics']
+tags = ['op-ed', 'ethics']
 +++
 
 ### I stand with & for reproductive health, the LGBTQ+ community, and the BIPOC community

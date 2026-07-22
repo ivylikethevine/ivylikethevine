@@ -7,14 +7,13 @@ description = 'The janky hardware I use, now updated!'
 draft = true
 toc = true
 tags = [
-    'dev ops',
+    'dev-ops',
     'homelab',
     'linux',
     'nas',
     'networking',
     'saffron',
 ]
-categories = ['saffron']
 +++
 
 # Rolecall

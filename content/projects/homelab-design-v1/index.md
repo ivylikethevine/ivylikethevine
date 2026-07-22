@@ -13,9 +13,9 @@ tags = [
     'networking',
     'docker',
     'homelab',
-    'nas'
+    'nas',
+    'dev-ops',
 ]
-categories = ['homelab', 'docker', 'dev-ops']
 +++
 
 [![Little Old Me](images/macbook-panera.webp?fit=1000x1000#center 'Back when I developed on my Macbook!')](https://www.reviewjournal.com/business/no-lazy-kid-12-year-old-app-developer-off-to-fast-start)

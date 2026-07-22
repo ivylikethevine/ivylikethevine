@@ -2,7 +2,7 @@ baseURL = 'https://localhost:1313/'
 title = 'ivy (local dev)'
 locale = 'en-us'
 defaultContentLanguage = 'en'
-pagination.pagerSize = 10
+pagination.pagerSize = 20
 cleanDestinationDir = true
 hasCJKLanguage = true
 enableInlineShortcodes = true
@@ -51,11 +51,6 @@ anchorLineNos = true
 codeFences = true
 hl_inline = false
 
-# [markup.tableOfContents]
-# endLevel = 3
-# ordered = false
-# startLevel = 2
-
 [markup.goldmark.renderer]
 unsafe = true
 
@@ -66,23 +61,17 @@ url = '/projects/'
 weight = 1
 
 [[menu.main]]
-name = 'resume'
-url = '/resume/'
+name = 'beliefs'
+url = '/beliefs/'
 weight = 2
 
 [[menu.main]]
-name = 'beliefs'
-url = '/beliefs/'
+name = 'resume'
+url = '/resume/'
 weight = 3
-
-[[menu.main]]
-name = 'links'
-url = '/links/'
-weight = 4
 
 [taxonomies]
 tag = 'tags'
-category = 'categories'
 
 [params]
 gitUrl = 'https://github.com/ivylikethevine/ivylikethevine/commit/'

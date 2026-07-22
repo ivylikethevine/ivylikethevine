@@ -8,11 +8,10 @@ comment = false
 toc = false
 tags = [
     'typescript',
-    'dev ops',
+    'dev-ops',
     'full stack',
     'cognitive science'
 ]
-categories = []
 +++
 
 {{< pdf "resume_v5.5.pdf" >}}

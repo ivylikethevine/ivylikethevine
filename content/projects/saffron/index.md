@@ -6,16 +6,17 @@ subtitle = 'Distributing a docker compose system via git.'
 author = 'Ivy Duggan'
 draft = false
 tags = [
-  'dev ops',
+  'dev-ops',
   'docker',
   'git',
   'homelab',
   'workflow',
+  'saffron',
+  'docker-compose'
 ]
 header_img = ''
 description = 'Distributing a docker compose system via git.'
 toc = true
-categories = ['saffron', 'docker', 'docker compose', 'git']
 +++
 
 ![Dashboard](images/dashboard.png?width=750#center "My saffron dashboard")
@@ -48,7 +49,7 @@ It is deployable via static files, and managed as a git repository: *[Public Git
 </td>
 <td style="border: none">
 
-![GitHub License](https://img.shields.io/github/license/ivylikethevine/saffron)
+![GitHub License](https://img.shields.io/github`/license/ivylikethevine/saffron)
 
 </td>
 </tr>

@@ -12,8 +12,11 @@ tags = [
     'data redundancy',
     'backups',
     'usb',
-    'nas' ]
-categories = ['homelab', 'docker', 'dev-ops']
+    'nas',
+    'homelab',
+    'dev-ops',
+    'docker'
+]
 +++
 
 ![image](images/sata-vs-usb3.png?width=750#center 'Left: 2011 Macbook with 2TB SATA 3 SSD. Right: 2015 Macbook with 2TB USB 3 SSD.')

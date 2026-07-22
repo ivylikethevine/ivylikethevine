@@ -6,8 +6,7 @@ subtitle = ''
 description = ''
 draft = true
 toc = false
-tags = ['git', 'go', 'hugo']
-categories = ['dev-ops']
+tags = ['git', 'go', 'hugo', 'dev-ops']
 +++
 
 {{< emgithub
