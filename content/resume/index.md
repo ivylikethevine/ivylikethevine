@@ -14,6 +14,8 @@ tags = [
 ]
 +++
 
+Additional details for csd.dev projects [here](https://csd.dev/projects)
+
 {{< pdf "resume_v5.5.pdf" >}}
 
 Made with [Reactive Resume](https://rxresu.me/)

@@ -1,3 +1,6 @@
 {
   "format_on_save": "off",
+  "edit_predictions": {
+    "disabled_globs": ["**/*.md"],
+  },
 }
