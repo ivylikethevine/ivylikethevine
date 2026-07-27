@@ -20,6 +20,10 @@ This post will not delve into the ethics or morals of AI. If interested, please 
 
 I say the following as a former software development intern, but an AI agent at this point in time is analogous to a human intern. This is not to demean other interns, past and present, or to imply that AI agents are unskilled. The intern comparison is useful purely as a cognitive model for analysis of software development as a process.
 
+> # If you wouldn't do it as a manager with an intern, you shouldn't do it with an LLM agent...
+
+
+
 #### Software as a Living System
 
 One of the largest mistakes that non-technical people make when discussing software is to view it as a flat, single point in time. I wish that were true.
@@ -34,9 +38,16 @@ In my opinion, the largest issue that the recent influx of AI usage & integratio
 
 ### Replacing Developers with AI
 
+> # "Let's fire 20 developers and give the manager 40 interns instead!"
+
 #### Short-sidedness
 #### Uncertain Future
 #### Tech Debt
+
+Tech debt in this context is actually two-fold. The first is a typical "the accrual of decisions and designs that limit or hinder future changes". The second is more complex and requires us to think of the software development "cycle". 
+
+When you are designing a system, the discussions and the decisions made during those discussions, itself, invaluable institutional knowledge. Knowing that a system using X authentication is fine and dandy, but the real useful "oh I remember that" is when you have to decide to switch to Y or Z authentication when X authentication is deprecated. 
+
 #### The Human Limit
 
 ## The "Buck"

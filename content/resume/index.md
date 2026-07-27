@@ -14,9 +14,9 @@ tags = [
 ]
 +++
 
-Additional details for csd.dev projects [here](https://csd.dev/projects).
-
 References provided upon request.
+
+My personal projects are [here](/projects) & csd.dev projects are [here](https://csd.dev/projects).
 
 {{< pdf "resume_v5.5.pdf" >}}
 

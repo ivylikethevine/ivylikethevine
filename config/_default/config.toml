@@ -56,8 +56,8 @@ unsafe = true
 
 [menu]
 [[menu.main]]
-name = 'projects'
-url = '/projects/'
+name = 'posts'
+url = '/posts/'
 weight = 1
 
 [[menu.main]]
@@ -69,6 +69,11 @@ weight = 2
 name = 'resume'
 url = '/resume/'
 weight = 3
+
+[[menu.main]]
+name = 'projects'
+url = '/projects/'
+weight = 4
 
 [taxonomies]
 tag = 'tags'

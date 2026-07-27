@@ -16,6 +16,7 @@ tags = [
 +++
 
 ![image](images/hackerman.jpg?width=750#center "Hackerman, 'Kung Fury'")
+
 ## Alias Anger
 
 Like a lot of developers (and a great many System Admins), I have to connect to a variety of machines for my job. Luckily, almost all of them are Linux or Mac, but even just amongst Linux machines, often I find myself in a strange new land with nothing but the muscle memory in my fingers.
@@ -60,7 +61,33 @@ Related to the above pain points are general configurations, which typically fal
 
 ## sshrc
 
+Initially as I researched how to carry my configs with me, I found [sshrc](https://github.com/cdown/sshrc), which was a great intro to what I wanted in this type of system. `sshrc` is the base of my project, `hi`, with some heavy modifications. `sshrc` was originally a project by Russell Stewart (Russell91), but I found the cdown fork linked above. Even this fork was still 6 years old, so I ended up changing almost all of it. `sshrc` still remains a relatively straightforward solution and is simpler than what I ended up building, so I recommend it. :)
+
 ## hi.d
+
+The design goal of hi.d was to make it so I never had to do any real per-device configuration. I switch between many Linux devices, and I wanted installing, syncing, and carrying my configs via ssh as easy and simple as possible. I further wanted to build a shell configuration for the (as I see them) 3 main shell languages: bash, zsh, and fish.
+
+I personally use fish on my machines, but I hardly ever install packages for my comfort on a bare metal host as a security precaution, so bash is a must. Zsh is a nice inbetween, as a lot of modern Linux installs will have it, and it is a lot more useful than bare bash. 
+
+As a sub-point to the above, I also required my aliases to properly work in all shells, in addition to enabling terminal colors. If my aliases aren't *always* working, I will *never* use them.
+
+### Initial Design
+
+I knew from the start that my ideal system to maintain my configuration would be to house hi.d as a git repository. I could easily just `git push` any changes and `git pull` to update my other machines. (I would later add a header that notifies me if I have any un-pushed changes to the installed `hi.d` repo). This has a few drawbacks/concerns:
+
+1. Security - Your shell configurations shouldn't ever be used to store secrets, but even some shell variables are best left out of the git history. An aggressive .gitignore was required, and I continually add to it as I find other kinds of files that are security-adjacent. 
+2. Installer - If we have a git repo, we can't (easily) use the default location for most configuration files (typically something like `~/.gitconfig || /$HOME/$USER/.gitconfig || /home/ivy/.gitconfig ` ), so we'll need a script to configure our default configurations to reference our `hi.d` git-tracked files. This will also be uesful later, when we carry our configs to a new host.
+3. Per Machine Config - Sometimes it is inevitable that a single machine will need "some goddamned fix for some goddamned reason". I've been lucky that almost all of my machines have nothing in the local configuration outside of the above mentioned chainloader, but we can modify the local configurations if we have to.
+
+
+#### Other Considerations
+
+1. Fail safety
+2. Conditional loading
+3. Compatibility
+4. Speed
+5. Unifying behaviors
+
 
 ## dotfiles
 
