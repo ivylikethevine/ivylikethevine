@@ -1,7 +1,7 @@
 +++
-title = 'hi (or how I learned to love SSH)'
-slug = 'hi (or how I learned to love SSH)'
-date = '2026-07-22'
+title = 'say-hi (and shell adventures)'
+slug = 'say-hi'
+date = '2026-08-21'
 subtitle = 'Carrying your configs everywhere you go'
 description = 'Carrying your configs everywhere you go'
 comments = true
@@ -29,13 +29,13 @@ When you ssh to a host, you don't really know what the environment you'll arrive
 
 #### 1. The shell(s) themselves
 
-This is the first problem I encountered. For a few years now, I've been using [`fish` shell](https://fishshell.com/), which is great **but** it is not technically POSIX-compliant. [POSIX](https://en.wikipedia.org/wiki/POSIX) is an IEEE standard, and the specifics are not that important. The consideration when using `fish` is *scripts that would execute fine in sh/bash/zsh may not run in fish*. 
+This is the first problem I encountered. For a few years now, I've been using [`fish` shell](https://fishshell.com/), which is great **but** it is not technically POSIX-compliant. [POSIX](https://en.wikipedia.org/wiki/POSIX) is an IEEE standard, and the specifics are not that important. The consideration when using `fish` is *scripts that would execute fine in sh/bash/zsh may not run in fish*.
 
 Another consideration is that most stock systems will not have it installed by default.
 
 #### 2. Aliases
 
-Even with the perfect mechanical keyboard, an ideal chair, and all of the wrist wrests and braces in the world, typing on a keyboard all day is bad for your hands and wrists. The name of the game is harm reduction, and when a good 50% of your CLI work involves `git ...` or `docker ...`, etc., then aliases can be a lifesaver. 
+Even with the perfect mechanical keyboard, an ideal chair, and all of the wrist wrests and braces in the world, typing on a keyboard all day is bad for your hands and wrists. The name of the game is harm reduction, and when a good 50% of your CLI work involves `git ...` or `docker ...`, etc., then aliases can be a lifesaver.
 
 However, I found that *an alias that only exists sometimes results in me using the full command almost all of the time*. Aliases are part of a local configuration, and there is no way I can be bothered to (remember to) set up every single machine and keep the aliases up-to-date.
 
@@ -67,7 +67,7 @@ Initially as I researched how to carry my configs with me, I found [sshrc](https
 
 The design goal of hi.d was to make it so I never had to do any real per-device configuration. I switch between many Linux devices, and I wanted installing, syncing, and carrying my configs via ssh as easy and simple as possible. I further wanted to build a shell configuration for the (as I see them) 3 main shell languages: bash, zsh, and fish.
 
-I personally use fish on my machines, but I hardly ever install packages for my comfort on a bare metal host as a security precaution, so bash is a must. Zsh is a nice inbetween, as a lot of modern Linux installs will have it, and it is a lot more useful than bare bash. 
+I personally use fish on my machines, but I hardly ever install packages for my comfort on a bare metal host as a security precaution, so bash is a must. Zsh is a nice inbetween, as a lot of modern Linux installs will have it, and it is a lot more useful than bare bash.
 
 As a sub-point to the above, I also required my aliases to properly work in all shells, in addition to enabling terminal colors. If my aliases aren't *always* working, I will *never* use them.
 
@@ -75,8 +75,8 @@ As a sub-point to the above, I also required my aliases to properly work in all 
 
 I knew from the start that my ideal system to maintain my configuration would be to house hi.d as a git repository. I could easily just `git push` any changes and `git pull` to update my other machines. (I would later add a header that notifies me if I have any un-pushed changes to the installed `hi.d` repo). This has a few drawbacks/concerns:
 
-1. Security - Your shell configurations shouldn't ever be used to store secrets, but even some shell variables are best left out of the git history. An aggressive .gitignore was required, and I continually add to it as I find other kinds of files that are security-adjacent. 
-2. Installer - If we have a git repo, we can't (easily) use the default location for most configuration files (typically something like `~/.gitconfig || /$HOME/$USER/.gitconfig || /home/ivy/.gitconfig ` ), so we'll need a script to configure our default configurations to reference our `hi.d` git-tracked files. This will also be uesful later, when we carry our configs to a new host.
+1. Security - Your shell configurations shouldn't ever be used to store secrets, but even some shell variables are best left out of the git history. An aggressive .gitignore was required, and I continually add to it as I find other kinds of files that are security-adjacent.
+2. Installer - If we have a git repo, we can't (easily) use the default location for most configuration files (typically something like `~/.gitconfig || /$HOME/$USER/.gitconfig || /home/ivy/.gitconfig` ), so we'll need a script to configure our default configurations to reference our `hi.d` git-tracked files. This will also be uesful later, when we carry our configs to a new host.
 3. Per Machine Config - Sometimes it is inevitable that a single machine will need "some goddamned fix for some goddamned reason". I've been lucky that almost all of my machines have nothing in the local configuration outside of the above mentioned chainloader, but we can modify the local configurations if we have to.
 
 
