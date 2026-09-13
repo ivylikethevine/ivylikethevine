@@ -4,7 +4,40 @@ This is my [github repo](https://github.com/ivylikethevine/ivylikethevine) for m
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ivylikethevine/ivylikethevine) | ![GitHub last commit](https://img.shields.io/github/last-commit/ivylikethevine/ivylikethevine)
 
-## Tech Stack
+## My Projects
+
+### Saffron
+
+An open source, docker compose based homelab configuration system.
+
+Project here: <https://github.com/ivylikethevine/saffron>
+Documentation here: <https://ivylikethevine.github.io/saffron/#/>
+
+### say-hi
+
+A single command to connect to ssh hosts and docker containers while bringing all of your essential configs along.
+
+Project here: <https://github.com/ivylikethevine/say-hi>
+Homebrew tap here: <https://github.com/ivylikethevine/homebrew-tap>
+Documentation here: <https://ivylikethevine.github.io/say-hi/>
+
+### sharerr-rs
+
+A system to cross-seed existing catalogued media libraries between friends, with as little setup as possible.
+
+Project here: <https://github.com/ivylikethevine/sharerr-rs>
+Documentation here: <https://ivylikethevine.github.io/sharerr-rs/>
+
+### instadroid
+
+Early alpha of a project to convert instagram feeds into RSS.
+
+Project here: <https://github.com/ivylikethevine/instadroid>
+Documentation here: TBD!
+
+### My Personal Site
+
+#### Tech Stack
 
 - Built using
   - [Hugo](https://gohugo.io/) - A modern, static site framework built using [Go](https://go.dev/) with simple [markdown](https://www.markdownguide.org/) posts.
@@ -24,7 +57,7 @@ This is my [github repo](https://github.com/ivylikethevine/ivylikethevine) for m
   - [Github workflows](https://docs.github.com/en/actions/using-workflows) - used to convert .ipynb Jupyter Notebooks to HTML for display
   - Documented on [my blog](https://ivylikethevine.com/projects/site-devops/)
 
-### Installation
+##### Installation
 
 Requires: git, go, hugo-extended, dart-sass
 
@@ -39,8 +72,8 @@ hugo serve -e staging # staging preview (drafts hidden)
 hugo serve -e production # production preview (drafts hidden)
 ```
 
-#### Resources
+###### Resources
 
-https://learnxinyminutes.com/docs/markdown/
+<https://learnxinyminutes.com/docs/markdown/>
 
-https://learnxinyminutes.com/docs/toml/
+<https://learnxinyminutes.com/docs/toml/>
