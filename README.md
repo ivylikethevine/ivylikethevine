@@ -11,6 +11,7 @@ This is my [github repo](https://github.com/ivylikethevine/ivylikethevine) for m
 An open source, docker compose based homelab configuration system.
 
 Project here: <https://github.com/ivylikethevine/saffron>
+
 Documentation here: <https://ivylikethevine.github.io/saffron/#/>
 
 ### say-hi
@@ -18,7 +19,9 @@ Documentation here: <https://ivylikethevine.github.io/saffron/#/>
 A single command to connect to ssh hosts and docker containers while bringing all of your essential configs along.
 
 Project here: <https://github.com/ivylikethevine/say-hi>
+
 Homebrew tap here: <https://github.com/ivylikethevine/homebrew-tap>
+
 Documentation here: <https://ivylikethevine.github.io/say-hi/>
 
 ### sharerr-rs
@@ -26,6 +29,7 @@ Documentation here: <https://ivylikethevine.github.io/say-hi/>
 A system to cross-seed existing catalogued media libraries between friends, with as little setup as possible.
 
 Project here: <https://github.com/ivylikethevine/sharerr-rs>
+
 Documentation here: <https://ivylikethevine.github.io/sharerr-rs/>
 
 ### instadroid
@@ -33,7 +37,8 @@ Documentation here: <https://ivylikethevine.github.io/sharerr-rs/>
 Early alpha of a project to convert instagram feeds into RSS.
 
 Project here: <https://github.com/ivylikethevine/instadroid>
-Documentation here: TBD!
+
+Documentation here: <https://ivylikethevine.github.io/instadroid/>
 
 ### My Personal Site
 

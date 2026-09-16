@@ -1,6 +1,6 @@
 +++
-title = 'A Cognitive Model of AI Agents'
-slug = 'A Cognitive Model of AI Agents'
+title = 'Trials in Not Being an AI Bro'
+slug = 'Trials in Not Being an AI Bro'
 date = '2026-07-23'
 description = 'A human-centric view of AI in software development.'
 subtitle = 'A human-centric view of AI in software development.'
