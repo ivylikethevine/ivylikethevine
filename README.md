@@ -1,8 +1,8 @@
-# Hi, I'm Ivy (likethevine)
+# ivylikethevine - Hi, that's me
 
-This is my [github repo](https://github.com/ivylikethevine/ivylikethevine) for my personal blog, [ivylikethevine.com](http://ivylikethevine.com), complete with continuous integration and deployment, staging & production environments.
+Welcome to my github profile/personal site. Here you'll find my latest projects, blog posts, and any resources I want to share. I love to program, and have recently started to contribute to OSS projects, as well as my own.
 
-![GitHub repo size](https://img.shields.io/github/repo-size/ivylikethevine/ivylikethevine) | ![GitHub last commit](https://img.shields.io/github/last-commit/ivylikethevine/ivylikethevine)
+My main current projects are as follows below:
 
 ## My Projects
 
@@ -11,31 +11,40 @@ This is my [github repo](https://github.com/ivylikethevine/ivylikethevine) for m
 An open source, docker compose based homelab configuration system.
 
 Project here: <https://github.com/ivylikethevine/saffron>
+
 Documentation here: <https://ivylikethevine.github.io/saffron/#/>
 
 ### say-hi
 
 A single command to connect to ssh hosts and docker containers while bringing all of your essential configs along.
 
-Project here: <https://github.com/ivylikethevine/say-hi>
-Homebrew tap here: <https://github.com/ivylikethevine/homebrew-tap>
-Documentation here: <https://ivylikethevine.github.io/say-hi/>
+[Repo](https://github.com/ivylikethevine/say-hi) | [Homebrew tap](https://github.com/ivylikethevine/homebrew-tap) | [Documentation](https://ivylikethevine.github.io/say-hi/)
 
 ### sharerr-rs
 
 A system to cross-seed existing catalogued media libraries between friends, with as little setup as possible.
 
-Project here: <https://github.com/ivylikethevine/sharerr-rs>
-Documentation here: <https://ivylikethevine.github.io/sharerr-rs/>
+[Repo](https://github.com/ivylikethevine/sharerr-rs) | [Documentation](https://ivylikethevine.github.io/sharerr-rs/)
 
 ### instadroid
 
 Early alpha of a project to convert instagram feeds into RSS.
 
-Project here: <https://github.com/ivylikethevine/instadroid>
-Documentation here: TBD!
+[Repo](https://github.com/ivylikethevine/instadroid) | [Documentation](https://ivylikethevine.github.io/instadroid/)
 
-### My Personal Site
+### python-constricter
+
+Python linting plugin that enforces strict typing of **all** variables, at **all** levels, in **all** python code.
+
+[Repo](https://github.com/ivylikethevine/python-constricter) | [PyPi Package](https://pypi.org/project/python-constricter/)
+
+---
+
+### ivylikethevine - My Personal Site
+
+This is my [github repo](https://github.com/ivylikethevine/ivylikethevine) for my personal blog, [ivylikethevine.com](http://ivylikethevine.com), complete with continuous integration and deployment, staging & production environments.
+
+![GitHub repo size](https://img.shields.io/github/repo-size/ivylikethevine/ivylikethevine) | ![GitHub last commit](https://img.shields.io/github/last-commit/ivylikethevine/ivylikethevine)
 
 #### Tech Stack
 
