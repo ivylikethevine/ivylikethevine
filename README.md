@@ -10,11 +10,17 @@ My main current projects are as follows below:
 
 An open source, docker compose based homelab configuration system.
 
+Project here: <https://github.com/ivylikethevine/saffron>
+
 [Repo](https://github.com/ivylikethevine/saffron) | [Documentation](https://ivylikethevine.github.io/saffron/#/)
 
 ### say-hi
 
 A single command to connect to ssh hosts and docker containers while bringing all of your essential configs along.
+
+Project here: <https://github.com/ivylikethevine/say-hi>
+
+Homebrew tap here: <https://github.com/ivylikethevine/homebrew-tap>
 
 [Repo](https://github.com/ivylikethevine/say-hi) | [Homebrew tap](https://github.com/ivylikethevine/homebrew-tap) | [Documentation](https://ivylikethevine.github.io/say-hi/)
 
@@ -22,11 +28,15 @@ A single command to connect to ssh hosts and docker containers while bringing al
 
 A system to cross-seed existing catalogued media libraries between friends, with as little setup as possible.
 
+Project here: <https://github.com/ivylikethevine/sharerr-rs>
+
 [Repo](https://github.com/ivylikethevine/sharerr-rs) | [Documentation](https://ivylikethevine.github.io/sharerr-rs/)
 
 ### instadroid
 
 Early alpha of a project to convert instagram feeds into RSS.
+
+Project here: <https://github.com/ivylikethevine/instadroid>
 
 [Repo](https://github.com/ivylikethevine/instadroid) | [Documentation](https://ivylikethevine.github.io/instadroid/)
 
